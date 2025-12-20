@@ -1,7 +1,7 @@
 from __future__ import annotations
 
-from typing import overload, Literal, Union
-from dataclasses import dataclass, field
+from typing import Union
+import re
 
 from amulet_nbt import (
     CompoundTag,
@@ -13,209 +13,25 @@ from amulet_nbt import (
     AnyNBT,
 )
 
-JSONList = list["JSON"]
-JSONDict = dict[str, "JSON"]
-JSON = Union[bool, int, float, str, JSONList, JSONDict]
-
-
-class ColourCodes:
-    class Java:
-        RGBToName = {
-            (0x00, 0x00, 0x00): "black",
-            (0x00, 0x00, 0xAA): "dark_blue",
-            (0x00, 0xAA, 0x00): "dark_green",
-            (0x00, 0xAA, 0xAA): "dark_aqua",
-            (0xAA, 0x00, 0x00): "dark_red",
-            (0xAA, 0x00, 0xAA): "dark_purple",
-            (0xFF, 0xAA, 0x00): "gold",
-            (0xAA, 0xAA, 0xAA): "gray",
-            (0x55, 0x55, 0x55): "dark_gray",
-            (0x55, 0x55, 0xFF): "blue",
-            (0x55, 0xFF, 0x55): "green",
-            (0x55, 0xFF, 0xFF): "aqua",
-            (0xFF, 0x55, 0x55): "red",
-            (0xFF, 0x55, 0xFF): "light_purple",
-            (0xFF, 0xFF, 0x55): "yellow",
-            (0xFF, 0xFF, 0xFF): "white",
-        }
-        NameToRGB = {v: k for k, v in RGBToName.items()}
-
-
-@dataclass(kw_only=True)
-class Colour:
-    """
-    An RGB colour with an optional name.
-    """
-
-    # The name or #RRGGBB value
-    name: Union[str, None]
-
-    # The RGB value of the colour [0-255]
-    r: int
-    g: int
-    b: int
-
-
-@dataclass(kw_only=True)
-class RGBAInt:
-    # RGBA values in range [0-255]
-    r: int
-    g: int
-    b: int
-    a: int
-
-
-@dataclass(kw_only=True)
-class RGBAFloat:
-    # RGBA values in range [0.0-1.0]
-    r: float
-    g: float
-    b: float
-    a: float
-
-
-TextComponent = Union[
-    "InvalidTextComponent",
-    "PlainTextComponent",
-    "RecursiveTextComponent",
-    "CompoundTextComponent",
-]
-
-
-@dataclass(kw_only=True)
-class InvalidTextComponent:
-    tag: AnyNBT
-
-
-@dataclass(kw_only=True)
-class PlainTextComponent:
-    """Plain text with no formatting."""
-
-    text: str
-
-
-@dataclass(kw_only=True)
-class RecursiveTextComponent:
-    """
-    A list of text components, each of which is a child of the previous.
-
-    Section string: components joined
-    Java JSON: [{"text": "red", "color": "red"}, "red"]
-    Java NBT: [{"text": "red", "color": "red"}, {"": "red"}]
-    """
-
-    # The components in the list
-    components: list[TextComponent] = field(default_factory=list)
-
-
-@dataclass(kw_only=True)
-class TextContent:
-    text: str
-
-
-@dataclass(kw_only=True)
-class TranslatableContent:
-    key: str
-    fallback: Union[str, None] = None
-    args: Union[list[TextComponent], None] = None
-
-
-@dataclass(kw_only=True)
-class ScoreboardContent:
-    selector: Union[str, None]
-    objective: Union[str, None]
-    unhandled: Union[CompoundTag, None]
-
-
-@dataclass(kw_only=True)
-class EntityContent:
-    selector: Union[str, None]
-    separator: Union[TextComponent, None]
-
-
-@dataclass(kw_only=True)
-class KeybindContent:
-    key: Union[str, None]
-
-
-Content = Union[
+from .data import (
+    ColourCodes,
+    Colour,
+    RGBAInt,
+    RGBAFloat,
+    UnhandledCompound,
+    TextComponent,
+    InvalidTextComponent,
+    PlainTextComponent,
+    RecursiveTextComponent,
+    CompoundTextComponent,
     TextContent,
     TranslatableContent,
     ScoreboardContent,
     EntityContent,
     KeybindContent,
-]
+)
 
-
-@dataclass(kw_only=True)
-class Formatting:
-    colour: Union[Colour, None] = None
-    font: Union[str, None] = None
-    bold: Union[bool, None] = None
-    italic: Union[bool, None] = None
-    underlined: Union[bool, None] = None
-    strikethrough: Union[bool, None] = None
-    obfuscated: Union[bool, None] = None
-    shadow_colour: Union[RGBAInt, RGBAFloat, None] = None
-
-
-@dataclass(kw_only=True)
-class CompoundTextComponent:
-    # The node in the empty key
-    empty_node: Union[TextComponent, None] = None
-
-    content_type: Union[str, None] = None
-    content: Union[Content, None] = None
-
-    # Each child inherits this component's formatting but are independent of each other.
-    children: Union[list[TextComponent], None] = None
-
-    formatting: Formatting = field(default_factory=Formatting)
-
-    insertion: Union[str, None] = None
-    click_event: None = None
-    hover_event: None = None
-    unhandled: Union[CompoundTag, None] = None
-
-
-@overload
-def from_bedrock_section_string(
-    section_str: str, split_newline: Literal[True]
-) -> list[str]: ...
-
-
-@overload
-def from_bedrock_section_string(
-    section_str: str, split_newline: Literal[False]
-) -> str: ...
-
-
-def from_bedrock_section_string(
-    section_str: str, split_newline: bool
-) -> Union[str, list[str]]:
-    raise NotImplementedError
-
-
-@overload
-def from_java_section_string(
-    section_str: str, split_newline: Literal[True]
-) -> list[str]: ...
-
-
-@overload
-def from_java_section_string(
-    section_str: str, split_newline: Literal[False]
-) -> str: ...
-
-
-def from_java_section_string(
-    section_str: str, split_newline: bool
-) -> Union[str, list[str]]:
-    raise NotImplementedError
-
-
-def from_java_json(json: JSON) -> TextComponent:
-    raise NotImplementedError
+RGBHexPattern = re.compile(r"#([0-9a-fA-F]{6})")
 
 
 def from_java_nbt(nbt: AnyNBT) -> TextComponent:
@@ -292,7 +108,11 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
                     return ScoreboardContent(
                         selector=name_tag.py_str,
                         objective=objective_tag.py_str,
-                        unhandled=score_tag if score_tag else None,
+                        unhandled=(
+                            UnhandledCompound(format_id="java", tag=score_tag)
+                            if score_tag
+                            else None
+                        ),
                     )
             return None
 
@@ -329,6 +149,11 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
             content = get_entity_content(nbt)
         elif content_type == "keybind":
             content = get_keybind_content(nbt)
+        # TODO: other content types
+        # elif content_type == "nbt":
+        #     raise NotImplementedError
+        # elif content_type == "object":
+        #     raise NotImplementedError
 
         if content is None:
             # content-type is undefined, invalid or does not match the content
@@ -345,8 +170,6 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
             children = [from_java_nbt(tag) for tag in children_tag]
         else:
             children = None
-
-        formatting = Formatting()
 
         # Get colour code
         colour_tag = nbt.get("color", None)
@@ -365,54 +188,68 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
             else:
                 # Unknown colour code
                 r = g = b = 0
-            formatting.colour = Colour(name=colour_code, r=r, g=g, b=b)
+            colour = Colour(name=colour_code, r=r, g=g, b=b)
+        else:
+            colour = None
 
         # Get font
         font_tag = nbt.get("font", None)
         if isinstance(font_tag, StringTag):
             del nbt["font"]
-            formatting.font = font_tag.py_str
+            font = font_tag.py_str
+        else:
+            font = None
 
         # Get bold
         bold_tag = nbt.get("bold", None)
         if isinstance(bold_tag, ByteTag):
             del nbt["bold"]
-            formatting.bold = bool(bold_tag)
+            bold = bool(bold_tag)
+        else:
+            bold = None
 
         # Get italic
         italic_tag = nbt.get("italic", None)
         if isinstance(italic_tag, ByteTag):
             del nbt["italic"]
-            formatting.italic = bool(italic_tag)
+            italic = bool(italic_tag)
+        else:
+            italic = None
 
         # Get underlined
         underlined_tag = nbt.get("underlined", None)
         if isinstance(underlined_tag, ByteTag):
             del nbt["underlined"]
-            formatting.underlined = bool(underlined_tag)
+            underlined = bool(underlined_tag)
+        else:
+            underlined = None
 
         # Get strikethrough
         strikethrough_tag = nbt.get("strikethrough", None)
         if isinstance(strikethrough_tag, ByteTag):
             del nbt["strikethrough"]
-            formatting.strikethrough = bool(strikethrough_tag)
+            strikethrough = bool(strikethrough_tag)
+        else:
+            strikethrough = None
 
         # Get obfuscated
         obfuscated_tag = nbt.get("obfuscated", None)
         if isinstance(obfuscated_tag, ByteTag):
             del nbt["obfuscated"]
-            formatting.obfuscated = bool(obfuscated_tag)
+            obfuscated = bool(obfuscated_tag)
+        else:
+            obfuscated = None
 
         # Get shadow colour
         shadow_colour_tag = nbt.get("shadow_color", None)
         if isinstance(shadow_colour_tag, IntTag):
             del nbt["shadow_color"]
-            shadow_colour = shadow_colour_tag.py_int
-            formatting.shadow_colour = RGBAInt(
-                a=(shadow_colour >> 24) & 0xFF,
-                r=(shadow_colour >> 16) & 0xFF,
-                g=(shadow_colour >> 8) & 0xFF,
-                b=shadow_colour & 0xFF,
+            shadow_colour_int = shadow_colour_tag.py_int
+            shadow_colour = RGBAInt(
+                a=(shadow_colour_int >> 24) & 0xFF,
+                r=(shadow_colour_int >> 16) & 0xFF,
+                g=(shadow_colour_int >> 8) & 0xFF,
+                b=shadow_colour_int & 0xFF,
             )
         elif (
             isinstance(shadow_colour_tag, ListTag)
@@ -420,12 +257,14 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
             and shadow_colour_tag.list_data_type == FloatTag.tag_id
         ):
             del nbt["shadow_color"]
-            formatting.shadow_colour = RGBAFloat(
+            shadow_colour = RGBAFloat(
                 r=shadow_colour_tag[0].py_float,
                 g=shadow_colour_tag[1].py_float,
                 b=shadow_colour_tag[2].py_float,
                 a=shadow_colour_tag[3].py_float,
             )
+        else:
+            shadow_colour = None
 
         # TODO: Interaction
 
@@ -434,12 +273,111 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
             content_type=content_type,
             content=content,
             children=children,
-            formatting=formatting,
-            unhandled=nbt if nbt else None,
+            colour=colour,
+            font=font,
+            bold=bold,
+            italic=italic,
+            underlined=underlined,
+            strikethrough=strikethrough,
+            obfuscated=obfuscated,
+            shadow_colour=shadow_colour,
+            unhandled=UnhandledCompound(format_id="java", tag=nbt) if nbt else None,
         )
     else:
         return InvalidTextComponent(tag=nbt)
 
 
 def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringTag]:
-    raise NotImplementedError
+    def escape_list_tags(list_tag: list[AnyNBT]) -> list[AnyNBT]:
+        if list_tag and next(
+            (True for tag in list_tag[1:] if type(tag) != list_tag[0]), False
+        ):
+            # Escape tags
+            for i in range(len(list_tag)):
+                tag = list_tag[i]
+                if not isinstance(tag, CompoundTag):
+                    list_tag[i] = CompoundTag({"": tag})
+        return list_tag
+
+    if isinstance(component, InvalidTextComponent):
+        return component.tag
+    elif isinstance(component, PlainTextComponent):
+        return StringTag(component.text)
+    elif isinstance(component, RecursiveTextComponent):
+        return ListTag(
+            escape_list_tags([to_java_nbt(child) for child in component.components])
+        )
+
+    elif isinstance(component, CompoundTextComponent):
+        if component.unhandled is not None and component.unhandled.format_id == "java":
+            compound = component.unhandled.tag
+        else:
+            compound = CompoundTag()
+
+        if component.empty_node is not None:
+            compound[""] = to_java_nbt(component.empty_node)
+
+        if component.content_type is not None:
+            compound["type"] = StringTag(component.content_type)
+
+        # TODO: content
+
+        if component.children is not None:
+            compound["extra"] = ListTag(
+                escape_list_tags([to_java_nbt(child) for child in component.children])
+            )
+
+        if component.colour is not None:
+            colour = component.colour
+            r = max(0, min(colour.r, 255))
+            g = max(0, min(colour.g, 255))
+            b = max(0, min(colour.b, 255))
+            if colour.name is None:
+                colour_code = f"#{r:02X}{g:02X}{b:02X}"
+            elif RGBHexPattern.fullmatch(colour.name) is not None:
+                colour_code = colour.name
+            elif ColourCodes.Java.NameToRGB.get(colour.name, None) == (r, g, b):
+                colour_code = colour.name
+            else:
+                colour_code = f"#{r:02X}{g:02X}{b:02X}"
+            compound["color"] = StringTag(colour_code)
+
+        if component.font is not None:
+            compound["font"] = StringTag(component.font)
+
+        if component.bold is not None:
+            compound["bold"] = ByteTag(component.bold)
+
+        if component.italic is not None:
+            compound["italic"] = ByteTag(component.italic)
+
+        if component.underlined is not None:
+            compound["underlined"] = ByteTag(component.underlined)
+
+        if component.strikethrough is not None:
+            compound["strikethrough"] = ByteTag(component.strikethrough)
+
+        if component.obfuscated is not None:
+            compound["obfuscated"] = ByteTag(component.obfuscated)
+
+        if component.shadow_colour is not None:
+            if isinstance(component.shadow_colour, RGBAInt):
+                compound["shadow_color"] = IntTag(
+                    (component.shadow_colour.a & 0xFF) << 24
+                    | (component.shadow_colour.r & 0xFF) << 16
+                    | (component.shadow_colour.g & 0xFF) << 8
+                    | (component.shadow_colour.b & 0xFF)
+                )
+            elif isinstance(component.shadow_colour, RGBAFloat):
+                compound["shadow_color"] = ListTag(
+                    [
+                        FloatTag(component.shadow_colour.r),
+                        FloatTag(component.shadow_colour.g),
+                        FloatTag(component.shadow_colour.b),
+                        FloatTag(component.shadow_colour.a),
+                    ]
+                )
+
+        return compound
+    else:
+        raise TypeError(f"Unexpected component type: {type(component)}")
