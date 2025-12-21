@@ -123,8 +123,8 @@ class TranslatableContent:
 
 @dataclass(kw_only=True)
 class ScoreboardContent:
-    selector: Union[str, None]
-    objective: Union[str, None]
+    selector: str
+    objective: str
     unhandled: Union[UnhandledCompound, None]
 
 

@@ -320,7 +320,30 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
         if component.content_type is not None:
             compound["type"] = StringTag(component.content_type)
 
-        # TODO: content
+        content = component.content
+        if isinstance(content, TextContent):
+            compound["text"] = StringTag(content.text)
+        elif isinstance(content, TranslatableContent):
+            compound["translate"] = StringTag(content.key)
+            if content.fallback is not None:
+                compound["fallback"] = StringTag(content.fallback)
+            if content.args is not None:
+                compound["with"] = ListTag(escape_list_tags([to_java_nbt(tag) for tag in content.args]))
+        elif isinstance(content, ScoreboardContent):
+            if content.unhandled is not None and content.unhandled.format_id == "java":
+                score = content.unhandled.tag
+            else:
+                score = CompoundTag()
+            score["name"] = StringTag(content.selector)
+            score["objective"] = StringTag(content.objective)
+            compound["score"] = score
+        elif isinstance(content, EntityContent):
+            compound["selector"] = StringTag(content.selector)
+            if content.separator is not None:
+                compound["separator"] = to_java_nbt(content.separator)
+        elif isinstance(content, KeybindContent):
+            compound["keybind"] = StringTag(content.key)
+        # TODO: other content types
 
         if component.children is not None:
             compound["extra"] = ListTag(
