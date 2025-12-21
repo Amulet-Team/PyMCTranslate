@@ -14,26 +14,75 @@ JSON = Union[bool, int, float, str, JSONList, JSONDict]
 
 
 class ColourCodes:
-    class Java:
-        RGBToName = {
-            (0x00, 0x00, 0x00): "black",
-            (0x00, 0x00, 0xAA): "dark_blue",
-            (0x00, 0xAA, 0x00): "dark_green",
-            (0x00, 0xAA, 0xAA): "dark_aqua",
-            (0xAA, 0x00, 0x00): "dark_red",
-            (0xAA, 0x00, 0xAA): "dark_purple",
-            (0xFF, 0xAA, 0x00): "gold",
-            (0xAA, 0xAA, 0xAA): "gray",
-            (0x55, 0x55, 0x55): "dark_gray",
-            (0x55, 0x55, 0xFF): "blue",
-            (0x55, 0xFF, 0x55): "green",
-            (0x55, 0xFF, 0xFF): "aqua",
-            (0xFF, 0x55, 0x55): "red",
-            (0xFF, 0x55, 0xFF): "light_purple",
-            (0xFF, 0xFF, 0x55): "yellow",
-            (0xFF, 0xFF, 0xFF): "white",
-        }
-        NameToRGB = {v: k for k, v in RGBToName.items()}
+    class ABC:
+        Colours: list[tuple[tuple[int, int, int], str, str]] = []
+        RGBToName: dict[tuple[int, int, int], str] = {}
+        NameToRGB: dict[str, tuple[int, int, int]] = {}
+
+        @classmethod
+        def find_closest(
+            cls, r: int, g: int, b: int
+        ) -> tuple[tuple[int, int, int], str, str]:
+            return min(
+                cls.Colours,
+                key=lambda c: abs(c[0][0] - r) + abs(c[0][1] - g) + abs(c[0][2] - b),
+            )
+
+    class Java(ABC):
+        Colours = [
+            ((0x00, 0x00, 0x00), "0", "black"),
+            ((0x00, 0x00, 0xAA), "1", "dark_blue"),
+            ((0x00, 0xAA, 0x00), "2", "dark_green"),
+            ((0x00, 0xAA, 0xAA), "3", "dark_aqua"),
+            ((0xAA, 0x00, 0x00), "4", "dark_red"),
+            ((0xAA, 0x00, 0xAA), "5", "dark_purple"),
+            ((0xFF, 0xAA, 0x00), "6", "gold"),
+            ((0xAA, 0xAA, 0xAA), "7", "gray"),
+            ((0x55, 0x55, 0x55), "8", "dark_gray"),
+            ((0x55, 0x55, 0xFF), "9", "blue"),
+            ((0x55, 0xFF, 0x55), "a", "green"),
+            ((0x55, 0xFF, 0xFF), "b", "aqua"),
+            ((0xFF, 0x55, 0x55), "c", "red"),
+            ((0xFF, 0x55, 0xFF), "d", "light_purple"),
+            ((0xFF, 0xFF, 0x55), "e", "yellow"),
+            ((0xFF, 0xFF, 0xFF), "f", "white"),
+        ]
+        RGBToName = {rgb: name for rgb, _, name in Colours}
+        NameToRGB = {name: rgb for rgb, _, name in Colours}
+
+    class Bedrock(ABC):
+        Colours = [
+            ((0x00, 0x00, 0x00), "0", "black"),
+            ((0x00, 0x00, 0xAA), "1", "dark_blue"),
+            ((0x00, 0xAA, 0x00), "2", "dark_green"),
+            ((0x00, 0xAA, 0xAA), "3", "dark_aqua"),
+            ((0xAA, 0x00, 0x00), "4", "dark_red"),
+            ((0xAA, 0x00, 0xAA), "5", "dark_purple"),
+            ((0xFF, 0xAA, 0x00), "6", "gold"),
+            ((0xAA, 0xAA, 0xAA), "7", "gray"),
+            ((0x55, 0x55, 0x55), "8", "dark_gray"),
+            ((0x55, 0x55, 0xFF), "9", "blue"),
+            ((0x55, 0xFF, 0x55), "a", "green"),
+            ((0x55, 0xFF, 0xFF), "b", "aqua"),
+            ((0xFF, 0x55, 0x55), "c", "red"),
+            ((0xFF, 0x55, 0xFF), "d", "light_purple"),
+            ((0xFF, 0xFF, 0x55), "e", "yellow"),
+            ((0xFF, 0xFF, 0xFF), "f", "white"),
+            ((0xDD, 0xD6, 0x05), "g", "minecoin_gold"),
+            ((0xE3, 0xD4, 0xD1), "h", "material_quartz"),
+            ((0xCE, 0xCA, 0xCA), "i", "material_iron"),
+            ((0x44, 0x3A, 0x3B), "j", "material_netherite"),
+            ((0x97, 0x16, 0x07), "m", "material_redstone"),
+            ((0xB4, 0x68, 0x4D), "n", "material_copper"),
+            ((0xDE, 0xB1, 0x2D), "p", "material_gold"),
+            ((0x47, 0xA0, 0x36), "q", "material_emerald"),
+            ((0x2C, 0xBA, 0xA8), "s", "material_diamond"),
+            ((0x21, 0x49, 0x7B), "t", "material_lapis"),
+            ((0x9A, 0x5C, 0xC6), "u", "material_amethyst"),
+            ((0xEB, 0x71, 0x14), "v", "material_resin"),
+        ]
+        RGBToName = {rgb: name for rgb, _, name in Colours}
+        NameToRGB = {name: rgb for rgb, _, name in Colours}
 
 
 @dataclass(kw_only=True)
@@ -78,7 +127,7 @@ class UnhandledCompound:
 TextComponent = Union[
     "InvalidTextComponent",
     "PlainTextComponent",
-    "RecursiveTextComponent",
+    "ListTextComponent",
     "CompoundTextComponent",
 ]
 
@@ -96,9 +145,10 @@ class PlainTextComponent:
 
 
 @dataclass(kw_only=True)
-class RecursiveTextComponent:
+class ListTextComponent:
     """
-    A list of text components, each of which is a child of the previous.
+    A list of text components.
+    All components after the first inherit formatting from the first.
 
     Section string: components joined
     Java JSON: [{"text": "red", "color": "red"}, "red"]
@@ -196,12 +246,6 @@ class CompoundTextComponent:
     # The node in the empty key
     empty_node: Union[TextComponent, None] = None
 
-    content_type: Union[str, None] = None
-    content: Union[Content, None] = None
-
-    # Each child inherits this component's formatting but are independent of each other.
-    children: Union[list[TextComponent], None] = None
-
     # Formatting
     colour: Union[Colour, None] = None
     font: Union[str, None] = None
@@ -211,6 +255,12 @@ class CompoundTextComponent:
     strikethrough: Union[bool, None] = None
     obfuscated: Union[bool, None] = None
     shadow_colour: Union[RGBAInt, RGBAFloat, None] = None
+
+    content_type: Union[str, None] = None
+    content: Union[Content, None] = None
+
+    # Each child inherits this component's formatting but are independent of each other.
+    children: Union[list[TextComponent], None] = None
 
     # Interaction
     insertion: Union[str, None] = None

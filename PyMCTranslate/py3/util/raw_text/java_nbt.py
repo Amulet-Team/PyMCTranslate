@@ -22,7 +22,7 @@ from .data import (
     TextComponent,
     InvalidTextComponent,
     PlainTextComponent,
-    RecursiveTextComponent,
+    ListTextComponent,
     CompoundTextComponent,
     TextContent,
     TranslatableContent,
@@ -38,7 +38,7 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
     if isinstance(nbt, StringTag):
         return PlainTextComponent(text=nbt.py_str)
     elif isinstance(nbt, ListTag):
-        return RecursiveTextComponent(components=[from_java_nbt(tag) for tag in nbt])
+        return ListTextComponent(components=[from_java_nbt(tag) for tag in nbt])
     elif isinstance(nbt, CompoundTag):
         # Unpack the node in key ""
         empty_node_tag = nbt.pop("", None)
@@ -290,7 +290,7 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
 def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringTag]:
     def escape_list_tags(list_tag: list[AnyNBT]) -> list[AnyNBT]:
         if list_tag and next(
-            (True for tag in list_tag[1:] if type(tag) != list_tag[0]), False
+            (True for tag in list_tag[1:] if type(tag) != type(list_tag[0])), False
         ):
             # Escape tags
             for i in range(len(list_tag)):
@@ -303,7 +303,7 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
         return component.tag
     elif isinstance(component, PlainTextComponent):
         return StringTag(component.text)
-    elif isinstance(component, RecursiveTextComponent):
+    elif isinstance(component, ListTextComponent):
         return ListTag(
             escape_list_tags([to_java_nbt(child) for child in component.components])
         )
@@ -328,7 +328,9 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
             if content.fallback is not None:
                 compound["fallback"] = StringTag(content.fallback)
             if content.args is not None:
-                compound["with"] = ListTag(escape_list_tags([to_java_nbt(tag) for tag in content.args]))
+                compound["with"] = ListTag(
+                    escape_list_tags([to_java_nbt(tag) for tag in content.args])
+                )
         elif isinstance(content, ScoreboardContent):
             if content.unhandled is not None and content.unhandled.format_id == "java":
                 score = content.unhandled.tag
