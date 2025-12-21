@@ -40,14 +40,18 @@ Formatting = Union[BedrockFormatting, JavaFormatting]
 FormattingT = TypeVar("FormattingT", BedrockFormatting, JavaFormatting)
 
 
-def _to_section_string(component: TextComponent, src_formatting: FormattingT, dst_formatting: FormattingT) -> list[str]:
+def _to_section_string(
+    component: TextComponent, src_formatting: FormattingT, dst_formatting: FormattingT
+) -> list[str]:
     if isinstance(component, PlainTextComponent):
         return [component.text]
     elif isinstance(component, ListTextComponent):
         out = []
         for i, child in enumerate(component.components):
             if i:
-                out.extend(_to_section_string(child, copy.copy(src_formatting), dst_formatting))
+                out.extend(
+                    _to_section_string(child, copy.copy(src_formatting), dst_formatting)
+                )
             else:
                 out.extend(_to_section_string(child, src_formatting, dst_formatting))
         return out
@@ -55,7 +59,11 @@ def _to_section_string(component: TextComponent, src_formatting: FormattingT, ds
         out = []
         # Technically, if empty_node and other data is defined, nothing renders
         if component.empty_node is not None:
-            out.extend(_to_section_string(component.empty_node, copy.copy(src_formatting), dst_formatting))
+            out.extend(
+                _to_section_string(
+                    component.empty_node, copy.copy(src_formatting), dst_formatting
+                )
+            )
 
         # Merge formatting with parent formatting
         if component.bold is not None:
@@ -65,9 +73,9 @@ def _to_section_string(component: TextComponent, src_formatting: FormattingT, ds
         if component.obfuscated is not None:
             src_formatting.obfuscated = component.obfuscated
         reset = (
-                (dst_formatting.bold and not src_formatting.bold)
-                or (dst_formatting.italic and not src_formatting.italic)
-                or (dst_formatting.obfuscated and not src_formatting.obfuscated)
+            (dst_formatting.bold and not src_formatting.bold)
+            or (dst_formatting.italic and not src_formatting.italic)
+            or (dst_formatting.obfuscated and not src_formatting.obfuscated)
         )
 
         if isinstance(src_formatting, JavaFormatting):
@@ -91,7 +99,9 @@ def _to_section_string(component: TextComponent, src_formatting: FormattingT, ds
                 dst_formatting.strikethrough = False
 
         if component.colour is not None:
-            src_formatting.colour = dst_formatting.colour_codes.find_closest(component.colour.r, component.colour.g, component.colour.b)[1]
+            src_formatting.colour = dst_formatting.colour_codes.find_closest(
+                component.colour.r, component.colour.g, component.colour.b
+            )[1]
 
         if dst_formatting.colour != src_formatting.colour:
             out.append(f"§{src_formatting.colour}")
@@ -124,7 +134,9 @@ def _to_section_string(component: TextComponent, src_formatting: FormattingT, ds
 
         if component.children is not None:
             for child in component.children:
-                out.extend(_to_section_string(child, copy.copy(src_formatting), dst_formatting))
+                out.extend(
+                    _to_section_string(child, copy.copy(src_formatting), dst_formatting)
+                )
         return out
     else:
         return [""]

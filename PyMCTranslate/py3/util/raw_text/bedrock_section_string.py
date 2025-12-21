@@ -30,8 +30,6 @@ def to_bedrock_section_string(
     if isinstance(component, list):
         return "\n".join(to_bedrock_section_string(line) for line in component)
     else:
-        return "".join(_to_section_string(
-            component,
-            BedrockFormatting(),
-            BedrockFormatting()
-        ))
+        return "".join(
+            _to_section_string(component, BedrockFormatting(), BedrockFormatting())
+        )
