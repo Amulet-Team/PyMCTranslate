@@ -24,8 +24,8 @@ class ColourCodes:
     class ABC:
         Colours: list[MinecraftColour] = []
         RGBToColour: dict[tuple[int, int, int], MinecraftColour] = {}
-        SectionCodeToColour: dict[tuple[int, int, int], MinecraftColour] = {}
-        NameToColour: dict[tuple[int, int, int], MinecraftColour] = {}
+        SectionCodeToColour: dict[str, MinecraftColour] = {}
+        NameToColour: dict[str, MinecraftColour] = {}
 
         @classmethod
         def find_closest(cls, r: int, g: int, b: int) -> MinecraftColour:
@@ -53,9 +53,15 @@ class ColourCodes:
             MinecraftColour((0xFF, 0xFF, 0x55), "e", "yellow"),
             MinecraftColour((0xFF, 0xFF, 0xFF), "f", "white"),
         ]
-        RGBToColour = {colour.rgb: colour for colour in Colours}
-        SectionCodeToColour = {colour.section_code: colour for colour in Colours}
-        NameToColour = {colour.name: colour for colour in Colours}
+        RGBToColour: dict[tuple[int, int, int], MinecraftColour] = {
+            colour.rgb: colour for colour in Colours
+        }
+        SectionCodeToColour: dict[str, MinecraftColour] = {
+            colour.section_code: colour for colour in Colours
+        }
+        NameToColour: dict[str, MinecraftColour] = {
+            colour.name: colour for colour in Colours
+        }
 
     class Bedrock(ABC):
         Colours = [
@@ -88,9 +94,15 @@ class ColourCodes:
             MinecraftColour((0x9A, 0x5C, 0xC6), "u", "material_amethyst"),
             MinecraftColour((0xEB, 0x71, 0x14), "v", "material_resin"),
         ]
-        RGBToColour = {colour.rgb: colour for colour in Colours}
-        SectionCodeToColour = {colour.section_code: colour for colour in Colours}
-        NameToColour = {colour.name: colour for colour in Colours}
+        RGBToColour: dict[tuple[int, int, int], MinecraftColour] = {
+            colour.rgb: colour for colour in Colours
+        }
+        SectionCodeToColour: dict[str, MinecraftColour] = {
+            colour.section_code: colour for colour in Colours
+        }
+        NameToColour: dict[str, MinecraftColour] = {
+            colour.name: colour for colour in Colours
+        }
 
 
 @dataclass(kw_only=True, slots=True)
