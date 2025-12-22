@@ -358,13 +358,17 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
             g = max(0, min(colour.g, 255))
             b = max(0, min(colour.b, 255))
             if colour.name is None:
-                colour_code = f"#{r:02X}{g:02X}{b:02X}"
+                mc_colour = ColourCodes.Java.RGBToColour.get((r, g, b))
+                if mc_colour is None:
+                    colour_code = f"#{r:02X}{g:02X}{b:02X}"
+                else:
+                    colour_code = mc_colour.name
             elif RGBHexPattern.fullmatch(colour.name) is not None:
                 colour_code = colour.name
             else:
-                colour = ColourCodes.Java.NameToColour.get(colour.name, None)
-                if colour is not None and colour.rgb == (r, g, b):
-                    colour_code = colour.name
+                mc_colour = ColourCodes.Java.NameToColour.get(colour.name)
+                if mc_colour is not None and mc_colour.rgb == (r, g, b):
+                    colour_code = mc_colour.name
                 else:
                     colour_code = f"#{r:02X}{g:02X}{b:02X}"
             compound["color"] = StringTag(colour_code)
