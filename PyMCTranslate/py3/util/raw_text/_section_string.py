@@ -101,7 +101,7 @@ def _to_section_string(
         if component.colour is not None:
             src_formatting.colour = dst_formatting.colour_codes.find_closest(
                 component.colour.r, component.colour.g, component.colour.b
-            )[1]
+            ).section_code
 
         if dst_formatting.colour != src_formatting.colour:
             out.append(f"§{src_formatting.colour}")
