@@ -2,26 +2,39 @@ from __future__ import annotations
 
 from typing import overload, Literal, Union
 
-from .data import TextComponent
-from ._section_string import BedrockFormatting, _to_section_string
+from .data import TextComponent, CompoundTextComponent
+
+from ._section_string import BedrockFormatting, _to_section_string, _from_section_string
 
 
 @overload
 def from_bedrock_section_string(
-    section_str: str, split_newline: Literal[True]
-) -> list[TextComponent]: ...
+    section_str: str,
+) -> CompoundTextComponent: ...
 
 
 @overload
 def from_bedrock_section_string(
     section_str: str, split_newline: Literal[False]
-) -> TextComponent: ...
+) -> CompoundTextComponent: ...
+
+
+@overload
+def from_bedrock_section_string(
+    section_str: str, split_newline: Literal[True]
+) -> list[CompoundTextComponent]: ...
+
+
+@overload
+def from_bedrock_section_string(
+    section_str: str, split_newline: bool
+) -> Union[CompoundTextComponent, list[CompoundTextComponent]]: ...
 
 
 def from_bedrock_section_string(
-    section_str: str, split_newline: bool
-) -> Union[TextComponent, list[TextComponent]]:
-    raise NotImplementedError
+    section_str: str, split_newline: bool = False
+) -> Union[CompoundTextComponent, list[CompoundTextComponent]]:
+    return _from_section_string(section_str, BedrockFormatting(), split_newline)
 
 
 def to_bedrock_section_string(

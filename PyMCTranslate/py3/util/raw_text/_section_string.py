@@ -1,10 +1,11 @@
 from __future__ import annotations
 
-from typing import Union, ClassVar, TypeVar
+from typing import Union, ClassVar, TypeVar, overload, Literal
 from dataclasses import dataclass
 import copy
 
 from .data import (
+    Colour,
     ColourCodes,
     TextComponent,
     PlainTextComponent,
@@ -14,7 +15,7 @@ from .data import (
 )
 
 
-@dataclass(kw_only=True)
+@dataclass(kw_only=True, slots=True)
 class BedrockFormatting:
     colour_codes: ClassVar = ColourCodes.Bedrock
     colour: str = "0"
@@ -23,7 +24,7 @@ class BedrockFormatting:
     obfuscated: bool = False
 
 
-@dataclass(kw_only=True)
+@dataclass(kw_only=True, slots=True)
 class JavaFormatting:
     colour_codes: ClassVar = ColourCodes.Java
     colour: str = "0"
@@ -38,6 +39,112 @@ Formatting = Union[BedrockFormatting, JavaFormatting]
 
 
 FormattingT = TypeVar("FormattingT", BedrockFormatting, JavaFormatting)
+
+
+@overload
+def _from_section_string(
+    section_str: str, formatting: Formatting, split_newline: Literal[False]
+) -> CompoundTextComponent: ...
+
+
+@overload
+def _from_section_string(
+    section_str: str, formatting: Formatting, split_newline: Literal[True]
+) -> list[CompoundTextComponent]: ...
+
+
+@overload
+def _from_section_string(
+    section_str: str, formatting: Formatting, split_newline: bool
+) -> Union[list[CompoundTextComponent], CompoundTextComponent]: ...
+
+
+def _from_section_string(
+    section_str: str, formatting: Formatting, split_newline: bool
+) -> Union[TextComponent, list[TextComponent]]:
+    lines: list[CompoundTextComponent] = []
+    line = CompoundTextComponent()
+
+    def reset_formatting() -> None:
+        formatting.colour = "0"
+        formatting.bold = False
+        formatting.italic = False
+        formatting.obfuscated = False
+        if isinstance(formatting, JavaFormatting):
+            formatting.underlined = False
+            formatting.strikethrough = False
+
+    reset_formatting()
+
+    buffer: list[str] = []
+
+    def append_to_line() -> None:
+        if not buffer:
+            return
+        component = CompoundTextComponent()
+        component.content = TextContent(text="".join(buffer))
+        if formatting.colour != "0":
+            colour = formatting.colour_codes.SectionCodeToColour.get(formatting.colour)
+            if colour is not None:
+                r, g, b = colour.rgb
+                component.colour = Colour(name="", r=r, g=g, b=b)
+        if formatting.bold:
+            component.bold = True
+        if formatting.italic:
+            component.italic = True
+        if formatting.obfuscated:
+            component.obfuscated = True
+        if isinstance(formatting, JavaFormatting):
+            if formatting.underlined:
+                component.underlined = True
+            if formatting.strikethrough:
+                component.strikethrough = True
+        if line.children is None:
+            line.children = []
+        line.children.append(component)
+        buffer.clear()
+
+    index = 0
+    section_str_len = len(section_str)
+    while index < section_str_len:
+        char = section_str[index]
+        index += 1
+        if char == "§":
+            append_to_line()
+            if index < section_str_len:
+                char = section_str[index]
+                index += 1
+                if char in formatting.colour_codes.SectionCodeToColour:
+                    formatting.colour = char
+                elif char == "k":  # obfuscated
+                    formatting.obfuscated = True
+                elif char == "l":  # bold
+                    formatting.bold = True
+                elif char == "o":  # italic
+                    formatting.italic = True
+                elif char == "r":  # reset
+                    reset_formatting()
+                elif isinstance(formatting, JavaFormatting):
+                    if char == "m":  # strikethrough
+                        formatting.strikethrough = True
+                    elif char == "n":  # underlined
+                        formatting.underline = True
+        elif split_newline and char == "\n":
+            append_to_line()
+            lines.append(line)
+            line = CompoundTextComponent()
+        else:
+            buffer.append(char)
+
+    # There may still be data in the buffer
+    append_to_line()
+
+    if split_newline:
+        if line.children:
+            lines.append(line)
+        return lines
+    else:
+        return line
 
 
 def _to_section_string(
