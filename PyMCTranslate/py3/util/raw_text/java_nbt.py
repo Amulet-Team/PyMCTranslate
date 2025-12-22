@@ -183,8 +183,8 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
                     b = int(colour_code[5:7], 16)
                 except ValueError:
                     r = g = b = 0
-            elif colour_code in ColourCodes.Java.NameToRGB:
-                r, g, b = ColourCodes.Java.NameToRGB[colour_code]
+            elif colour_code in ColourCodes.Java.NameToColour:
+                r, g, b = ColourCodes.Java.NameToColour[colour_code].rgb
             else:
                 # Unknown colour code
                 r = g = b = 0
@@ -361,10 +361,12 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
                 colour_code = f"#{r:02X}{g:02X}{b:02X}"
             elif RGBHexPattern.fullmatch(colour.name) is not None:
                 colour_code = colour.name
-            elif ColourCodes.Java.NameToRGB.get(colour.name, None) == (r, g, b):
-                colour_code = colour.name
             else:
-                colour_code = f"#{r:02X}{g:02X}{b:02X}"
+                colour = ColourCodes.Java.NameToColour.get(colour.name, None)
+                if colour is not None and colour.rgb == (r, g, b):
+                    colour_code = colour.name
+                else:
+                    colour_code = f"#{r:02X}{g:02X}{b:02X}"
             compound["color"] = StringTag(colour_code)
 
         if component.font is not None:

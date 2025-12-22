@@ -13,76 +13,86 @@ JSONDict = dict[str, "JSON"]
 JSON = Union[bool, int, float, str, JSONList, JSONDict]
 
 
+@dataclass
+class MinecraftColour:
+    rgb: tuple[int, int, int]
+    section_code: str
+    name: str
+
+
 class ColourCodes:
     class ABC:
-        Colours: list[tuple[tuple[int, int, int], str, str]] = []
-        RGBToName: dict[tuple[int, int, int], str] = {}
-        NameToRGB: dict[str, tuple[int, int, int]] = {}
+        Colours: list[MinecraftColour] = []
+        RGBToColour: dict[tuple[int, int, int], MinecraftColour] = {}
+        SectionCodeToColour: dict[tuple[int, int, int], MinecraftColour] = {}
+        NameToColour: dict[tuple[int, int, int], MinecraftColour] = {}
 
         @classmethod
         def find_closest(
             cls, r: int, g: int, b: int
-        ) -> tuple[tuple[int, int, int], str, str]:
+        ) -> MinecraftColour:
             return min(
                 cls.Colours,
-                key=lambda c: abs(c[0][0] - r) + abs(c[0][1] - g) + abs(c[0][2] - b),
+                key=lambda c: abs(c.rgb[0] - r) + abs(c.rgb[1] - g) + abs(c.rgb[2] - b),
             )
 
     class Java(ABC):
         Colours = [
-            ((0x00, 0x00, 0x00), "0", "black"),
-            ((0x00, 0x00, 0xAA), "1", "dark_blue"),
-            ((0x00, 0xAA, 0x00), "2", "dark_green"),
-            ((0x00, 0xAA, 0xAA), "3", "dark_aqua"),
-            ((0xAA, 0x00, 0x00), "4", "dark_red"),
-            ((0xAA, 0x00, 0xAA), "5", "dark_purple"),
-            ((0xFF, 0xAA, 0x00), "6", "gold"),
-            ((0xAA, 0xAA, 0xAA), "7", "gray"),
-            ((0x55, 0x55, 0x55), "8", "dark_gray"),
-            ((0x55, 0x55, 0xFF), "9", "blue"),
-            ((0x55, 0xFF, 0x55), "a", "green"),
-            ((0x55, 0xFF, 0xFF), "b", "aqua"),
-            ((0xFF, 0x55, 0x55), "c", "red"),
-            ((0xFF, 0x55, 0xFF), "d", "light_purple"),
-            ((0xFF, 0xFF, 0x55), "e", "yellow"),
-            ((0xFF, 0xFF, 0xFF), "f", "white"),
+            MinecraftColour((0x00, 0x00, 0x00), "0", "black"),
+            MinecraftColour((0x00, 0x00, 0xAA), "1", "dark_blue"),
+            MinecraftColour((0x00, 0xAA, 0x00), "2", "dark_green"),
+            MinecraftColour((0x00, 0xAA, 0xAA), "3", "dark_aqua"),
+            MinecraftColour((0xAA, 0x00, 0x00), "4", "dark_red"),
+            MinecraftColour((0xAA, 0x00, 0xAA), "5", "dark_purple"),
+            MinecraftColour((0xFF, 0xAA, 0x00), "6", "gold"),
+            MinecraftColour((0xAA, 0xAA, 0xAA), "7", "gray"),
+            MinecraftColour((0x55, 0x55, 0x55), "8", "dark_gray"),
+            MinecraftColour((0x55, 0x55, 0xFF), "9", "blue"),
+            MinecraftColour((0x55, 0xFF, 0x55), "a", "green"),
+            MinecraftColour((0x55, 0xFF, 0xFF), "b", "aqua"),
+            MinecraftColour((0xFF, 0x55, 0x55), "c", "red"),
+            MinecraftColour((0xFF, 0x55, 0xFF), "d", "light_purple"),
+            MinecraftColour((0xFF, 0xFF, 0x55), "e", "yellow"),
+            MinecraftColour((0xFF, 0xFF, 0xFF), "f", "white"),
         ]
-        RGBToName = {rgb: name for rgb, _, name in Colours}
-        NameToRGB = {name: rgb for rgb, _, name in Colours}
+        RGBToColour = {colour.rgb: colour for colour in Colours}
+        SectionCodeToColour = {colour.section_code: colour for colour in Colours}
+        NameToColour = {colour.name: colour for colour in Colours}
 
     class Bedrock(ABC):
         Colours = [
-            ((0x00, 0x00, 0x00), "0", "black"),
-            ((0x00, 0x00, 0xAA), "1", "dark_blue"),
-            ((0x00, 0xAA, 0x00), "2", "dark_green"),
-            ((0x00, 0xAA, 0xAA), "3", "dark_aqua"),
-            ((0xAA, 0x00, 0x00), "4", "dark_red"),
-            ((0xAA, 0x00, 0xAA), "5", "dark_purple"),
-            ((0xFF, 0xAA, 0x00), "6", "gold"),
-            ((0xAA, 0xAA, 0xAA), "7", "gray"),
-            ((0x55, 0x55, 0x55), "8", "dark_gray"),
-            ((0x55, 0x55, 0xFF), "9", "blue"),
-            ((0x55, 0xFF, 0x55), "a", "green"),
-            ((0x55, 0xFF, 0xFF), "b", "aqua"),
-            ((0xFF, 0x55, 0x55), "c", "red"),
-            ((0xFF, 0x55, 0xFF), "d", "light_purple"),
-            ((0xFF, 0xFF, 0x55), "e", "yellow"),
-            ((0xFF, 0xFF, 0xFF), "f", "white"),
-            ((0xDD, 0xD6, 0x05), "g", "minecoin_gold"),
-            ((0xE3, 0xD4, 0xD1), "h", "material_quartz"),
-            ((0xCE, 0xCA, 0xCA), "i", "material_iron"),
-            ((0x44, 0x3A, 0x3B), "j", "material_netherite"),
-            ((0x97, 0x16, 0x07), "m", "material_redstone"),
-            ((0xB4, 0x68, 0x4D), "n", "material_copper"),
-            ((0xDE, 0xB1, 0x2D), "p", "material_gold"),
-            ((0x47, 0xA0, 0x36), "q", "material_emerald"),
-            ((0x2C, 0xBA, 0xA8), "s", "material_diamond"),
-            ((0x21, 0x49, 0x7B), "t", "material_lapis"),
-            ((0x9A, 0x5C, 0xC6), "u", "material_amethyst"),
-            ((0xEB, 0x71, 0x14), "v", "material_resin"),
+            MinecraftColour((0x00, 0x00, 0x00), "0", "black"),
+            MinecraftColour((0x00, 0x00, 0xAA), "1", "dark_blue"),
+            MinecraftColour((0x00, 0xAA, 0x00), "2", "dark_green"),
+            MinecraftColour((0x00, 0xAA, 0xAA), "3", "dark_aqua"),
+            MinecraftColour((0xAA, 0x00, 0x00), "4", "dark_red"),
+            MinecraftColour((0xAA, 0x00, 0xAA), "5", "dark_purple"),
+            MinecraftColour((0xFF, 0xAA, 0x00), "6", "gold"),
+            MinecraftColour((0xAA, 0xAA, 0xAA), "7", "gray"),
+            MinecraftColour((0x55, 0x55, 0x55), "8", "dark_gray"),
+            MinecraftColour((0x55, 0x55, 0xFF), "9", "blue"),
+            MinecraftColour((0x55, 0xFF, 0x55), "a", "green"),
+            MinecraftColour((0x55, 0xFF, 0xFF), "b", "aqua"),
+            MinecraftColour((0xFF, 0x55, 0x55), "c", "red"),
+            MinecraftColour((0xFF, 0x55, 0xFF), "d", "light_purple"),
+            MinecraftColour((0xFF, 0xFF, 0x55), "e", "yellow"),
+            MinecraftColour((0xFF, 0xFF, 0xFF), "f", "white"),
+            MinecraftColour((0xDD, 0xD6, 0x05), "g", "minecoin_gold"),
+            MinecraftColour((0xE3, 0xD4, 0xD1), "h", "material_quartz"),
+            MinecraftColour((0xCE, 0xCA, 0xCA), "i", "material_iron"),
+            MinecraftColour((0x44, 0x3A, 0x3B), "j", "material_netherite"),
+            MinecraftColour((0x97, 0x16, 0x07), "m", "material_redstone"),
+            MinecraftColour((0xB4, 0x68, 0x4D), "n", "material_copper"),
+            MinecraftColour((0xDE, 0xB1, 0x2D), "p", "material_gold"),
+            MinecraftColour((0x47, 0xA0, 0x36), "q", "material_emerald"),
+            MinecraftColour((0x2C, 0xBA, 0xA8), "s", "material_diamond"),
+            MinecraftColour((0x21, 0x49, 0x7B), "t", "material_lapis"),
+            MinecraftColour((0x9A, 0x5C, 0xC6), "u", "material_amethyst"),
+            MinecraftColour((0xEB, 0x71, 0x14), "v", "material_resin"),
         ]
-        RGBToName = {rgb: name for rgb, _, name in Colours}
-        NameToRGB = {name: rgb for rgb, _, name in Colours}
+        RGBToColour = {colour.rgb: colour for colour in Colours}
+        SectionCodeToColour = {colour.section_code: colour for colour in Colours}
+        NameToColour = {colour.name: colour for colour in Colours}
 
 
 @dataclass(kw_only=True)
