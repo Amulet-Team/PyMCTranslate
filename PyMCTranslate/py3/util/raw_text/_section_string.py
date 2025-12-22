@@ -65,6 +65,15 @@ def _from_section_string(
     lines: list[CompoundTextComponent] = []
     line = CompoundTextComponent()
 
+    def get_simplifid_line() -> TextComponent:
+        if line.children:
+            if len(line.children) == 1:
+                return line.children[0]
+            else:
+                return line
+        else:
+            return PlainTextComponent(text="")
+
     def reset_formatting() -> None:
         formatting.colour = "0"
         formatting.bold = False
@@ -81,24 +90,38 @@ def _from_section_string(
     def append_to_line() -> None:
         if not buffer:
             return
-        component = CompoundTextComponent()
-        component.content = TextContent(text="".join(buffer))
-        if formatting.colour != "0":
-            colour = formatting.colour_codes.SectionCodeToColour.get(formatting.colour)
-            if colour is not None:
-                r, g, b = colour.rgb
-                component.colour = Colour(name="", r=r, g=g, b=b)
-        if formatting.bold:
-            component.bold = True
-        if formatting.italic:
-            component.italic = True
-        if formatting.obfuscated:
-            component.obfuscated = True
-        if isinstance(formatting, JavaFormatting):
-            if formatting.underlined:
-                component.underlined = True
-            if formatting.strikethrough:
-                component.strikethrough = True
+        if (
+            formatting.colour != "0"
+            or formatting.bold
+            or formatting.italic
+            or formatting.obfuscated
+            or (
+                isinstance(formatting, JavaFormatting)
+                and (formatting.underlined or formatting.strikethrough)
+            )
+        ):
+            component = CompoundTextComponent()
+            component.content = TextContent(text="".join(buffer))
+            if formatting.colour != "0":
+                colour = formatting.colour_codes.SectionCodeToColour.get(
+                    formatting.colour
+                )
+                if colour is not None:
+                    r, g, b = colour.rgb
+                    component.colour = Colour(name=None, r=r, g=g, b=b)
+            if formatting.bold:
+                component.bold = True
+            if formatting.italic:
+                component.italic = True
+            if formatting.obfuscated:
+                component.obfuscated = True
+            if isinstance(formatting, JavaFormatting):
+                if formatting.underlined:
+                    component.underlined = True
+                if formatting.strikethrough:
+                    component.strikethrough = True
+        else:
+            component = PlainTextComponent(text="".join(buffer))
         if line.children is None:
             line.children = []
         line.children.append(component)
@@ -128,10 +151,10 @@ def _from_section_string(
                     if char == "m":  # strikethrough
                         formatting.strikethrough = True
                     elif char == "n":  # underlined
-                        formatting.underline = True
+                        formatting.underlined = True
         elif split_newline and char == "\n":
             append_to_line()
-            lines.append(line)
+            lines.append(get_simplifid_line())
             line = CompoundTextComponent()
         else:
             buffer.append(char)
@@ -141,10 +164,10 @@ def _from_section_string(
 
     if split_newline:
         if line.children:
-            lines.append(line)
+            lines.append(get_simplifid_line())
         return lines
     else:
-        return line
+        return get_simplifid_line()
 
 
 def _to_section_string(
