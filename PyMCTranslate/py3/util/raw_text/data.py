@@ -144,6 +144,12 @@ class UnhandledCompound:
     tag: CompoundTag
 
 
+@dataclass(kw_only=True, slots=True)
+class UnhandledDict:
+    format_id: str
+    tag: JSONDict
+
+
 TextComponent = Union[
     "InvalidTextComponent",
     "PlainTextComponent",
@@ -153,8 +159,13 @@ TextComponent = Union[
 
 
 @dataclass(kw_only=True, slots=True)
-class InvalidTextComponent:
+class InvalidNBTTextComponent:
     tag: AnyNBT
+
+
+@dataclass(kw_only=True, slots=True)
+class InvalidJSONTextComponent:
+    tag: JSON
 
 
 @dataclass(kw_only=True, slots=True)
@@ -195,7 +206,7 @@ class TranslatableContent:
 class ScoreboardContent:
     selector: str
     objective: str
-    unhandled: Union[UnhandledCompound, None]
+    unhandled: Union[UnhandledCompound, UnhandledDict, None]
 
 
 @dataclass(kw_only=True, slots=True)
@@ -287,4 +298,4 @@ class CompoundTextComponent:
     click_event: None = None
     hover_event: None = None
 
-    unhandled: Union[UnhandledCompound, None] = None
+    unhandled: Union[UnhandledCompound, UnhandledDict, None] = None

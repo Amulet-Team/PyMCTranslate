@@ -20,7 +20,7 @@ from .data import (
     RGBAFloat,
     UnhandledCompound,
     TextComponent,
-    InvalidTextComponent,
+    InvalidNBTTextComponent,
     PlainTextComponent,
     ListTextComponent,
     CompoundTextComponent,
@@ -284,7 +284,7 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
             unhandled=UnhandledCompound(format_id="java", tag=nbt) if nbt else None,
         )
     else:
-        return InvalidTextComponent(tag=nbt)
+        return InvalidNBTTextComponent(tag=nbt)
 
 
 def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringTag]:
@@ -299,7 +299,7 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
                     list_tag[i] = CompoundTag({"": tag})
         return list_tag
 
-    if isinstance(component, InvalidTextComponent):
+    if isinstance(component, InvalidNBTTextComponent):
         return component.tag
     elif isinstance(component, PlainTextComponent):
         return StringTag(component.text)
@@ -309,7 +309,10 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
         )
 
     elif isinstance(component, CompoundTextComponent):
-        if component.unhandled is not None and component.unhandled.format_id == "java":
+        if (
+            isinstance(component.unhandled, UnhandledCompound)
+            and component.unhandled.format_id == "java"
+        ):
             compound = component.unhandled.tag
         else:
             compound = CompoundTag()
@@ -332,7 +335,10 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
                     escape_list_tags([to_java_nbt(tag) for tag in content.args])
                 )
         elif isinstance(content, ScoreboardContent):
-            if content.unhandled is not None and content.unhandled.format_id == "java":
+            if (
+                isinstance(content.unhandled, UnhandledCompound)
+                and content.unhandled.format_id == "java"
+            ):
                 score = content.unhandled.tag
             else:
                 score = CompoundTag()
@@ -411,4 +417,4 @@ def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringT
 
         return compound
     else:
-        raise TypeError(f"Unexpected component type: {type(component)}")
+        return StringTag()
