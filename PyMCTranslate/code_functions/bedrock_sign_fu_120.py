@@ -1,12 +1,13 @@
+from amulet_nbt import CompoundTag, ListTag, StringTag
+
 from PyMCTranslate.py3.util.raw_text import raw_text_list_to_section_string
 
 
-def pack_text(messages):
+def pack_text(messages: ListTag) -> str:
     lines = []
-    for line_number in range(len(messages)):
-        tag = messages[line_number]
-        if tag[0] == "string":
-            lines.append(tag[1])
+    for line_number, tag in enumerate(messages):
+        if isinstance(tag, StringTag):
+            lines.append(tag.py_str)
         else:
             lines.append('{"text":""}')
 
@@ -16,24 +17,21 @@ def pack_text(messages):
 def main(nbt):
     front_text = back_text = ""
 
-    if nbt[0] == "compound" and "utags" in nbt[1] and nbt[1]["utags"][0] == "compound":
-        utags = nbt[1]["utags"][1]
-        if (
-            "front_text" in utags
-            and utags["front_text"][0] == "compound"
-            and "messages" in utags["front_text"][1]
-            and utags["front_text"][1]["messages"][0] == "list"
-        ):
-            front_text = pack_text(utags["front_text"][1]["messages"][1])
-        if (
-            "back_text" in utags
-            and utags["back_text"][0] == "compound"
-            and "messages" in utags["back_text"][1]
-            and utags["back_text"][1]["messages"][0] == "list"
-        ):
-            back_text = pack_text(utags["back_text"][1]["messages"][1])
+    if isinstance(nbt, CompoundTag):
+        utags = nbt.get("utags")
+        if isinstance(utags, CompoundTag):
+            front_text_tag = utags.get("front_text")
+            if isinstance(front_text_tag, CompoundTag):
+                messages = front_text_tag.get("messages")
+                if isinstance(messages, ListTag):
+                    front_text = pack_text(messages)
+            back_text_tag = utags.get("back_text")
+            if isinstance(back_text_tag, CompoundTag):
+                messages = back_text_tag.get("messages")
+                if isinstance(messages, ListTag):
+                    back_text = pack_text(messages)
 
     return [
-        ["", "compound", [("FrontText", "compound")], "Text", ["string", front_text]],
-        ["", "compound", [("BackText", "compound")], "Text", ["string", back_text]],
+        ["", "compound", [("FrontText", "compound")], "Text", StringTag(front_text)],
+        ["", "compound", [("BackText", "compound")], "Text", StringTag(back_text)],
     ]
