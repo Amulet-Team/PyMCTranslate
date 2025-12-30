@@ -1,5 +1,6 @@
 from amulet_nbt import CompoundTag, IntTag
 
+
 def main(nbt, location):
     if not isinstance(nbt, CompoundTag):
         return []
@@ -9,7 +10,11 @@ def main(nbt, location):
     piston_pos_dx = utags.get("pistonPosdX")
     piston_pos_dy = utags.get("pistonPosdY")
     piston_pos_dz = utags.get("pistonPosdZ")
-    if not (isinstance(piston_pos_dx, IntTag) and isinstance(piston_pos_dy, IntTag) and isinstance(piston_pos_dz, IntTag)):
+    if not (
+        isinstance(piston_pos_dx, IntTag)
+        and isinstance(piston_pos_dy, IntTag)
+        and isinstance(piston_pos_dz, IntTag)
+    ):
         return []
     return [
         [

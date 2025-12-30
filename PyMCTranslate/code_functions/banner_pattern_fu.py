@@ -18,12 +18,14 @@ def main(nbt):
         colour = pattern.get("Color")
         if not isinstance(colour, IntTag):
             continue
-        tags.append([
-            "",
-            "compound",
-            [("Patterns", "list"), (index, "compound")],
-            "Color",
-            IntTag(15 - colour.py_int),
-        ])
+        tags.append(
+            [
+                "",
+                "compound",
+                [("Patterns", "list"), (index, "compound")],
+                "Color",
+                IntTag(15 - colour.py_int),
+            ]
+        )
         index += 1
     return tags

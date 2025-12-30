@@ -3,7 +3,11 @@ from typing import Union
 from amulet_nbt import CompoundTag, ByteTag, ShortTag, IntTag, LongTag, StringTag
 
 
-def main(nbt, properties: dict[str, Union[ByteTag, ShortTag, IntTag, LongTag, StringTag]], location: tuple[int, int, int]) -> dict[str, str]:
+def main(
+    nbt,
+    properties: dict[str, Union[ByteTag, ShortTag, IntTag, LongTag, StringTag]],
+    location: tuple[int, int, int],
+) -> dict[str, str]:
     if not isinstance(nbt, CompoundTag):
         return {}
     facing_direction = properties.get("facing_direction")

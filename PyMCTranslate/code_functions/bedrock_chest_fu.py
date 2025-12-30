@@ -1,5 +1,6 @@
 from amulet_nbt import ByteTag, IntTag, StringTag
 
+
 def main(properties, location):
     x, _, z = location
     facing = properties.get("facing")

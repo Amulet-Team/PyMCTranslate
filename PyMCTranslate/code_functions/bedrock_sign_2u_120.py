@@ -14,7 +14,9 @@ def main(nbt):
         if isinstance(text_compound, CompoundTag):
             text = text_compound.get("Text")
             if isinstance(text, StringTag):
-                for line_num, line in enumerate(section_string_to_raw_text_list(text.py_str)):
+                for line_num, line in enumerate(
+                    section_string_to_raw_text_list(text.py_str)
+                ):
                     out.append(
                         [
                             "",
