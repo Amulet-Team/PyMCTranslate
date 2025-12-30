@@ -287,7 +287,7 @@ def from_java_nbt(nbt: AnyNBT) -> TextComponent:
         return InvalidNBTTextComponent(tag=nbt)
 
 
-def to_java_nbt(component: TextComponent) -> Union[CompoundTag, ListTag, StringTag]:
+def to_java_nbt(component: TextComponent) -> AnyNBT:
     def escape_list_tags(list_tag: list[AnyNBT]) -> list[AnyNBT]:
         if list_tag and next(
             (True for tag in list_tag[1:] if type(tag) != type(list_tag[0])), False
