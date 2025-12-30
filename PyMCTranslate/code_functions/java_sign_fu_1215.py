@@ -1,4 +1,4 @@
-from amulet_nbt import StringTag, CompoundTag, ListTag
+from amulet_nbt import StringTag, CompoundTag, ListTag, AnyNBT
 
 from PyMCTranslate.py3.util.raw_text.data import PlainTextComponent, TextComponent
 from PyMCTranslate.py3.util.raw_text.bedrock_section_string import (
@@ -6,29 +6,41 @@ from PyMCTranslate.py3.util.raw_text.bedrock_section_string import (
 )
 from PyMCTranslate.py3.util.raw_text.java_section_string import from_java_section_string
 from PyMCTranslate.py3.util.raw_text.java_json import from_java_json
-from PyMCTranslate.py3.util.raw_text.java_nbt import from_java_nbt
+from PyMCTranslate.py3.util.raw_text.java_nbt import to_java_nbt
 
 
-EmptyJSON = StringTag(r"\"\"")
+EmptyTag = StringTag()
+
+
+def escape_tags(tags: list[AnyNBT]) -> list[AnyNBT]:
+    if not tags:
+        return tags
+    tag_0 = tags[0]
+    if not all(type(tag_0) == type(tag) for tag in tags[1:]):
+        for i, tag in enumerate(tags):
+            if not isinstance(tag, CompoundTag):
+                tags[i] = CompoundTag({"": tag})
+    return tags
 
 
 def pack_components(
     components: list[TextComponent],
-) -> tuple[StringTag, StringTag, StringTag, StringTag]:
-    java_json = [StringTag(to_java_json(component)) for component in components[:4]]
-    java_json += [EmptyJSON] * (4 - len(java_json))
+) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
+    java_json = [to_java_nbt(component) for component in components[:4]]
+    java_json += [EmptyTag] * (4 - len(java_json))
+    java_json = escape_tags(java_json)
     return java_json[0], java_json[1], java_json[2], java_json[3]
 
 
-def bedrock_string_to_java_json(
+def bedrock_string_to_java_nbt(
     text: str,
-) -> tuple[StringTag, StringTag, StringTag, StringTag]:
+) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
     return pack_components(from_bedrock_section_string(text, split_newline=True))
 
 
-def java_string_to_java_json(
+def java_string_to_java_nbt(
     lines: ListTag,
-) -> tuple[StringTag, StringTag, StringTag, StringTag]:
+) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
     return pack_components(
         [
             (
@@ -41,40 +53,48 @@ def java_string_to_java_json(
     )
 
 
-def java_json_to_java_json(
+def java_json_to_java_nbt(
     lines: ListTag,
-) -> tuple[StringTag, StringTag, StringTag, StringTag]:
-    java_json = [
-        line if isinstance(line, StringTag) else EmptyJSON for line in lines[:4]
-    ]
-    java_json += [EmptyJSON] * (4 - len(java_json))
-    return java_json[0], java_json[1], java_json[2], java_json[3]
+) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
+    return pack_components(
+        [
+            (
+                from_java_json(line.py_str)
+                if isinstance(line, StringTag)
+                else PlainTextComponent(text="")
+            )
+            for line in lines[:4]
+        ]
+    )
 
 
-def java_nbt_to_java_json(
+def java_nbt_to_java_nbt(
     lines: ListTag,
-) -> tuple[StringTag, StringTag, StringTag, StringTag]:
-    return pack_components([from_java_nbt(line) for line in lines[:4]])
+) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
+    java_nbt = [line if isinstance(line, StringTag) else EmptyTag for line in lines[:4]]
+    java_nbt += [EmptyTag] * (4 - len(java_nbt))
+    java_nbt = escape_tags(java_nbt)
+    return java_nbt[0], java_nbt[1], java_nbt[2], java_nbt[3]
 
 
-def unpack_text(tag: CompoundTag) -> tuple[StringTag, StringTag, StringTag, StringTag]:
+def unpack_text(tag: CompoundTag) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
     bedrock_string = tag.get("bedrock_string")
     if isinstance(bedrock_string, StringTag):
-        return bedrock_string_to_java_json(bedrock_string.py_str)
+        return bedrock_string_to_java_nbt(bedrock_string.py_str)
 
     java_string = tag.get("java_string")
     if isinstance(java_string, ListTag):
-        return java_string_to_java_json(java_string)
+        return java_string_to_java_nbt(java_string)
 
     java_json = tag.get("java_json")
     if isinstance(java_json, ListTag):
-        return java_json_to_java_json(java_json)
+        return java_json_to_java_nbt(java_json)
 
     java_nbt = tag.get("java_nbt")
     if isinstance(java_nbt, ListTag):
-        return java_nbt_to_java_json(java_nbt)
+        return java_nbt_to_java_nbt(java_nbt)
 
-    return EmptyJSON, EmptyJSON, EmptyJSON, EmptyJSON
+    return EmptyTag, EmptyTag, EmptyTag, EmptyTag
 
 
 def main(nbt):

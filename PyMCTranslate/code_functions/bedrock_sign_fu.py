@@ -1,29 +1,75 @@
-from amulet_nbt import CompoundTag, ListTag, StringTag
+from amulet_nbt import CompoundTag, StringTag, ListTag
 
-from PyMCTranslate.py3.util.raw_text import raw_text_list_to_section_string
+from PyMCTranslate.py3.util.raw_text.bedrock_section_string import (
+    to_bedrock_section_string,
+)
+from PyMCTranslate.py3.util.raw_text.java_section_string import from_java_section_string
+from PyMCTranslate.py3.util.raw_text.java_json import from_java_json
+from PyMCTranslate.py3.util.raw_text.java_nbt import from_java_nbt
 
 
-def pack_text(messages: ListTag) -> str:
-    lines = []
-    for line_number, tag in enumerate(messages):
-        if isinstance(tag, StringTag):
-            lines.append(tag.py_str)
-        else:
-            lines.append('{"text":""}')
+def java_string_to_bedrock_string(lines: ListTag) -> StringTag:
+    return StringTag(
+        "\n§r".join(
+            (
+                to_bedrock_section_string(from_java_section_string(line.py_str))
+                if isinstance(line, StringTag)
+                else ""
+            )
+            for line in lines[:4]
+        )
+    )
 
-    return raw_text_list_to_section_string(lines)
+
+def java_json_to_bedrock_string(lines: ListTag) -> StringTag:
+    return StringTag(
+        "\n§r".join(
+            (
+                to_bedrock_section_string(from_java_json(line.py_str))
+                if isinstance(line, StringTag)
+                else ""
+            )
+            for line in lines[:4]
+        )
+    )
+
+
+def java_nbt_to_bedrock_string(lines: ListTag) -> StringTag:
+    return StringTag(
+        "\n§r".join(
+            to_bedrock_section_string(from_java_nbt(line)) for line in lines[:4]
+        )
+    )
+
+
+def unpack_text(tag: CompoundTag) -> StringTag:
+    bedrock_string = tag.get("bedrock_string")
+    if isinstance(bedrock_string, StringTag):
+        return bedrock_string
+
+    java_string = tag.get("java_string")
+    if isinstance(java_string, ListTag):
+        return java_string_to_bedrock_string(java_string)
+
+    java_json = tag.get("java_json")
+    if isinstance(java_json, ListTag):
+        return java_json_to_bedrock_string(java_json)
+
+    java_nbt = tag.get("java_nbt")
+    if isinstance(java_nbt, ListTag):
+        return java_nbt_to_bedrock_string(java_nbt)
+
+    return StringTag()
 
 
 def main(nbt):
-    front_text = ""
+    front_text = StringTag()
 
     if isinstance(nbt, CompoundTag):
         utags = nbt.get("utags")
         if isinstance(utags, CompoundTag):
             front_text_tag = utags.get("front_text")
             if isinstance(front_text_tag, CompoundTag):
-                messages = front_text_tag.get("messages")
-                if isinstance(messages, ListTag):
-                    front_text = pack_text(messages)
+                front_text = unpack_text(front_text_tag)
 
-    return [["", "compound", [], "Text", StringTag(front_text)]]
+    return [["", "compound", [], "Text", front_text]]
