@@ -1,36 +1,41 @@
+from amulet_nbt import CompoundTag, IntTag
+
+
 def main(nbt, location):
-    if (
-        nbt[0] == "compound"
-        and "utags" in nbt[1]
-        and nbt[1]["utags"][0] == "compound"
-        and "pistonPosdX" in nbt[1]["utags"][1]
-        and nbt[1]["utags"][1]["pistonPosdX"][0] == "int"
-        and "pistonPosdY" in nbt[1]["utags"][1]
-        and nbt[1]["utags"][1]["pistonPosdY"][0] == "int"
-        and "pistonPosdZ" in nbt[1]["utags"][1]
-        and nbt[1]["utags"][1]["pistonPosdZ"][0] == "int"
+    if not isinstance(nbt, CompoundTag):
+        return []
+    utags = nbt.get("utags")
+    if not isinstance(utags, CompoundTag):
+        return []
+    piston_pos_dx = utags.get("pistonPosdX")
+    piston_pos_dy = utags.get("pistonPosdY")
+    piston_pos_dz = utags.get("pistonPosdZ")
+    if not (
+        isinstance(piston_pos_dx, IntTag)
+        and isinstance(piston_pos_dy, IntTag)
+        and isinstance(piston_pos_dz, IntTag)
     ):
-        return [
-            [
-                "",
-                "compound",
-                [],
-                "pistonPosX",
-                ["int", nbt[1]["utags"][1]["pistonPosdX"][1] + location[0]],
-            ],
-            [
-                "",
-                "compound",
-                [],
-                "pistonPosY",
-                ["int", nbt[1]["utags"][1]["pistonPosdY"][1] + location[1]],
-            ],
-            [
-                "",
-                "compound",
-                [],
-                "pistonPosZ",
-                ["int", nbt[1]["utags"][1]["pistonPosdZ"][1] + location[2]],
-            ],
-        ]
-    return []
+        return []
+    return [
+        [
+            "",
+            "compound",
+            [],
+            "pistonPosX",
+            IntTag(piston_pos_dx.py_int + location[0]),
+        ],
+        [
+            "",
+            "compound",
+            [],
+            "pistonPosY",
+            IntTag(piston_pos_dy.py_int + location[1]),
+        ],
+        [
+            "",
+            "compound",
+            [],
+            "pistonPosZ",
+            IntTag(piston_pos_dz.py_int + location[2]),
+        ],
+    ]
