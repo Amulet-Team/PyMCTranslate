@@ -920,11 +920,11 @@ def _translate(
 
         elif "code" == function_name:
             # {
-            # 	"function": "code",  # when all the other functions fail you this should do what you need. Use as sparingly as possible
+            # 	"function": "code",  # when all the other functions fail you, this should do what you need. Use as sparingly as possible
             # 	"options": {
-            # 		"input": ["namespace", "base_name", "properties", "nbt"],  # all of these inputs and output are optional. Change these lists to modify
+            # 		"input": ["namespace", "base_name", "properties", "nbt"], # all of these inputs and output are optional. Change these lists to modify inputs and outputs.
             # 		"output": ["output_name", "output_type", "new_properties", "new_nbt"],
-            # 		"function": "function_name"  # this links to a lua funciton in the lua directory with the file name function_name.lua
+            # 		"function": "function_name" # this links to a function in the code_functions directory with the file name function_name.py
             # 	}
             # }
 
@@ -952,9 +952,9 @@ def _translate(
                 elif inp == "nbt":
                     if nbt_input is None:
                         extra_needed = True
-                        function_inputs.append(["compound", {}])
+                        function_inputs.append(["compound", TAG_Compound()])
                     else:
-                        function_inputs.append(objectify_nbt(nbt_input))
+                        function_inputs.append(nbt_input)
                 elif inp == "location":
                     function_inputs.append(absolute_location)
 
@@ -977,50 +977,9 @@ def _translate(
                     assert isinstance(out, list)
                     for val in out:
                         assert len(val) == 5
-                        new_data["nbt"].append(
-                            tuple(val[:4]) + (unobjectify_nbt(val[4]),)
-                        )
+                        new_data["nbt"].append(val)
 
     return output_name, output_type, new_data, extra_needed, cacheable
-
-
-def objectify_nbt(nbt: NamedTag) -> Tuple[str, dict]:
-    return _objectify_nbt(nbt.tag)
-
-
-def _objectify_nbt(nbt: amulet_nbt.AnyNBT) -> Tuple[str, Union[dict, list, int, str]]:
-    nbt_type = nbt_to_datatype(nbt)
-    nbt_data = nbt.py_data
-    if isinstance(nbt_data, dict):
-        return nbt_type, {key: _objectify_nbt(nbt_) for key, nbt_ in nbt_data.items()}
-    elif isinstance(nbt_data, list):
-        return nbt_type, [_objectify_nbt(nbt_) for nbt_ in nbt_data]
-    elif isinstance(nbt_data, (int, float, str)):
-        return nbt_type, nbt_data
-    else:  # numpy array
-        return nbt_type, list(nbt)
-
-
-def unobjectify_nbt(nbt: Tuple[str, Union[dict, list, int, str, "ndarray"]]):
-    nbt_type, nbt = nbt
-    nbt_class = datatype_to_nbt(nbt_type)
-    if nbt_type == "compound":
-        return nbt_class({key: unobjectify_nbt(val) for key, val in nbt.items()})
-    elif nbt_type == "list":
-        return nbt_class([unobjectify_nbt(val) for val in nbt])
-    elif nbt_type in [
-        "byte",
-        "short",
-        "int",
-        "long",
-        "float",
-        "double",
-        "string",
-        "byte_array",
-        "int_array",
-        "long_array",
-    ]:
-        return nbt_class(nbt)
 
 
 def _convert_walk_input_nbt(

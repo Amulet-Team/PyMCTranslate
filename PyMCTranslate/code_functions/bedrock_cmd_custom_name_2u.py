@@ -1,18 +1,16 @@
+from amulet_nbt import CompoundTag, StringTag
+
 from PyMCTranslate.py3.util.raw_text import section_string_to_raw_text
 
 
 def main(nbt):
     raw_text = '""'
 
-    if (
-        nbt[0] == "compound"
-        and "CustomName" in nbt[1]
-        and nbt[1]["CustomName"][0] == "string"
-    ):
-        text = nbt[1]["CustomName"][1]
-        if text:
-            raw_text = section_string_to_raw_text(text)
+    if isinstance(nbt, CompoundTag):
+        custom_name = nbt.get("CustomName")
+        if isinstance(custom_name, StringTag):
+            raw_text = section_string_to_raw_text(custom_name.py_str)
 
     return [
-        ["", "compound", [("utags", "compound")], "CustomName", ["string", raw_text]]
+        ["", "compound", [("utags", "compound")], "CustomName", StringTag(raw_text)]
     ]

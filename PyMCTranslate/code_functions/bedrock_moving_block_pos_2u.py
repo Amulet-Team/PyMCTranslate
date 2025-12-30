@@ -1,34 +1,39 @@
+from amulet_nbt import CompoundTag, IntTag
+
+
 def main(nbt, location):
-    if (
-        nbt[0] == "compound"
-        and "pistonPosX" in nbt[1]
-        and nbt[1]["pistonPosX"][0] == "int"
-        and "pistonPosY" in nbt[1]
-        and nbt[1]["pistonPosY"][0] == "int"
-        and "pistonPosZ" in nbt[1]
-        and nbt[1]["pistonPosZ"][0] == "int"
+    if not isinstance(nbt, CompoundTag):
+        return []
+    piston_pos_x = nbt.get("pistonPosX")
+    piston_pos_y = nbt.get("pistonPosY")
+    piston_pos_z = nbt.get("pistonPosZ")
+    if not (
+        isinstance(piston_pos_x, IntTag)
+        and isinstance(piston_pos_y, IntTag)
+        and isinstance(piston_pos_z, IntTag)
     ):
-        return [
-            [
-                "",
-                "compound",
-                [("utags", "compound")],
-                "pistonPosdX",
-                ["int", nbt[1]["pistonPosX"][1] - location[0]],
-            ],
-            [
-                "",
-                "compound",
-                [("utags", "compound")],
-                "pistonPosdY",
-                ["int", nbt[1]["pistonPosY"][1] - location[1]],
-            ],
-            [
-                "",
-                "compound",
-                [("utags", "compound")],
-                "pistonPosdZ",
-                ["int", nbt[1]["pistonPosZ"][1] - location[2]],
-            ],
-        ]
-    return []
+        return []
+
+    return [
+        [
+            "",
+            "compound",
+            [("utags", "compound")],
+            "pistonPosdX",
+            IntTag(piston_pos_x.py_int - location[0]),
+        ],
+        [
+            "",
+            "compound",
+            [("utags", "compound")],
+            "pistonPosdY",
+            IntTag(piston_pos_y.py_int - location[1]),
+        ],
+        [
+            "",
+            "compound",
+            [("utags", "compound")],
+            "pistonPosdZ",
+            IntTag(piston_pos_z.py_int - location[2]),
+        ],
+    ]
