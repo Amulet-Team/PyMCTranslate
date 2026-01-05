@@ -71,28 +71,28 @@ def java_json_to_java_nbt(
 def java_nbt_to_java_nbt(
     lines: ListTag,
 ) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
-    java_nbt = [line if isinstance(line, StringTag) else EmptyTag for line in lines[:4]]
+    java_nbt = lines[:4]
     java_nbt += [EmptyTag] * (4 - len(java_nbt))
     java_nbt = escape_tags(java_nbt)
     return java_nbt[0], java_nbt[1], java_nbt[2], java_nbt[3]
 
 
 def unpack_text(tag: CompoundTag) -> tuple[AnyNBT, AnyNBT, AnyNBT, AnyNBT]:
-    bedrock_string = tag.get("bedrock_string")
-    if isinstance(bedrock_string, StringTag):
-        return bedrock_string_to_java_nbt(bedrock_string.py_str)
-
-    java_string = tag.get("java_string")
-    if isinstance(java_string, ListTag):
-        return java_string_to_java_nbt(java_string)
+    java_nbt = tag.get("java_nbt")
+    if isinstance(java_nbt, ListTag):
+        return java_nbt_to_java_nbt(java_nbt)
 
     java_json = tag.get("java_json")
     if isinstance(java_json, ListTag):
         return java_json_to_java_nbt(java_json)
 
-    java_nbt = tag.get("java_nbt")
-    if isinstance(java_nbt, ListTag):
-        return java_nbt_to_java_nbt(java_nbt)
+    java_string = tag.get("java_string")
+    if isinstance(java_string, ListTag):
+        return java_string_to_java_nbt(java_string)
+
+    bedrock_string = tag.get("bedrock_string")
+    if isinstance(bedrock_string, StringTag):
+        return bedrock_string_to_java_nbt(bedrock_string.py_str)
 
     return EmptyTag, EmptyTag, EmptyTag, EmptyTag
 

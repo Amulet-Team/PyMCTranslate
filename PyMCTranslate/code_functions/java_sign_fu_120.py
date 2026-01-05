@@ -58,14 +58,6 @@ def java_nbt_to_java_json(
 
 
 def unpack_text(tag: CompoundTag) -> tuple[StringTag, StringTag, StringTag, StringTag]:
-    bedrock_string = tag.get("bedrock_string")
-    if isinstance(bedrock_string, StringTag):
-        return bedrock_string_to_java_json(bedrock_string.py_str)
-
-    java_string = tag.get("java_string")
-    if isinstance(java_string, ListTag):
-        return java_string_to_java_json(java_string)
-
     java_json = tag.get("java_json")
     if isinstance(java_json, ListTag):
         return java_json_to_java_json(java_json)
@@ -73,6 +65,14 @@ def unpack_text(tag: CompoundTag) -> tuple[StringTag, StringTag, StringTag, Stri
     java_nbt = tag.get("java_nbt")
     if isinstance(java_nbt, ListTag):
         return java_nbt_to_java_json(java_nbt)
+
+    java_string = tag.get("java_string")
+    if isinstance(java_string, ListTag):
+        return java_string_to_java_json(java_string)
+
+    bedrock_string = tag.get("bedrock_string")
+    if isinstance(bedrock_string, StringTag):
+        return bedrock_string_to_java_json(bedrock_string.py_str)
 
     return EmptyJSON, EmptyJSON, EmptyJSON, EmptyJSON
 
