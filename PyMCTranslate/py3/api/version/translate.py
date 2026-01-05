@@ -952,9 +952,9 @@ def _translate(
                 elif inp == "nbt":
                     if nbt_input is None:
                         extra_needed = True
-                        function_inputs.append(["compound", TAG_Compound()])
+                        function_inputs.append(TAG_Compound())
                     else:
-                        function_inputs.append(nbt_input)
+                        function_inputs.append(nbt_input.tag)
                 elif inp == "location":
                     function_inputs.append(absolute_location)
 
