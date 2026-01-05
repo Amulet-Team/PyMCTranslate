@@ -2,8 +2,8 @@ from amulet_nbt import CompoundTag, StringTag
 
 
 def main(nbt):
+    out = []
     if isinstance(nbt, CompoundTag):
-        out = []
         for i in range(1, 5):
             key = f"Text{i}"
             tag = nbt.get(key)
@@ -24,4 +24,4 @@ def main(nbt):
                     line,
                 ]
             )
-    return []
+    return out
