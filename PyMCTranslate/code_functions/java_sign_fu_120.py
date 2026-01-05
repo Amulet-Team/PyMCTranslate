@@ -97,12 +97,60 @@ def main(nbt):
                 )
 
     return [
-        ["", "compound", [("front_text", "compound")], 0, front_text_1],
-        ["", "compound", [("front_text", "compound")], 1, front_text_2],
-        ["", "compound", [("front_text", "compound")], 2, front_text_3],
-        ["", "compound", [("front_text", "compound")], 3, front_text_4],
-        ["", "compound", [("back_text", "compound")], 0, back_text_1],
-        ["", "compound", [("back_text", "compound")], 1, back_text_2],
-        ["", "compound", [("back_text", "compound")], 2, back_text_3],
-        ["", "compound", [("back_text", "compound")], 3, back_text_4],
+        [
+            "",
+            "compound",
+            [("front_text", "compound"), ("messages", "list")],
+            0,
+            front_text_1,
+        ],
+        [
+            "",
+            "compound",
+            [("front_text", "compound"), ("messages", "list")],
+            1,
+            front_text_2,
+        ],
+        [
+            "",
+            "compound",
+            [("front_text", "compound"), ("messages", "list")],
+            2,
+            front_text_3,
+        ],
+        [
+            "",
+            "compound",
+            [("front_text", "compound"), ("messages", "list")],
+            3,
+            front_text_4,
+        ],
+        [
+            "",
+            "compound",
+            [("back_text", "compound"), ("messages", "list")],
+            0,
+            back_text_1,
+        ],
+        [
+            "",
+            "compound",
+            [("back_text", "compound"), ("messages", "list")],
+            1,
+            back_text_2,
+        ],
+        [
+            "",
+            "compound",
+            [("back_text", "compound"), ("messages", "list")],
+            2,
+            back_text_3,
+        ],
+        [
+            "",
+            "compound",
+            [("back_text", "compound"), ("messages", "list")],
+            3,
+            back_text_4,
+        ],
     ]
