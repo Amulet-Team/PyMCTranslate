@@ -2,8 +2,8 @@ from amulet_nbt import CompoundTag, StringTag
 
 
 def main(nbt):
+    out = []
     if isinstance(nbt, CompoundTag):
-        out = []
         for group_1, group_2 in (
             ("FrontText", "front_text"),
             ("BackText", "back_text"),
@@ -24,4 +24,4 @@ def main(nbt):
                             text,
                         ]
                     )
-    return []
+    return out
