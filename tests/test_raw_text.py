@@ -615,20 +615,28 @@ class RawTextTestCase(unittest.TestCase):
     def test_from_java_json(self) -> None:
         empty_cases = (
             '""',
-            '[]',
-            '{}',
+            "[]",
+            "{}",
         )
         empty_components = [from_java_json(case) for case in empty_cases]
         for i, component in enumerate(empty_components):
             with self.subTest(i=i):
-                self.assertEqual("", to_bedrock_section_string(copy.deepcopy(component)))
+                self.assertEqual(
+                    "", to_bedrock_section_string(copy.deepcopy(component))
+                )
                 self.assertEqual("", to_java_section_string(copy.deepcopy(component)))
         self.assertEqual(StringTag(), to_java_nbt(copy.deepcopy(empty_components[0])))
-        self.assertEqual("", json.loads(to_java_json(copy.deepcopy(empty_components[0]))))
+        self.assertEqual(
+            "", json.loads(to_java_json(copy.deepcopy(empty_components[0])))
+        )
         self.assertEqual(ListTag(), to_java_nbt(copy.deepcopy(empty_components[1])))
-        self.assertEqual([], json.loads(to_java_json(copy.deepcopy(empty_components[1]))))
+        self.assertEqual(
+            [], json.loads(to_java_json(copy.deepcopy(empty_components[1])))
+        )
         self.assertEqual(CompoundTag(), to_java_nbt(copy.deepcopy(empty_components[2])))
-        self.assertEqual({}, json.loads(to_java_json(copy.deepcopy(empty_components[2]))))
+        self.assertEqual(
+            {}, json.loads(to_java_json(copy.deepcopy(empty_components[2])))
+        )
 
         cases = (
             '"Hello World"',
@@ -638,15 +646,33 @@ class RawTextTestCase(unittest.TestCase):
         components = [from_java_json(case) for case in cases]
         for i, component in enumerate(components):
             with self.subTest(i=i):
-                self.assertEqual("Hello World", to_bedrock_section_string(copy.deepcopy(component)))
-                self.assertEqual("Hello World", to_java_section_string(copy.deepcopy(component)))
-        self.assertEqual(StringTag("Hello World"), to_java_nbt(copy.deepcopy(components[0])))
-        self.assertEqual("Hello World", json.loads(to_java_json(copy.deepcopy(components[0]))))
-        self.assertEqual(ListTag([StringTag("Hello World")]), to_java_nbt(copy.deepcopy(components[1])))
-        self.assertEqual(["Hello World"], json.loads(to_java_json(copy.deepcopy(components[1]))))
-        self.assertEqual(CompoundTag({"text": StringTag("Hello World")}), to_java_nbt(copy.deepcopy(components[2])))
-        self.assertEqual({"text": "Hello World"}, json.loads(to_java_json(copy.deepcopy(components[2]))))
-
+                self.assertEqual(
+                    "Hello World", to_bedrock_section_string(copy.deepcopy(component))
+                )
+                self.assertEqual(
+                    "Hello World", to_java_section_string(copy.deepcopy(component))
+                )
+        self.assertEqual(
+            StringTag("Hello World"), to_java_nbt(copy.deepcopy(components[0]))
+        )
+        self.assertEqual(
+            "Hello World", json.loads(to_java_json(copy.deepcopy(components[0])))
+        )
+        self.assertEqual(
+            ListTag([StringTag("Hello World")]),
+            to_java_nbt(copy.deepcopy(components[1])),
+        )
+        self.assertEqual(
+            ["Hello World"], json.loads(to_java_json(copy.deepcopy(components[1])))
+        )
+        self.assertEqual(
+            CompoundTag({"text": StringTag("Hello World")}),
+            to_java_nbt(copy.deepcopy(components[2])),
+        )
+        self.assertEqual(
+            {"text": "Hello World"},
+            json.loads(to_java_json(copy.deepcopy(components[2]))),
+        )
 
     def test_from_java_nbt(self) -> None:
         empty_cases = (
@@ -657,14 +683,22 @@ class RawTextTestCase(unittest.TestCase):
         empty_components = [from_java_nbt(case) for case in empty_cases]
         for i, component in enumerate(empty_components):
             with self.subTest(i=i):
-                self.assertEqual("", to_bedrock_section_string(copy.deepcopy(component)))
+                self.assertEqual(
+                    "", to_bedrock_section_string(copy.deepcopy(component))
+                )
                 self.assertEqual("", to_java_section_string(copy.deepcopy(component)))
         self.assertEqual(StringTag(), to_java_nbt(copy.deepcopy(empty_components[0])))
-        self.assertEqual("", json.loads(to_java_json(copy.deepcopy(empty_components[0]))))
+        self.assertEqual(
+            "", json.loads(to_java_json(copy.deepcopy(empty_components[0])))
+        )
         self.assertEqual(ListTag(), to_java_nbt(copy.deepcopy(empty_components[1])))
-        self.assertEqual([], json.loads(to_java_json(copy.deepcopy(empty_components[1]))))
+        self.assertEqual(
+            [], json.loads(to_java_json(copy.deepcopy(empty_components[1])))
+        )
         self.assertEqual(CompoundTag(), to_java_nbt(copy.deepcopy(empty_components[2])))
-        self.assertEqual({}, json.loads(to_java_json(copy.deepcopy(empty_components[2]))))
+        self.assertEqual(
+            {}, json.loads(to_java_json(copy.deepcopy(empty_components[2])))
+        )
 
         cases = (
             StringTag("Hello World"),
@@ -674,14 +708,33 @@ class RawTextTestCase(unittest.TestCase):
         components = [from_java_nbt(case) for case in cases]
         for i, component in enumerate(components):
             with self.subTest(i=i):
-                self.assertEqual("Hello World", to_bedrock_section_string(copy.deepcopy(component)))
-                self.assertEqual("Hello World", to_java_section_string(copy.deepcopy(component)))
-        self.assertEqual(StringTag("Hello World"), to_java_nbt(copy.deepcopy(components[0])))
-        self.assertEqual("Hello World", json.loads(to_java_json(copy.deepcopy(components[0]))))
-        self.assertEqual(ListTag([StringTag("Hello World")]), to_java_nbt(copy.deepcopy(components[1])))
-        self.assertEqual(["Hello World"], json.loads(to_java_json(copy.deepcopy(components[1]))))
-        self.assertEqual(CompoundTag({"text": StringTag("Hello World")}), to_java_nbt(copy.deepcopy(components[2])))
-        self.assertEqual({"text": "Hello World"}, json.loads(to_java_json(copy.deepcopy(components[2]))))
+                self.assertEqual(
+                    "Hello World", to_bedrock_section_string(copy.deepcopy(component))
+                )
+                self.assertEqual(
+                    "Hello World", to_java_section_string(copy.deepcopy(component))
+                )
+        self.assertEqual(
+            StringTag("Hello World"), to_java_nbt(copy.deepcopy(components[0]))
+        )
+        self.assertEqual(
+            "Hello World", json.loads(to_java_json(copy.deepcopy(components[0])))
+        )
+        self.assertEqual(
+            ListTag([StringTag("Hello World")]),
+            to_java_nbt(copy.deepcopy(components[1])),
+        )
+        self.assertEqual(
+            ["Hello World"], json.loads(to_java_json(copy.deepcopy(components[1])))
+        )
+        self.assertEqual(
+            CompoundTag({"text": StringTag("Hello World")}),
+            to_java_nbt(copy.deepcopy(components[2])),
+        )
+        self.assertEqual(
+            {"text": "Hello World"},
+            json.loads(to_java_json(copy.deepcopy(components[2]))),
+        )
 
 
 if __name__ == "__main__":
