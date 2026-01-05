@@ -320,6 +320,8 @@ def _to_java_json(component: TextComponent) -> JSON:
                 d["separator"] = _to_java_json(content.separator)
         elif isinstance(content, KeybindContent):
             d["keybind"] = content.key
+        else:
+            d["text"] = ""
         # TODO: other content types
 
         if component.children is not None:

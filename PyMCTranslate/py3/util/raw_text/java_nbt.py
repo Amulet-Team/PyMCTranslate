@@ -351,6 +351,8 @@ def to_java_nbt(component: TextComponent) -> AnyNBT:
                 compound["separator"] = to_java_nbt(content.separator)
         elif isinstance(content, KeybindContent):
             compound["keybind"] = StringTag(content.key)
+        else:
+            compound["text"] = StringTag()
         # TODO: other content types
 
         if component.children is not None:
