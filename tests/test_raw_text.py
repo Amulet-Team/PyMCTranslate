@@ -217,6 +217,7 @@ class RawTextTestCase(unittest.TestCase):
         self.assertEqual(
             CompoundTag(
                 {
+                    "text": StringTag(),
                     "extra": ListTag(
                         [
                             CompoundTag(
@@ -232,13 +233,14 @@ class RawTextTestCase(unittest.TestCase):
                                 }
                             ),
                         ]
-                    )
+                    ),
                 }
             ),
             to_java_nbt(copy.deepcopy(component)),
         )
         self.assertEqual(
             {
+                "text": "",
                 "extra": [
                     {
                         "text": "Hello",
@@ -248,7 +250,7 @@ class RawTextTestCase(unittest.TestCase):
                         "text": "World",
                         "color": "dark_blue",
                     },
-                ]
+                ],
             },
             json.loads(to_java_json(copy.deepcopy(component))),
         )
@@ -267,6 +269,7 @@ class RawTextTestCase(unittest.TestCase):
         self.assertEqual(
             CompoundTag(
                 {
+                    "text": StringTag(),
                     "extra": ListTag(
                         [
                             CompoundTag({"text": StringTag("H"), "italic": ByteTag(1)}),
@@ -336,13 +339,14 @@ class RawTextTestCase(unittest.TestCase):
                                 }
                             ),
                         ]
-                    )
+                    ),
                 }
             ),
             to_java_nbt(copy.deepcopy(component)),
         )
         self.assertEqual(
             {
+                "text": "",
                 "extra": [
                     {"text": "H", "italic": True},
                     {
@@ -392,7 +396,7 @@ class RawTextTestCase(unittest.TestCase):
                         "color": "blue",
                         "italic": True,
                     },
-                ]
+                ],
             },
             json.loads(to_java_json(copy.deepcopy(component))),
         )
@@ -428,6 +432,7 @@ class RawTextTestCase(unittest.TestCase):
         self.assertEqual(
             CompoundTag(
                 {
+                    "text": StringTag(),
                     "extra": ListTag(
                         [
                             CompoundTag(
@@ -443,13 +448,14 @@ class RawTextTestCase(unittest.TestCase):
                                 }
                             ),
                         ]
-                    )
+                    ),
                 }
             ),
             to_java_nbt(copy.deepcopy(component)),
         )
         self.assertEqual(
             {
+                "text": "",
                 "extra": [
                     {
                         "text": "Hello",
@@ -459,7 +465,7 @@ class RawTextTestCase(unittest.TestCase):
                         "text": "World",
                         "color": "dark_blue",
                     },
-                ]
+                ],
             },
             json.loads(to_java_json(copy.deepcopy(component))),
         )
@@ -478,6 +484,7 @@ class RawTextTestCase(unittest.TestCase):
         self.assertEqual(
             CompoundTag(
                 {
+                    "text": StringTag(),
                     "extra": ListTag(
                         [
                             CompoundTag({"text": StringTag("H"), "italic": ByteTag(1)}),
@@ -549,13 +556,14 @@ class RawTextTestCase(unittest.TestCase):
                                 }
                             ),
                         ]
-                    )
+                    ),
                 }
             ),
             to_java_nbt(copy.deepcopy(component)),
         )
         self.assertEqual(
             {
+                "text": "",
                 "extra": [
                     {"text": "H", "italic": True},
                     {
@@ -607,7 +615,7 @@ class RawTextTestCase(unittest.TestCase):
                         "color": "blue",
                         "italic": True,
                     },
-                ]
+                ],
             },
             json.loads(to_java_json(copy.deepcopy(component))),
         )
@@ -633,9 +641,12 @@ class RawTextTestCase(unittest.TestCase):
         self.assertEqual(
             [], json.loads(to_java_json(copy.deepcopy(empty_components[1])))
         )
-        self.assertEqual(CompoundTag(), to_java_nbt(copy.deepcopy(empty_components[2])))
         self.assertEqual(
-            {}, json.loads(to_java_json(copy.deepcopy(empty_components[2])))
+            CompoundTag({"text": StringTag()}),
+            to_java_nbt(copy.deepcopy(empty_components[2])),
+        )
+        self.assertEqual(
+            {"text": ""}, json.loads(to_java_json(copy.deepcopy(empty_components[2])))
         )
 
         cases = (
@@ -695,9 +706,12 @@ class RawTextTestCase(unittest.TestCase):
         self.assertEqual(
             [], json.loads(to_java_json(copy.deepcopy(empty_components[1])))
         )
-        self.assertEqual(CompoundTag(), to_java_nbt(copy.deepcopy(empty_components[2])))
         self.assertEqual(
-            {}, json.loads(to_java_json(copy.deepcopy(empty_components[2])))
+            CompoundTag({"text": StringTag()}),
+            to_java_nbt(copy.deepcopy(empty_components[2])),
+        )
+        self.assertEqual(
+            {"text": ""}, json.loads(to_java_json(copy.deepcopy(empty_components[2])))
         )
 
         cases = (
