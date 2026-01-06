@@ -22,7 +22,7 @@
     "defaults": {
         "rotation": "\"0\""
     },
-    "snbt": "{Text1: \"{\\\"text\\\":\\\"\\\"}\", Text2: \"{\\\"text\\\":\\\"\\\"}\", Text3: \"{\\\"text\\\":\\\"\\\"}\", Text4: \"{\\\"text\\\":\\\"\\\"}\"}",
+    "snbt": "{Text1: \"\\\"\\\"\", Text2: \"\\\"\\\"\", Text3: \"\\\"\\\"\", Text4: \"\\\"\\\"\"}",
     "nbt_identifier": [
         "minecraft",
         "sign"

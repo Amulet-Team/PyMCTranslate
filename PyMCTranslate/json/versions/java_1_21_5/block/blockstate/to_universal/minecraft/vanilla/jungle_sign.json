@@ -55,7 +55,12 @@
                 },
                 "front_text": {
                     "type": "compound",
-                    "nested_default": [],
+                    "nested_default": [
+                        {
+                            "function": "carry_nbt",
+                            "options": {}
+                        }
+                    ],
                     "self_default": [],
                     "keys": {
                         "has_glowing_text": {
@@ -99,113 +104,18 @@
                             ]
                         },
                         "messages": {
-                            "type": "list",
-                            "nested_default": [],
-                            "self_default": [],
-                            "index": {
-                                "0": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "front_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                "1": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "front_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                "2": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "front_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                "3": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "front_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
+                            "type": "list"
                         }
                     }
                 },
                 "back_text": {
                     "type": "compound",
-                    "nested_default": [],
+                    "nested_default": [
+                        {
+                            "function": "carry_nbt",
+                            "options": {}
+                        }
+                    ],
                     "self_default": [],
                     "keys": {
                         "has_glowing_text": {
@@ -249,107 +159,7 @@
                             ]
                         },
                         "messages": {
-                            "type": "list",
-                            "nested_default": [],
-                            "self_default": [],
-                            "index": {
-                                "0": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "back_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                "1": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "back_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                "2": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "back_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                },
-                                "3": {
-                                    "type": "string",
-                                    "functions": [
-                                        {
-                                            "function": "carry_nbt",
-                                            "options": {
-                                                "path": [
-                                                    [
-                                                        "utags",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "back_text",
-                                                        "compound"
-                                                    ],
-                                                    [
-                                                        "messages",
-                                                        "list"
-                                                    ]
-                                                ]
-                                            }
-                                        }
-                                    ]
-                                }
-                            }
+                            "type": "list"
                         }
                     }
                 },
@@ -382,6 +192,18 @@
                     "options": {}
                 }
             ]
+        }
+    },
+    {
+        "function": "code",
+        "options": {
+            "input": [
+                "nbt"
+            ],
+            "output": [
+                "new_nbt"
+            ],
+            "function": "java_sign_2u_1215"
         }
     }
 ]

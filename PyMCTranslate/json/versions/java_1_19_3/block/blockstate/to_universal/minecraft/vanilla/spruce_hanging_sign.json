@@ -61,104 +61,16 @@
             "type": "compound",
             "keys": {
                 "Text1": {
-                    "type": "string",
-                    "functions": [
-                        {
-                            "function": "carry_nbt",
-                            "options": {
-                                "path": [
-                                    [
-                                        "utags",
-                                        "compound"
-                                    ],
-                                    [
-                                        "front_text",
-                                        "compound"
-                                    ],
-                                    [
-                                        "messages",
-                                        "list"
-                                    ]
-                                ],
-                                "key": 0
-                            }
-                        }
-                    ]
+                    "type": "string"
                 },
                 "Text2": {
-                    "type": "string",
-                    "functions": [
-                        {
-                            "function": "carry_nbt",
-                            "options": {
-                                "path": [
-                                    [
-                                        "utags",
-                                        "compound"
-                                    ],
-                                    [
-                                        "front_text",
-                                        "compound"
-                                    ],
-                                    [
-                                        "messages",
-                                        "list"
-                                    ]
-                                ],
-                                "key": 1
-                            }
-                        }
-                    ]
+                    "type": "string"
                 },
                 "Text3": {
-                    "type": "string",
-                    "functions": [
-                        {
-                            "function": "carry_nbt",
-                            "options": {
-                                "path": [
-                                    [
-                                        "utags",
-                                        "compound"
-                                    ],
-                                    [
-                                        "front_text",
-                                        "compound"
-                                    ],
-                                    [
-                                        "messages",
-                                        "list"
-                                    ]
-                                ],
-                                "key": 2
-                            }
-                        }
-                    ]
+                    "type": "string"
                 },
                 "Text4": {
-                    "type": "string",
-                    "functions": [
-                        {
-                            "function": "carry_nbt",
-                            "options": {
-                                "path": [
-                                    [
-                                        "utags",
-                                        "compound"
-                                    ],
-                                    [
-                                        "front_text",
-                                        "compound"
-                                    ],
-                                    [
-                                        "messages",
-                                        "list"
-                                    ]
-                                ],
-                                "key": 3
-                            }
-                        }
-                    ]
+                    "type": "string"
                 },
                 "keepPacked": {
                     "type": "byte",
@@ -189,6 +101,18 @@
                     "options": {}
                 }
             ]
+        }
+    },
+    {
+        "function": "code",
+        "options": {
+            "input": [
+                "nbt"
+            ],
+            "output": [
+                "new_nbt"
+            ],
+            "function": "java_sign_2u_19"
         }
     }
 ]

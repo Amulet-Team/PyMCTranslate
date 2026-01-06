@@ -18,77 +18,7 @@
         "function": "walk_input_nbt",
         "options": {
             "type": "compound",
-            "keys": {
-                "utags": {
-                    "type": "compound",
-                    "nested_default": [],
-                    "self_default": [],
-                    "keys": {
-                        "front_text": {
-                            "type": "compound",
-                            "nested_default": [],
-                            "self_default": [],
-                            "keys": {
-                                "messages": {
-                                    "type": "list",
-                                    "nested_default": [],
-                                    "self_default": [],
-                                    "index": {
-                                        "0": {
-                                            "type": "string",
-                                            "functions": [
-                                                {
-                                                    "function": "carry_nbt",
-                                                    "options": {
-                                                        "path": [],
-                                                        "key": "Text1"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "1": {
-                                            "type": "string",
-                                            "functions": [
-                                                {
-                                                    "function": "carry_nbt",
-                                                    "options": {
-                                                        "path": [],
-                                                        "key": "Text2"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "2": {
-                                            "type": "string",
-                                            "functions": [
-                                                {
-                                                    "function": "carry_nbt",
-                                                    "options": {
-                                                        "path": [],
-                                                        "key": "Text3"
-                                                    }
-                                                }
-                                            ]
-                                        },
-                                        "3": {
-                                            "type": "string",
-                                            "functions": [
-                                                {
-                                                    "function": "carry_nbt",
-                                                    "options": {
-                                                        "path": [],
-                                                        "key": "Text4"
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            "keys": {}
         }
     },
     {
@@ -112,6 +42,18 @@
                     "options": {}
                 }
             ]
+        }
+    },
+    {
+        "function": "code",
+        "options": {
+            "input": [
+                "nbt"
+            ],
+            "output": [
+                "new_nbt"
+            ],
+            "function": "java_sign_fu_19"
         }
     }
 ]
