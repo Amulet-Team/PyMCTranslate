@@ -119,6 +119,10 @@
                         }
                     ]
                 },
+                "conditionalMode": {
+                    "type": "byte",
+                    "functions": []
+                },
                 "conditionMet": {
                     "type": "byte",
                     "functions": [

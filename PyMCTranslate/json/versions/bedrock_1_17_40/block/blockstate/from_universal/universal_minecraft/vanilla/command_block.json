@@ -33,6 +33,15 @@
                         "options": {
                             "conditional_bit": "0b"
                         }
+                    },
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "conditionalMode",
+                                "value": "0b"
+                            }
+                        ]
                     }
                 ],
                 "\"true\"": [
@@ -41,6 +50,15 @@
                         "options": {
                             "conditional_bit": "1b"
                         }
+                    },
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "conditionalMode",
+                                "value": "1b"
+                            }
+                        ]
                     }
                 ]
             },
