@@ -71,6 +71,15 @@
                                                 ]
                                             }
                                         }
+                                    },
+                                    {
+                                        "function": "new_nbt",
+                                        "options": [
+                                            {
+                                                "key": "conditionalMode",
+                                                "value": "0b"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "\"true\"": [
@@ -128,6 +137,15 @@
                                                 ]
                                             }
                                         }
+                                    },
+                                    {
+                                        "function": "new_nbt",
+                                        "options": [
+                                            {
+                                                "key": "conditionalMode",
+                                                "value": "1b"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -198,6 +216,15 @@
                                                 ]
                                             }
                                         }
+                                    },
+                                    {
+                                        "function": "new_nbt",
+                                        "options": [
+                                            {
+                                                "key": "conditionalMode",
+                                                "value": "0b"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "\"true\"": [
@@ -255,6 +282,15 @@
                                                 ]
                                             }
                                         }
+                                    },
+                                    {
+                                        "function": "new_nbt",
+                                        "options": [
+                                            {
+                                                "key": "conditionalMode",
+                                                "value": "1b"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
@@ -325,6 +361,15 @@
                                                 ]
                                             }
                                         }
+                                    },
+                                    {
+                                        "function": "new_nbt",
+                                        "options": [
+                                            {
+                                                "key": "conditionalMode",
+                                                "value": "0b"
+                                            }
+                                        ]
                                     }
                                 ],
                                 "\"true\"": [
@@ -382,6 +427,15 @@
                                                 ]
                                             }
                                         }
+                                    },
+                                    {
+                                        "function": "new_nbt",
+                                        "options": [
+                                            {
+                                                "key": "conditionalMode",
+                                                "value": "1b"
+                                            }
+                                        ]
                                     }
                                 ]
                             }
