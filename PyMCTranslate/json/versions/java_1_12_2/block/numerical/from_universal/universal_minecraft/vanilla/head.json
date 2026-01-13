@@ -3,28 +3,7 @@
         "function": "walk_input_nbt",
         "options": {
             "type": "compound",
-            "keys": {
-                "utags": {
-                    "type": "compound",
-                    "nested_default": [],
-                    "self_default": [],
-                    "keys": {
-                        "Owner": {
-                            "type": "compound",
-                            "nested_default": [],
-                            "self_default": [],
-                            "functions": [
-                                {
-                                    "function": "carry_nbt",
-                                    "options": {
-                                        "path": []
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
+            "keys": {}
         }
     },
     {
@@ -51,9 +30,36 @@
         }
     },
     {
+        "function": "new_block",
+        "options": "minecraft:skull"
+    },
+    {
         "function": "map_properties",
         "options": {
             "mob": {
+                "\"player\"": [
+                    {
+                        "function": "code",
+                        "options": {
+                            "input": [
+                                "nbt"
+                            ],
+                            "output": [
+                                "new_nbt"
+                            ],
+                            "function": "java_skull_fu_19"
+                        }
+                    },
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "SkullType",
+                                "value": "3b"
+                            }
+                        ]
+                    }
+                ],
                 "\"skeleton\"": [
                     {
                         "function": "new_nbt",
@@ -87,17 +93,6 @@
                         ]
                     }
                 ],
-                "\"player\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "SkullType",
-                                "value": "3b"
-                            }
-                        ]
-                    }
-                ],
                 "\"creeper\"": [
                     {
                         "function": "new_nbt",
@@ -127,7 +122,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "0b"
                             }
                         ]
@@ -138,7 +133,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "1b"
                             }
                         ]
@@ -149,7 +144,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "2b"
                             }
                         ]
@@ -160,7 +155,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "3b"
                             }
                         ]
@@ -171,7 +166,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "4b"
                             }
                         ]
@@ -182,7 +177,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "5b"
                             }
                         ]
@@ -193,7 +188,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "6b"
                             }
                         ]
@@ -204,7 +199,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "7b"
                             }
                         ]
@@ -215,7 +210,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "8b"
                             }
                         ]
@@ -226,7 +221,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "9b"
                             }
                         ]
@@ -237,7 +232,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "10b"
                             }
                         ]
@@ -248,7 +243,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "11b"
                             }
                         ]
@@ -259,7 +254,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "12b"
                             }
                         ]
@@ -270,7 +265,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "13b"
                             }
                         ]
@@ -281,7 +276,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "14b"
                             }
                         ]
@@ -292,7 +287,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "15b"
                             }
                         ]
@@ -300,10 +295,6 @@
                 ]
             }
         }
-    },
-    {
-        "function": "new_block",
-        "options": "minecraft:skull"
     },
     {
         "function": "new_properties",

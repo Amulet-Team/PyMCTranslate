@@ -4,10 +4,8 @@
         "options": {
             "type": "compound",
             "keys": {
-                "Owner": {
+                "profile": {
                     "type": "compound",
-                    "nested_default": [],
-                    "self_default": [],
                     "functions": [
                         {
                             "function": "carry_nbt",
@@ -17,7 +15,8 @@
                                         "utags",
                                         "compound"
                                     ]
-                                ]
+                                ],
+                                "key": "owner_j1205"
                             }
                         }
                     ]
