@@ -12,12 +12,14 @@ def convert_uuid(tag: CompoundTag):
             pass
         else:
             uuid_int = uuid_.int
-            tag["Id"] = ListTag([
-                IntTag((uuid_int >> 96) & 0xFFFFFFFF),
-                IntTag((uuid_int >> 64) & 0xFFFFFFFF),
-                IntTag((uuid_int >> 32) & 0xFFFFFFFF),
-                IntTag(uuid_int & 0xFFFFFFFF),
-            ])
+            tag["Id"] = ListTag(
+                [
+                    IntTag((uuid_int >> 96) & 0xFFFFFFFF),
+                    IntTag((uuid_int >> 64) & 0xFFFFFFFF),
+                    IntTag((uuid_int >> 32) & 0xFFFFFFFF),
+                    IntTag(uuid_int & 0xFFFFFFFF),
+                ]
+            )
 
 
 def convert_properties(tag: CompoundTag):
@@ -30,47 +32,60 @@ def convert_properties(tag: CompoundTag):
                 value = prop_tag.get("value")
                 signature = prop_tag.get("signature")
                 if isinstance(name, StringTag) and isinstance(value, StringTag):
-                    new_prop_tag = CompoundTag({
-                        "Value": value
-                    })
+                    new_prop_tag = CompoundTag({"Value": value})
                     if isinstance(signature, StringTag):
                         new_prop_tag["Signature"] = signature
-                    new_properties_tag.setdefault(name.py_str, ListTag()).append(new_prop_tag)
+                    new_properties_tag.setdefault(name.py_str, ListTag()).append(
+                        new_prop_tag
+                    )
         tag["Properties"] = new_properties_tag
+
+
+def downgrade_name(tag: CompoundTag):
+    name_tag = tag.pop("name", None)
+    if isinstance(name_tag, StringTag):
+        tag["Name"] = name_tag
 
 
 def main(nbt):
     if isinstance(nbt, CompoundTag):
         utags = nbt.get("utags")
         if isinstance(utags, CompoundTag):
-            owner_j19 = utags.get("owner_j19")
-            if isinstance(owner_j19, CompoundTag):
-                convert_uuid(owner_j19)
-                return [
-                    "",
-                    "compound",
-                    [],
-                    "SkullOwner",
-                    owner_j19,
-                ]
             owner_j116 = utags.get("owner_j116")
             if isinstance(owner_j116, CompoundTag):
                 return [
-                    "",
-                    "compound",
-                    [],
-                    "SkullOwner",
-                    owner_j116,
+                    [
+                        "",
+                        "compound",
+                        [],
+                        "SkullOwner",
+                        owner_j116,
+                    ]
                 ]
             owner_j1205 = utags.get("owner_j1205")
             if isinstance(owner_j1205, CompoundTag):
                 convert_properties(owner_j1205)
+                downgrade_name(owner_j1205)
                 return [
-                    "",
-                    "compound",
-                    [],
-                    "SkullOwner",
-                    owner_j1205,
+                    [
+                        "",
+                        "compound",
+                        [],
+                        "SkullOwner",
+                        owner_j1205,
+                    ]
+                ]
+            owner_j19 = utags.get("owner_j19")
+            if isinstance(owner_j19, CompoundTag):
+                convert_uuid(owner_j19)
+                return [
+                    [
+                        "",
+                        "compound",
+                        [],
+                        "SkullOwner",
+                        owner_j19,
+                    ]
                 ]
 
     return []

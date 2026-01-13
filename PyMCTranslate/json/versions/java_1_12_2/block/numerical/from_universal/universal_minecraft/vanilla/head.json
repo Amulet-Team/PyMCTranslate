@@ -122,7 +122,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "0b"
                             }
                         ]
@@ -133,7 +133,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "1b"
                             }
                         ]
@@ -144,7 +144,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "2b"
                             }
                         ]
@@ -155,7 +155,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "3b"
                             }
                         ]
@@ -166,7 +166,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "4b"
                             }
                         ]
@@ -177,7 +177,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "5b"
                             }
                         ]
@@ -188,7 +188,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "6b"
                             }
                         ]
@@ -199,7 +199,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "7b"
                             }
                         ]
@@ -210,7 +210,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "8b"
                             }
                         ]
@@ -221,7 +221,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "9b"
                             }
                         ]
@@ -232,7 +232,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "10b"
                             }
                         ]
@@ -243,7 +243,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "11b"
                             }
                         ]
@@ -254,7 +254,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "12b"
                             }
                         ]
@@ -265,7 +265,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "13b"
                             }
                         ]
@@ -276,7 +276,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "14b"
                             }
                         ]
@@ -287,7 +287,7 @@
                         "function": "new_nbt",
                         "options": [
                             {
-                                "key": "Rotation",
+                                "key": "Rot",
                                 "value": "15b"
                             }
                         ]
