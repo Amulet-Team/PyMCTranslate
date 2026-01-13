@@ -4,24 +4,6 @@
         "options": {
             "type": "compound",
             "keys": {
-                "Owner": {
-                    "type": "compound",
-                    "nested_default": [],
-                    "self_default": [],
-                    "functions": [
-                        {
-                            "function": "carry_nbt",
-                            "options": {
-                                "path": [
-                                    [
-                                        "utags",
-                                        "compound"
-                                    ]
-                                ]
-                            }
-                        }
-                    ]
-                },
                 "keepPacked": {
                     "type": "byte",
                     "functions": [

@@ -3,28 +3,7 @@
         "function": "walk_input_nbt",
         "options": {
             "type": "compound",
-            "keys": {
-                "utags": {
-                    "type": "compound",
-                    "nested_default": [],
-                    "self_default": [],
-                    "keys": {
-                        "Owner": {
-                            "type": "compound",
-                            "nested_default": [],
-                            "self_default": [],
-                            "functions": [
-                                {
-                                    "function": "carry_nbt",
-                                    "options": {
-                                        "path": []
-                                    }
-                                }
-                            ]
-                        }
-                    }
-                }
-            }
+            "keys": {}
         }
     },
     {
@@ -51,9 +30,36 @@
         }
     },
     {
+        "function": "new_block",
+        "options": "minecraft:skull"
+    },
+    {
         "function": "map_properties",
         "options": {
             "mob": {
+                "\"player\"": [
+                    {
+                        "function": "code",
+                        "options": {
+                            "input": [
+                                "nbt"
+                            ],
+                            "output": [
+                                "new_nbt"
+                            ],
+                            "function": "java_skull_fu_19"
+                        }
+                    },
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "SkullType",
+                                "value": "3b"
+                            }
+                        ]
+                    }
+                ],
                 "\"skeleton\"": [
                     {
                         "function": "new_nbt",
@@ -83,17 +89,6 @@
                             {
                                 "key": "SkullType",
                                 "value": "2b"
-                            }
-                        ]
-                    }
-                ],
-                "\"player\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "SkullType",
-                                "value": "3b"
                             }
                         ]
                     }
@@ -156,9 +151,5 @@
                 ]
             }
         }
-    },
-    {
-        "function": "new_block",
-        "options": "minecraft:skull"
     }
 ]

@@ -6,8 +6,6 @@
             "keys": {
                 "Owner": {
                     "type": "compound",
-                    "nested_default": [],
-                    "self_default": [],
                     "functions": [
                         {
                             "function": "carry_nbt",
@@ -17,7 +15,8 @@
                                         "utags",
                                         "compound"
                                     ]
-                                ]
+                                ],
+                                "key": "owner_j19"
                             }
                         }
                     ]

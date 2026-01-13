@@ -9,19 +9,6 @@
                     "nested_default": [],
                     "self_default": [],
                     "keys": {
-                        "Owner": {
-                            "type": "compound",
-                            "nested_default": [],
-                            "self_default": [],
-                            "functions": [
-                                {
-                                    "function": "carry_nbt",
-                                    "options": {
-                                        "path": []
-                                    }
-                                }
-                            ]
-                        },
                         "keepPacked": {
                             "type": "byte",
                             "functions": [
@@ -88,6 +75,18 @@
                     }
                 ],
                 "\"player\"": [
+                    {
+                        "function": "code",
+                        "options": {
+                            "input": [
+                                "nbt"
+                            ],
+                            "output": [
+                                "new_nbt"
+                            ],
+                            "function": "java_skull_fu_19"
+                        }
+                    },
                     {
                         "function": "new_block",
                         "options": "minecraft:player_wall_head"
