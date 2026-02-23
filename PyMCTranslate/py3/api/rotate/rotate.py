@@ -7,7 +7,6 @@ import numpy
 from PyMCTranslate.py3.api.version import Version
 from PyMCTranslate.py3.api import Block, PropertyValueType
 
-
 # This is the dictionary stored under the properties key in the specification files
 from PyMCTranslate.py3.api.version.translators.block import BlockSpecification
 

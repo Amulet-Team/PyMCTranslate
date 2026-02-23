@@ -24,7 +24,7 @@
                         "function": "map_properties",
                         "options": {
                             "minecraft:cardinal_direction": {
-                                "\"east\"": [
+                                "\"south\"": [
                                     {
                                         "function": "new_properties",
                                         "options": {
@@ -32,7 +32,7 @@
                                         }
                                     }
                                 ],
-                                "\"south\"": [
+                                "\"west\"": [
                                     {
                                         "function": "new_properties",
                                         "options": {
@@ -40,7 +40,7 @@
                                         }
                                     }
                                 ],
-                                "\"west\"": [
+                                "\"north\"": [
                                     {
                                         "function": "new_properties",
                                         "options": {
@@ -48,7 +48,7 @@
                                         }
                                     }
                                 ],
-                                "\"north\"": [
+                                "\"east\"": [
                                     {
                                         "function": "new_properties",
                                         "options": {
@@ -159,7 +159,7 @@
                                         "function": "map_properties",
                                         "options": {
                                             "minecraft:cardinal_direction": {
-                                                "\"east\"": [
+                                                "\"south\"": [
                                                     {
                                                         "function": "new_properties",
                                                         "options": {
@@ -167,7 +167,7 @@
                                                         }
                                                     }
                                                 ],
-                                                "\"south\"": [
+                                                "\"west\"": [
                                                     {
                                                         "function": "new_properties",
                                                         "options": {
@@ -175,7 +175,7 @@
                                                         }
                                                     }
                                                 ],
-                                                "\"west\"": [
+                                                "\"north\"": [
                                                     {
                                                         "function": "new_properties",
                                                         "options": {
@@ -183,7 +183,7 @@
                                                         }
                                                     }
                                                 ],
-                                                "\"north\"": [
+                                                "\"east\"": [
                                                     {
                                                         "function": "new_properties",
                                                         "options": {
