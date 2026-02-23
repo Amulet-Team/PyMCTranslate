@@ -8,7 +8,6 @@ from PyMCTranslate.py3.util.raw_text.java_section_string import from_java_sectio
 from PyMCTranslate.py3.util.raw_text.java_json import from_java_json
 from PyMCTranslate.py3.util.raw_text.java_nbt import to_java_nbt
 
-
 EmptyTag = StringTag()
 
 

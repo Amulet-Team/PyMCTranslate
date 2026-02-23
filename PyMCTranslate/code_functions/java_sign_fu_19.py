@@ -8,7 +8,6 @@ from PyMCTranslate.py3.util.raw_text.java_section_string import from_java_sectio
 from PyMCTranslate.py3.util.raw_text.java_json import to_java_json
 from PyMCTranslate.py3.util.raw_text.java_nbt import from_java_nbt
 
-
 EmptyJSON = StringTag(r"\"\"")
 
 
