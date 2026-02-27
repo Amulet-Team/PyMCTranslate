@@ -53,6 +53,39 @@ class DoorShape(BaseVectorBlockShape):
 
 
 @BlockShapes.register
+class ChestShape(BaseVectorBlockShape):
+    Properties = ("connection", "facing")
+    Vectors = {
+        (TAG_String("none"), TAG_String("north")): (0, 0, -2),
+        (TAG_String("none"), TAG_String("east")): (2, 0, 0),
+        (TAG_String("none"), TAG_String("south")): (0, 0, 2),
+        (TAG_String("none"), TAG_String("west")): (-2, 0, 0),
+        (TAG_String("left"), TAG_String("north")): (1, 0, -2),
+        (TAG_String("left"), TAG_String("east")): (2, 0, 1),
+        (TAG_String("left"), TAG_String("south")): (-1, 0, 2),
+        (TAG_String("left"), TAG_String("west")): (-2, 0, -1),
+        (TAG_String("right"), TAG_String("north")): (-1, 0, -2),
+        (TAG_String("right"), TAG_String("east")): (2, 0, -1),
+        (TAG_String("right"), TAG_String("south")): (1, 0, 2),
+        (TAG_String("right"), TAG_String("west")): (-2, 0, 1),
+    }
+
+    def is_valid(
+        self, namespace: str, base_name: str, specification: BlockSpecification
+    ) -> bool:
+        return set(specification.valid_properties.get("facing", ())) == {
+            TAG_String("north"),
+            TAG_String("south"),
+            TAG_String("west"),
+            TAG_String("east"),
+        } and set(specification.valid_properties.get("connection", ())) == {
+            TAG_String("none"),
+            TAG_String("left"),
+            TAG_String("right"),
+        }
+
+
+@BlockShapes.register
 class TrapdoorShape(BaseVectorBlockShape):
     Properties = ("open", "half", "facing")
     Vectors = {
