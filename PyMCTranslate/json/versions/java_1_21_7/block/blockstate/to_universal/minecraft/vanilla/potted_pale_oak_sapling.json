@@ -6,7 +6,7 @@
     {
         "function": "new_properties",
         "options": {
-            "plant": "\"pale_oak\""
+            "plant": "\"pale_oak_sapling\""
         }
     }
 ]

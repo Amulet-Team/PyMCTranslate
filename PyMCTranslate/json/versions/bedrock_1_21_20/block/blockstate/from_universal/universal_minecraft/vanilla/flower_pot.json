@@ -56,182 +56,6 @@
         "function": "map_properties",
         "options": {
             "plant": {
-                "\"dandelion\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:yellow_flower\", states: {}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"poppy\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"poppy\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"blue_orchid\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"orchid\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"allium\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"allium\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"azure_bluet\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"houstonia\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"red_tulip\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"tulip_red\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"orange_tulip\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"tulip_orange\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"white_tulip\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"tulip_white\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"pink_tulip\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"tulip_pink\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"oxeye_daisy\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"oxeye\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"oak_sapling\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:sapling\", states: {age_bit: 0b, sapling_type: \"oak\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"spruce_sapling\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:sapling\", states: {age_bit: 0b, sapling_type: \"spruce\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"birch_sapling\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:sapling\", states: {age_bit: 0b, sapling_type: \"birch\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"jungle_sapling\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:sapling\", states: {age_bit: 0b, sapling_type: \"jungle\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"acacia_sapling\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:sapling\", states: {age_bit: 0b, sapling_type: \"acacia\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"dark_oak_sapling\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:sapling\", states: {age_bit: 0b, sapling_type: \"dark_oak\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
                 "\"red_mushroom\"": [
                     {
                         "function": "new_nbt",
@@ -250,17 +74,6 @@
                             {
                                 "key": "PlantBlock",
                                 "value": "{name:\"minecraft:brown_mushroom\", states: {}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"fern\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:tallgrass\", states: {tall_grass_type: \"fern\"}, version: 17629184}"
                             }
                         ]
                     }
@@ -294,28 +107,6 @@
                             {
                                 "key": "PlantBlock",
                                 "value": "{name:\"minecraft:bamboo\", states: {age_bit: 0, bamboo_leaf_size: \"no_leaves\", bamboo_stalk_thickness: \"thin\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"cornflower\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"cornflower\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"lily_of_the_valley\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"lily_of_the_valley\"}, version: 17629184}"
                             }
                         ]
                     }
@@ -371,6 +162,259 @@
                             {
                                 "key": "PlantBlock",
                                 "value": "{name:\"minecraft:warped_roots\", states: {}, version: 17760256}"
+                            }
+                        ]
+                    }
+                ],
+                "\"azalea_bush\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:azalea\", states: {}, version: 17879555}"
+                            }
+                        ]
+                    }
+                ],
+                "\"flowering_azalea_bush\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:flowering_azalea\", states: {}, version: 17879555}"
+                            }
+                        ]
+                    }
+                ],
+                "\"mangrove_propagule\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:mangrove_propagule\", states: {hanging: 0b, propagule_stage: 0}, version: 17959425}"
+                            }
+                        ]
+                    }
+                ],
+                "\"cherry_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:cherry_sapling\", states: {age_bit: 0b}, version: 18042891}"
+                            }
+                        ]
+                    }
+                ],
+                "\"oak_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:oak_sapling\", states: {age_bit: 0b}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"spruce_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:spruce_sapling\", states: {age_bit: 0b}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"birch_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:birch_sapling\", states: {age_bit: 0b}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"jungle_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:jungle_sapling\", states: {age_bit: 0b}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"acacia_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:acacia_sapling\", states: {age_bit: 0b}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"dark_oak_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:dark_oak_sapling\", states: {age_bit: 0b}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"poppy\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:poppy\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"blue_orchid\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:blue_orchid\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"allium\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:allium\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"azure_bluet\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:azure_bluet\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"red_tulip\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:red_tulip\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"orange_tulip\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:orange_tulip\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"white_tulip\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:white_tulip\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"pink_tulip\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:pink_tulip\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"oxeye_daisy\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:oxeye_daisy\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"cornflower\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:cornflower\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"lily_of_the_valley\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:lily_of_the_valley\", states: {}, version: 18108419}"
+                            }
+                        ]
+                    }
+                ],
+                "\"fern\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:fern\", states: {}, version: 18153475}"
+                            }
+                        ]
+                    }
+                ],
+                "\"dandelion\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:dandelion\", states: {}, version: 18158598}"
                             }
                         ]
                     }

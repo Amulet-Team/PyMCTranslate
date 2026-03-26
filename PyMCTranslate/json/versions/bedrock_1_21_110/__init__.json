@@ -11,15 +11,15 @@
         110
     ],
     "version_max_known": [
-        1,
-        21,
-        130
+        26,
+        3
     ],
     "version_max": [
-        2,
+        26,
+        10,
         -1
     ],
     "data_version": 18168865,
     "data_version_max_known": 18168865,
-    "data_version_max": 4294967295
+    "data_version_max": 18168865
 }
