@@ -18,6 +18,293 @@
                                     "function": "map_nbt",
                                     "options": {
                                         "cases": {
+                                            "\"minecraft:red_mushroom\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"red_mushroom\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"red_mushroom\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:brown_mushroom\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"brown_mushroom\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"brown_mushroom\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:deadbush\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"dead_bush\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"dead_bush\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:cactus\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"cactus\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{age: 0}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"cactus\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:bamboo\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"bamboo\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{age_bit: 0, bamboo_leaf_size: \"no_leaves\", bamboo_stalk_thickness: \"thin\"}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"bamboo\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:wither_rose\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"wither_rose\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"wither_rose\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:tallgrass\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"fern\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{tall_grass_type: \"fern\"}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"fern\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
                                             "\"minecraft:yellow_flower\"": [
                                                 {
                                                     "function": "new_properties",
@@ -261,293 +548,6 @@
                                                     }
                                                 }
                                             ],
-                                            "\"minecraft:red_mushroom\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"red_mushroom\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"red_mushroom\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "\"minecraft:brown_mushroom\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"brown_mushroom\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"brown_mushroom\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "\"minecraft:tallgrass\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"fern\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{tall_grass_type: \"fern\"}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"fern\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "\"minecraft:deadbush\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"dead_bush\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"dead_bush\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "\"minecraft:cactus\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"cactus\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{age: 0}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"cactus\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "\"minecraft:bamboo\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"bamboo\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{age_bit: 0, bamboo_leaf_size: \"no_leaves\", bamboo_stalk_thickness: \"thin\"}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"bamboo\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
-                                            "\"minecraft:wither_rose\"": [
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"wither_rose\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "states",
-                                                            "compound"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "compound",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "{}": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"wither_rose\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ],
                                             "\"minecraft:crimson_fungus\"": [
                                                 {
                                                     "function": "new_properties",
@@ -702,6 +702,170 @@
                                                                                 "function": "new_properties",
                                                                                 "options": {
                                                                                     "plant": "\"warped_roots\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:azalea\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"azalea_bush\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"azalea_bush\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:flowering_azalea\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"flowering_azalea_bush\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"flowering_azalea_bush\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:mangrove_propagule\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"mangrove_propagule\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{hanging: 0b, propagule_stage: 0}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"mangrove_propagule\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "\"minecraft:cherry_sapling\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"cherry_sapling\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{age_bit: 0b}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"cherry_sapling\""
                                                                                 }
                                                                             }
                                                                         ]

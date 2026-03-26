@@ -56,6 +56,83 @@
         "function": "map_properties",
         "options": {
             "plant": {
+                "\"red_mushroom\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:red_mushroom\", states: {}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"brown_mushroom\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:brown_mushroom\", states: {}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"dead_bush\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:deadbush\", states: {}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"cactus\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:cactus\", states: {age: 0}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"bamboo\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:bamboo\", states: {age_bit: 0, bamboo_leaf_size: \"no_leaves\", bamboo_stalk_thickness: \"thin\"}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"wither_rose\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:wither_rose\", states: {}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"fern\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:tallgrass\", states: {tall_grass_type: \"fern\"}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
                 "\"dandelion\"": [
                     {
                         "function": "new_nbt",
@@ -166,6 +243,28 @@
                         ]
                     }
                 ],
+                "\"cornflower\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"cornflower\"}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
+                "\"lily_of_the_valley\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"lily_of_the_valley\"}, version: 17629184}"
+                            }
+                        ]
+                    }
+                ],
                 "\"oak_sapling\"": [
                     {
                         "function": "new_nbt",
@@ -232,105 +331,6 @@
                         ]
                     }
                 ],
-                "\"red_mushroom\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_mushroom\", states: {}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"brown_mushroom\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:brown_mushroom\", states: {}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"fern\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:tallgrass\", states: {tall_grass_type: \"fern\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"dead_bush\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:deadbush\", states: {}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"cactus\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:cactus\", states: {age: 0}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"bamboo\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:bamboo\", states: {age_bit: 0, bamboo_leaf_size: \"no_leaves\", bamboo_stalk_thickness: \"thin\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"cornflower\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"cornflower\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"lily_of_the_valley\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:red_flower\", states: {flower_type: \"lily_of_the_valley\"}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
-                "\"wither_rose\"": [
-                    {
-                        "function": "new_nbt",
-                        "options": [
-                            {
-                                "key": "PlantBlock",
-                                "value": "{name:\"minecraft:wither_rose\", states: {}, version: 17629184}"
-                            }
-                        ]
-                    }
-                ],
                 "\"crimson_fungus\"": [
                     {
                         "function": "new_nbt",
@@ -371,6 +371,28 @@
                             {
                                 "key": "PlantBlock",
                                 "value": "{name:\"minecraft:warped_roots\", states: {}, version: 17760256}"
+                            }
+                        ]
+                    }
+                ],
+                "\"azalea_bush\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:azalea\", states: {}, version: 17879555}"
+                            }
+                        ]
+                    }
+                ],
+                "\"flowering_azalea_bush\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:flowering_azalea\", states: {}, version: 17879555}"
                             }
                         ]
                     }
