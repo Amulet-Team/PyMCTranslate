@@ -1,24 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "minecraft:potent_sulfur"
+        "options": "universal_minecraft:potent_sulfur"
     },
     {
         "function": "walk_input_nbt",
         "options": {
             "type": "compound",
-            "keys": {}
-        }
-    },
-    {
-        "function": "walk_input_nbt",
-        "options": {
-            "type": "compound",
-            "keys": {
-                "utags": {
-                    "type": "compound"
-                }
-            },
+            "keys": {},
             "self_default": [
                 {
                     "function": "carry_nbt",

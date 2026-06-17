@@ -10,5 +10,10 @@
     },
     "defaults": {
         "potent_sulfur_state": "\"dry\""
-    }
+    },
+    "nbt_identifier": [
+        "universal_minecraft",
+        "potent_sulfur"
+    ],
+    "snbt": "{utags: {countdown: 0}}"
 }

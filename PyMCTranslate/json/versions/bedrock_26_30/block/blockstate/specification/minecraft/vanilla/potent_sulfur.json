@@ -10,5 +10,10 @@
     },
     "defaults": {
         "potent_sulfur_state": "\"dry\""
-    }
+    },
+    "nbt_identifier": [
+        "",
+        "PotentSulfurBlock"
+    ],
+    "snbt": "{}"
 }
