@@ -389,6 +389,42 @@
                                         "function": "new_block",
                                         "options": "minecraft:pale_oak_slab"
                                     }
+                                ],
+                                "\"cinnabar_brick\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cinnabar_brick_slab"
+                                    }
+                                ],
+                                "\"cinnabar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cinnabar_slab"
+                                    }
+                                ],
+                                "\"polished_cinnabar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:polished_cinnabar_slab"
+                                    }
+                                ],
+                                "\"polished_sulfur\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:polished_sulfur_slab"
+                                    }
+                                ],
+                                "\"sulfur_brick\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:sulfur_brick_slab"
+                                    }
+                                ],
+                                "\"sulfur\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:sulfur_slab"
+                                    }
                                 ]
                             }
                         }
@@ -776,6 +812,42 @@
                                         "function": "new_block",
                                         "options": "minecraft:pale_oak_slab"
                                     }
+                                ],
+                                "\"cinnabar_brick\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cinnabar_brick_slab"
+                                    }
+                                ],
+                                "\"cinnabar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cinnabar_slab"
+                                    }
+                                ],
+                                "\"polished_cinnabar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:polished_cinnabar_slab"
+                                    }
+                                ],
+                                "\"polished_sulfur\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:polished_sulfur_slab"
+                                    }
+                                ],
+                                "\"sulfur_brick\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:sulfur_brick_slab"
+                                    }
+                                ],
+                                "\"sulfur\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:sulfur_slab"
+                                    }
                                 ]
                             }
                         }
@@ -1156,6 +1228,42 @@
                                     {
                                         "function": "new_block",
                                         "options": "minecraft:pale_oak_double_slab"
+                                    }
+                                ],
+                                "\"cinnabar_brick\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cinnabar_brick_double_slab"
+                                    }
+                                ],
+                                "\"cinnabar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cinnabar_double_slab"
+                                    }
+                                ],
+                                "\"polished_cinnabar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:polished_cinnabar_double_slab"
+                                    }
+                                ],
+                                "\"polished_sulfur\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:polished_sulfur_double_slab"
+                                    }
+                                ],
+                                "\"sulfur_brick\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:sulfur_brick_double_slab"
+                                    }
+                                ],
+                                "\"sulfur\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:sulfur_double_slab"
                                     }
                                 ]
                             }
