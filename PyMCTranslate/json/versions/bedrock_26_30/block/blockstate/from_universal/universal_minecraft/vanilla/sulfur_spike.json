@@ -61,7 +61,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "vertical_direction": "1b"
+                            "hanging": "1b"
                         }
                     }
                 ]
