@@ -58,7 +58,13 @@
             "\"tuff_brick\"",
             "\"polished_tuff\"",
             "\"pale_oak\"",
-            "\"resin_brick\""
+            "\"resin_brick\"",
+            "\"cinnabar_brick\"",
+            "\"cinnabar\"",
+            "\"polished_cinnabar\"",
+            "\"polished_sulfur\"",
+            "\"sulfur_brick\"",
+            "\"sulfur\""
         ],
         "facing": [
             "\"north\"",

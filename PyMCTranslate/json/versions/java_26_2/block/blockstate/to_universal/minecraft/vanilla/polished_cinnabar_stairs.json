@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:polished_cinnabar_stairs"
+        "options": "universal_minecraft:stairs"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"polished_cinnabar\""
+        }
     },
     {
         "function": "carry_properties",

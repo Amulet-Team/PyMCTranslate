@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:cinnabar_brick_stairs"
+        "options": "universal_minecraft:stairs"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"cinnabar_brick\""
+        }
     },
     {
         "function": "carry_properties",

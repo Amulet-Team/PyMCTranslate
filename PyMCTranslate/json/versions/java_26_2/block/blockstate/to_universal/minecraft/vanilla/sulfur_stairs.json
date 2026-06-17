@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:sulfur_stairs"
+        "options": "universal_minecraft:stairs"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"sulfur\""
+        }
     },
     {
         "function": "carry_properties",

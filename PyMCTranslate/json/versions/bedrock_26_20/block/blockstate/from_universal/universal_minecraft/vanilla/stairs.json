@@ -354,6 +354,42 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_stairs"
                     }
+                ],
+                "\"cinnabar_brick\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:cinnabar_brick_stairs"
+                    }
+                ],
+                "\"cinnabar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:cinnabar_stairs"
+                    }
+                ],
+                "\"polished_cinnabar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:polished_cinnabar_stairs"
+                    }
+                ],
+                "\"polished_sulfur\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:polished_sulfur_stairs"
+                    }
+                ],
+                "\"sulfur_brick\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:sulfur_brick_stairs"
+                    }
+                ],
+                "\"sulfur\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:sulfur_stairs"
+                    }
                 ]
             },
             "half": {
