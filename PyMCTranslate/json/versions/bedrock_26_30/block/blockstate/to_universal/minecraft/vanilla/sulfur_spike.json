@@ -1,17 +1,17 @@
 [
     {
         "function": "new_block",
-        "options": "minecraft:sulfur_spike"
+        "options": "universal_minecraft:sulfur_spike"
     },
     {
         "function": "map_properties",
         "options": {
-            "thickness": {
+            "dripstone_thickness": {
                 "\"tip\"": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "dripstone_thickness": "\"tip\""
+                            "thickness": "\"tip\""
                         }
                     }
                 ],
@@ -19,7 +19,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "dripstone_thickness": "\"frustum\""
+                            "thickness": "\"frustum\""
                         }
                     }
                 ],
@@ -27,7 +27,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "dripstone_thickness": "\"middle\""
+                            "thickness": "\"middle\""
                         }
                     }
                 ],
@@ -35,33 +35,33 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "dripstone_thickness": "\"base\""
+                            "thickness": "\"base\""
                         }
                     }
                 ],
-                "\"tip_merge\"": [
+                "\"merge\"": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "dripstone_thickness": "\"merge\""
+                            "thickness": "\"tip_merge\""
                         }
                     }
                 ]
             },
-            "vertical_direction": {
-                "\"up\"": [
+            "hanging": {
+                "0b": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "hanging": "0b"
+                            "vertical_direction": "\"up\""
                         }
                     }
                 ],
-                "\"down\"": [
+                "1b": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "vertical_direction": "1b"
+                            "vertical_direction": "\"down\""
                         }
                     }
                 ]
