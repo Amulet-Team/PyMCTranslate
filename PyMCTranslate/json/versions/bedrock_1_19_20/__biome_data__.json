@@ -265,6 +265,7 @@
         "universal_minecraft:end_barrens": "minecraft:the_end",
         "universal_minecraft:the_void": "minecraft:plains",
         "universal_minecraft:cherry_grove": "minecraft:plains",
-        "universal_minecraft:pale_garden": "minecraft:roofed_forest"
+        "universal_minecraft:pale_garden": "minecraft:roofed_forest",
+        "universal_minecraft:sulfur_caves": "minecraft:dripstone_caves"
     }
 }

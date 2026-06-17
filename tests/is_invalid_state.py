@@ -238,6 +238,12 @@ def is_invalid_state(
                 "minecraft:waxed_oxidized_double_cut_copper_slab",
                 "minecraft:waxed_weathered_double_cut_copper_slab",
                 "minecraft:weathered_double_cut_copper_slab",
+                "minecraft:cinnabar_brick_double_slab",
+                "minecraft:cinnabar_double_slab",
+                "minecraft:polished_cinnabar_double_slab",
+                "minecraft:polished_sulfur_double_slab",
+                "minecraft:sulfur_brick_double_slab",
+                "minecraft:sulfur_double_slab",
             }:
                 return (
                     input_blockstate.properties.get("top_slot_bit", IntTag()).py_int
