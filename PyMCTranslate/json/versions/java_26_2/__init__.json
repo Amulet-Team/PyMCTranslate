@@ -1,0 +1,24 @@
+{
+    "block_format": "blockstate",
+    "block_entity_format": "namespace-str-id",
+    "block_entity_coord_format": "xyz-int",
+    "entity_format": "namespace-str-id",
+    "entity_coord_format": "Pos-list-float",
+    "platform": "java",
+    "version": [
+        26,
+        2,
+        0
+    ],
+    "version_max_known": [
+        26,
+        2
+    ],
+    "version_max": [
+        100,
+        -1
+    ],
+    "data_version": 4901,
+    "data_version_max_known": 4903,
+    "data_version_max": 2147483647
+}

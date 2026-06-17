@@ -1,0 +1,22 @@
+[
+    {
+        "function": "new_block",
+        "options": "universal_minecraft:sulfur_spike"
+    },
+    {
+        "function": "carry_properties",
+        "options": {
+            "thickness": [
+                "\"tip_merge\"",
+                "\"tip\"",
+                "\"frustum\"",
+                "\"middle\"",
+                "\"base\""
+            ],
+            "vertical_direction": [
+                "\"up\"",
+                "\"down\""
+            ]
+        }
+    }
+]

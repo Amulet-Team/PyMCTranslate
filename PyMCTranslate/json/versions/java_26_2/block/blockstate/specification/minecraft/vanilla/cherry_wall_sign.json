@@ -1,0 +1,18 @@
+{
+    "nbt_identifier": [
+        "minecraft",
+        "sign"
+    ],
+    "snbt": "{back_text: {color: \"black\", has_glowing_text: 0b, messages: [\"\", \"\", \"\", \"\"]}, front_text: {color: \"black\", has_glowing_text: 0b, messages: [\"\", \"\", \"\", \"\"]}, is_waxed: 0b}",
+    "properties": {
+        "facing": [
+            "\"north\"",
+            "\"south\"",
+            "\"west\"",
+            "\"east\""
+        ]
+    },
+    "defaults": {
+        "facing": "\"north\""
+    }
+}
