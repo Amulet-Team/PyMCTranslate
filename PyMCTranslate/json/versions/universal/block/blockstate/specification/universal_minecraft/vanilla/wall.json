@@ -26,7 +26,13 @@
             "\"tuff\"",
             "\"tuff_brick\"",
             "\"polished_tuff\"",
-            "\"resin_brick\""
+            "\"resin_brick\"",
+            "\"cinnabar_brick\"",
+            "\"cinnabar\"",
+            "\"polished_cinnabar\"",
+            "\"polished_sulfur\"",
+            "\"sulfur_brick\"",
+            "\"sulfur\""
         ],
         "east": [
             "\"none\"",

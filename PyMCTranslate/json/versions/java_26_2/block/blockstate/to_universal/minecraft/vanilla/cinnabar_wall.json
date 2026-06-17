@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:cinnabar_wall"
+        "options": "universal_minecraft:wall"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"cinnabar\""
+        }
     },
     {
         "function": "carry_properties",

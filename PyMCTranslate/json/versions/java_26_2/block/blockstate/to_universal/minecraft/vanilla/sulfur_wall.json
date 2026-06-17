@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:sulfur_wall"
+        "options": "universal_minecraft:wall"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"sulfur\""
+        }
     },
     {
         "function": "carry_properties",

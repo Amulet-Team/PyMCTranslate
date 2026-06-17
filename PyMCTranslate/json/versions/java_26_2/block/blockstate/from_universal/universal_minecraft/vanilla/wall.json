@@ -162,6 +162,42 @@
                         "function": "new_block",
                         "options": "minecraft:resin_brick_wall"
                     }
+                ],
+                "\"cinnabar_brick\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:cinnabar_brick_wall"
+                    }
+                ],
+                "\"cinnabar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:cinnabar_wall"
+                    }
+                ],
+                "\"polished_cinnabar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:polished_cinnabar_wall"
+                    }
+                ],
+                "\"polished_sulfur\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:polished_sulfur_wall"
+                    }
+                ],
+                "\"sulfur_brick\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:sulfur_brick_wall"
+                    }
+                ],
+                "\"sulfur\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:sulfur_wall"
+                    }
                 ]
             }
         }
