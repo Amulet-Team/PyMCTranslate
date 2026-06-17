@@ -1,6 +1,6 @@
 [
     {
         "function": "new_block",
-        "options": "minecraft:polished_sulfur"
+        "options": "universal_minecraft:sulfur"
     }
 ]
