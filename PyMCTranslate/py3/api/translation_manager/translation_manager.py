@@ -221,6 +221,16 @@ class TranslationManager:
             elif isinstance(version_number, tuple):
                 previous_version = None
                 next_version = None
+                if (
+                    len(version_number) >= 2
+                    and version_number[0] == 1
+                    and version_number[1] >= 26
+                ):
+                    # 1.26.x should resolve to 26.x
+                    src_version = version_number
+                    version_number = (*version_number[1:], 0)
+                else:
+                    src_version = None
                 for version_number_ in self._versions[platform].keys():
                     if version_number_ < version_number:
                         if previous_version is None:
@@ -243,6 +253,10 @@ class TranslationManager:
                     raise KeyError(
                         f"Could not find a version for Version({platform}, {version_number})"
                     )
+                if src_version is not None:
+                    self._version_remap[(platform, src_version)] = self._version_remap[
+                        (platform, version_number)
+                    ]
 
             else:
                 raise KeyError(
