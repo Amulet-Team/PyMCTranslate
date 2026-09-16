@@ -65,7 +65,8 @@
         "minecraft:mangrove_swamp": null,
         "minecraft:cherry_grove": null,
         "minecraft:pale_garden": null,
-        "minecraft:sulfur_caves": null
+        "minecraft:sulfur_caves": null,
+        "minecraft:dappled_forest": null
     },
     "version2universal": {
         "minecraft:ocean": "universal_minecraft:ocean",
@@ -133,7 +134,8 @@
         "minecraft:mangrove_swamp": "universal_minecraft:mangrove_swamp",
         "minecraft:cherry_grove": "universal_minecraft:cherry_grove",
         "minecraft:pale_garden": "universal_minecraft:pale_garden",
-        "minecraft:sulfur_caves": "universal_minecraft:sulfur_caves"
+        "minecraft:sulfur_caves": "universal_minecraft:sulfur_caves",
+        "minecraft:dappled_forest": "universal_minecraft:dappled_forest"
     },
     "universal2version": {
         "universal_minecraft:ocean": "minecraft:ocean",
@@ -202,6 +204,7 @@
         "universal_minecraft:cherry_grove": "minecraft:cherry_grove",
         "universal_minecraft:pale_garden": "minecraft:pale_garden",
         "universal_minecraft:sulfur_caves": "minecraft:sulfur_caves",
+        "universal_minecraft:dappled_forest": "minecraft:dappled_forest",
         "universal_minecraft:deep_warm_ocean": "minecraft:warm_ocean",
         "universal_minecraft:bamboo_jungle_hills": "minecraft:bamboo_jungle",
         "universal_minecraft:legacy_frozen_ocean": "minecraft:frozen_ocean",

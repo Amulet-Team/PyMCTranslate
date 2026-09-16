@@ -87,7 +87,8 @@
         "minecraft:mangrove_swamp": 191,
         "minecraft:cherry_grove": 192,
         "minecraft:pale_garden": 193,
-        "minecraft:sulfur_caves": 194
+        "minecraft:sulfur_caves": 194,
+        "minecraft:dappled_forest": 195
     },
     "version2universal": {
         "minecraft:ocean": "universal_minecraft:ocean",
@@ -177,7 +178,8 @@
         "minecraft:mangrove_swamp": "universal_minecraft:mangrove_swamp",
         "minecraft:cherry_grove": "universal_minecraft:cherry_grove",
         "minecraft:pale_garden": "universal_minecraft:pale_garden",
-        "minecraft:sulfur_caves": "universal_minecraft:sulfur_caves"
+        "minecraft:sulfur_caves": "universal_minecraft:sulfur_caves",
+        "minecraft:dappled_forest": "universal_minecraft:dappled_forest"
     },
     "universal2version": {
         "universal_minecraft:ocean": "minecraft:ocean",
@@ -268,6 +270,7 @@
         "universal_minecraft:cherry_grove": "minecraft:cherry_grove",
         "universal_minecraft:pale_garden": "minecraft:pale_garden",
         "universal_minecraft:sulfur_caves": "minecraft:sulfur_caves",
+        "universal_minecraft:dappled_forest": "minecraft:dappled_forest",
         "universal_minecraft:small_end_islands": "minecraft:the_end",
         "universal_minecraft:end_midlands": "minecraft:the_end",
         "universal_minecraft:end_highlands": "minecraft:the_end",
