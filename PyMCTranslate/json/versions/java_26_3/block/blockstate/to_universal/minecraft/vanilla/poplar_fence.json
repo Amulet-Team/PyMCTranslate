@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:poplar_fence"
+        "options": "universal_minecraft:fence"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"poplar\""
+        }
     },
     {
         "function": "carry_properties",

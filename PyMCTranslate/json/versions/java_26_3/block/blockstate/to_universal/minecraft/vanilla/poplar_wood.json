@@ -1,7 +1,14 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:poplar_wood"
+        "options": "universal_minecraft:wood"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"acacia\"",
+            "stripped": "\"false\""
+        }
     },
     {
         "function": "carry_properties",

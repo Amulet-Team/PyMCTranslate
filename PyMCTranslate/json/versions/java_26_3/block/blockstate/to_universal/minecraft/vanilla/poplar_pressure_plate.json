@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:poplar_pressure_plate"
+        "options": "universal_minecraft:pressure_plate"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"poplar\""
+        }
     },
     {
         "function": "carry_properties",

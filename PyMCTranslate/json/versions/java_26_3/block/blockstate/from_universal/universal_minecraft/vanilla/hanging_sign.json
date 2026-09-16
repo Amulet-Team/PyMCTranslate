@@ -402,6 +402,39 @@
                             }
                         }
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "map_properties",
+                        "options": {
+                            "connection": {
+                                "\"up\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_hanging_sign"
+                                    },
+                                    {
+                                        "function": "new_properties",
+                                        "options": {
+                                            "attached": "\"false\""
+                                        }
+                                    }
+                                ],
+                                "\"up_chain\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_hanging_sign"
+                                    },
+                                    {
+                                        "function": "new_properties",
+                                        "options": {
+                                            "attached": "\"true\""
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 ]
             }
         }

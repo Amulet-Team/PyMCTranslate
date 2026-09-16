@@ -78,6 +78,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_wall_sign"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_wall_sign"
+                    }
                 ]
             }
         }

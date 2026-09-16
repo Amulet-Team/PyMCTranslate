@@ -240,6 +240,12 @@
                         "function": "new_block",
                         "options": "minecraft:potted_golden_dandelion"
                     }
+                ],
+                "\"poplar_sapling\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:potted_poplar_sapling"
+                    }
                 ]
             }
         }

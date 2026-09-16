@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:poplar_sapling"
+        "options": "universal_minecraft:sapling"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"poplar\""
+        }
     },
     {
         "function": "carry_properties",

@@ -1,7 +1,13 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:poplar_fence_gate"
+        "options": "universal_minecraft:fence_gate"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"poplar\""
+        }
     },
     {
         "function": "carry_properties",

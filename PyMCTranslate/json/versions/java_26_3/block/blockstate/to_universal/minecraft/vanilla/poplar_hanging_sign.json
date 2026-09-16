@@ -1,15 +1,40 @@
 [
     {
         "function": "new_block",
-        "options": "universal_minecraft:poplar_hanging_sign"
+        "options": "universal_minecraft:hanging_sign"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"poplar\""
+        }
+    },
+    {
+        "function": "map_properties",
+        "options": {
+            "attached": {
+                "\"false\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "connection": "\"up\""
+                        }
+                    }
+                ],
+                "\"true\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "connection": "\"up_chain\""
+                        }
+                    }
+                ]
+            }
+        }
     },
     {
         "function": "carry_properties",
         "options": {
-            "attached": [
-                "\"true\"",
-                "\"false\""
-            ],
             "rotation": [
                 "\"0\"",
                 "\"1\"",
@@ -28,6 +53,180 @@
                 "\"14\"",
                 "\"15\""
             ]
+        }
+    },
+    {
+        "function": "walk_input_nbt",
+        "options": {
+            "type": "compound",
+            "keys": {
+                "is_waxed": {
+                    "type": "byte",
+                    "functions": [
+                        {
+                            "function": "carry_nbt",
+                            "options": {
+                                "path": [
+                                    [
+                                        "utags",
+                                        "compound"
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                },
+                "front_text": {
+                    "type": "compound",
+                    "nested_default": [
+                        {
+                            "function": "carry_nbt",
+                            "options": {}
+                        }
+                    ],
+                    "self_default": [],
+                    "keys": {
+                        "has_glowing_text": {
+                            "type": "byte",
+                            "functions": [
+                                {
+                                    "function": "carry_nbt",
+                                    "options": {
+                                        "path": [
+                                            [
+                                                "utags",
+                                                "compound"
+                                            ],
+                                            [
+                                                "front_text",
+                                                "compound"
+                                            ]
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "color": {
+                            "type": "string",
+                            "functions": [
+                                {
+                                    "function": "carry_nbt",
+                                    "options": {
+                                        "path": [
+                                            [
+                                                "utags",
+                                                "compound"
+                                            ],
+                                            [
+                                                "front_text",
+                                                "compound"
+                                            ]
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "messages": {
+                            "type": "list"
+                        }
+                    }
+                },
+                "back_text": {
+                    "type": "compound",
+                    "nested_default": [
+                        {
+                            "function": "carry_nbt",
+                            "options": {}
+                        }
+                    ],
+                    "self_default": [],
+                    "keys": {
+                        "has_glowing_text": {
+                            "type": "byte",
+                            "functions": [
+                                {
+                                    "function": "carry_nbt",
+                                    "options": {
+                                        "path": [
+                                            [
+                                                "utags",
+                                                "compound"
+                                            ],
+                                            [
+                                                "back_text",
+                                                "compound"
+                                            ]
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "color": {
+                            "type": "string",
+                            "functions": [
+                                {
+                                    "function": "carry_nbt",
+                                    "options": {
+                                        "path": [
+                                            [
+                                                "utags",
+                                                "compound"
+                                            ],
+                                            [
+                                                "back_text",
+                                                "compound"
+                                            ]
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "messages": {
+                            "type": "list"
+                        }
+                    }
+                },
+                "keepPacked": {
+                    "type": "byte",
+                    "functions": [
+                        {
+                            "function": "carry_nbt",
+                            "options": {
+                                "path": [
+                                    [
+                                        "utags",
+                                        "compound"
+                                    ]
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "self_default": [
+                {
+                    "function": "carry_nbt",
+                    "options": {}
+                }
+            ],
+            "nested_default": [
+                {
+                    "function": "carry_nbt",
+                    "options": {}
+                }
+            ]
+        }
+    },
+    {
+        "function": "code",
+        "options": {
+            "input": [
+                "nbt"
+            ],
+            "output": [
+                "new_nbt"
+            ],
+            "function": "java_sign_2u_1215"
         }
     }
 ]

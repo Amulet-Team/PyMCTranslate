@@ -164,6 +164,12 @@
                         "function": "new_block",
                         "options": "minecraft:warped_shelf"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_shelf"
+                    }
                 ]
             }
         }
