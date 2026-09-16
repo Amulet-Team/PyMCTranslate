@@ -63,6 +63,48 @@
                         }
                     }
                 ]
+            },
+            "minecraft:corner": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "shape": "\"straight\""
+                        }
+                    }
+                ],
+                "\"inner_left\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "shape": "\"inner_left\""
+                        }
+                    }
+                ],
+                "\"inner_right\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "shape": "\"inner_right\""
+                        }
+                    }
+                ],
+                "\"outer_left\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "shape": "\"outer_left\""
+                        }
+                    }
+                ],
+                "\"outer_right\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "shape": "\"outer_right\""
+                        }
+                    }
+                ]
             }
         }
     }

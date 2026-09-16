@@ -390,6 +390,204 @@
                         "function": "new_block",
                         "options": "minecraft:sulfur_stairs"
                     }
+                ],
+                "\"black_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:black_concrete_stairs"
+                    }
+                ],
+                "\"black_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:black_wool_stairs"
+                    }
+                ],
+                "\"blue_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:blue_concrete_stairs"
+                    }
+                ],
+                "\"blue_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:blue_wool_stairs"
+                    }
+                ],
+                "\"brown_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:brown_concrete_stairs"
+                    }
+                ],
+                "\"brown_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:brown_wool_stairs"
+                    }
+                ],
+                "\"cyan_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:cyan_concrete_stairs"
+                    }
+                ],
+                "\"cyan_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:cyan_wool_stairs"
+                    }
+                ],
+                "\"gray_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:gray_concrete_stairs"
+                    }
+                ],
+                "\"gray_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:gray_wool_stairs"
+                    }
+                ],
+                "\"green_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:green_concrete_stairs"
+                    }
+                ],
+                "\"green_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:green_wool_stairs"
+                    }
+                ],
+                "\"light_blue_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:light_blue_concrete_stairs"
+                    }
+                ],
+                "\"light_blue_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:light_blue_wool_stairs"
+                    }
+                ],
+                "\"light_gray_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:light_gray_concrete_stairs"
+                    }
+                ],
+                "\"light_gray_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:light_gray_wool_stairs"
+                    }
+                ],
+                "\"lime_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:lime_concrete_stairs"
+                    }
+                ],
+                "\"lime_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:lime_wool_stairs"
+                    }
+                ],
+                "\"magenta_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:magenta_concrete_stairs"
+                    }
+                ],
+                "\"magenta_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:magenta_wool_stairs"
+                    }
+                ],
+                "\"orange_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:orange_concrete_stairs"
+                    }
+                ],
+                "\"orange_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:orange_wool_stairs"
+                    }
+                ],
+                "\"pink_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:pink_concrete_stairs"
+                    }
+                ],
+                "\"pink_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:pink_wool_stairs"
+                    }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_stairs"
+                    }
+                ],
+                "\"purple_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:purple_concrete_stairs"
+                    }
+                ],
+                "\"purple_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:purple_wool_stairs"
+                    }
+                ],
+                "\"red_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:red_concrete_stairs"
+                    }
+                ],
+                "\"red_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:red_wool_stairs"
+                    }
+                ],
+                "\"white_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:white_concrete_stairs"
+                    }
+                ],
+                "\"white_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:white_wool_stairs"
+                    }
+                ],
+                "\"yellow_concrete\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:yellow_concrete_stairs"
+                    }
+                ],
+                "\"yellow_wool\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:yellow_wool_stairs"
+                    }
                 ]
             },
             "half": {
@@ -440,6 +638,48 @@
                         "function": "new_properties",
                         "options": {
                             "weirdo_direction": "3"
+                        }
+                    }
+                ]
+            },
+            "shape": {
+                "\"straight\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:corner": "\"none\""
+                        }
+                    }
+                ],
+                "\"inner_left\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:corner": "\"inner_left\""
+                        }
+                    }
+                ],
+                "\"inner_right\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:corner": "\"inner_right\""
+                        }
+                    }
+                ],
+                "\"outer_left\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:corner": "\"outer_left\""
+                        }
+                    }
+                ],
+                "\"outer_right\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:corner": "\"outer_right\""
                         }
                     }
                 ]
