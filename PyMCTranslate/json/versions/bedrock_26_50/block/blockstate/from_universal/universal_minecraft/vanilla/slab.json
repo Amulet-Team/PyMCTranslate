@@ -425,6 +425,204 @@
                                         "function": "new_block",
                                         "options": "minecraft:sulfur_slab"
                                     }
+                                ],
+                                "\"black_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:black_concrete_slab"
+                                    }
+                                ],
+                                "\"black_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:black_wool_slab"
+                                    }
+                                ],
+                                "\"blue_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:blue_concrete_slab"
+                                    }
+                                ],
+                                "\"blue_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:blue_wool_slab"
+                                    }
+                                ],
+                                "\"brown_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:brown_concrete_slab"
+                                    }
+                                ],
+                                "\"brown_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:brown_wool_slab"
+                                    }
+                                ],
+                                "\"cyan_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cyan_concrete_slab"
+                                    }
+                                ],
+                                "\"cyan_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cyan_wool_slab"
+                                    }
+                                ],
+                                "\"gray_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:gray_concrete_slab"
+                                    }
+                                ],
+                                "\"gray_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:gray_wool_slab"
+                                    }
+                                ],
+                                "\"green_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:green_concrete_slab"
+                                    }
+                                ],
+                                "\"green_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:green_wool_slab"
+                                    }
+                                ],
+                                "\"light_blue_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_blue_concrete_slab"
+                                    }
+                                ],
+                                "\"light_blue_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_blue_wool_slab"
+                                    }
+                                ],
+                                "\"light_gray_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_gray_concrete_slab"
+                                    }
+                                ],
+                                "\"light_gray_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_gray_wool_slab"
+                                    }
+                                ],
+                                "\"lime_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:lime_concrete_slab"
+                                    }
+                                ],
+                                "\"lime_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:lime_wool_slab"
+                                    }
+                                ],
+                                "\"magenta_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:magenta_concrete_slab"
+                                    }
+                                ],
+                                "\"magenta_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:magenta_wool_slab"
+                                    }
+                                ],
+                                "\"orange_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:orange_concrete_slab"
+                                    }
+                                ],
+                                "\"orange_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:orange_wool_slab"
+                                    }
+                                ],
+                                "\"pink_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:pink_concrete_slab"
+                                    }
+                                ],
+                                "\"pink_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:pink_wool_slab"
+                                    }
+                                ],
+                                "\"poplar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_slab"
+                                    }
+                                ],
+                                "\"purple_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:purple_concrete_slab"
+                                    }
+                                ],
+                                "\"purple_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:purple_wool_slab"
+                                    }
+                                ],
+                                "\"red_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:red_concrete_slab"
+                                    }
+                                ],
+                                "\"red_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:red_wool_slab"
+                                    }
+                                ],
+                                "\"white_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:white_concrete_slab"
+                                    }
+                                ],
+                                "\"white_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:white_wool_slab"
+                                    }
+                                ],
+                                "\"yellow_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:yellow_concrete_slab"
+                                    }
+                                ],
+                                "\"yellow_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:yellow_wool_slab"
+                                    }
                                 ]
                             }
                         }
@@ -848,6 +1046,204 @@
                                         "function": "new_block",
                                         "options": "minecraft:sulfur_slab"
                                     }
+                                ],
+                                "\"black_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:black_concrete_slab"
+                                    }
+                                ],
+                                "\"black_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:black_wool_slab"
+                                    }
+                                ],
+                                "\"blue_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:blue_concrete_slab"
+                                    }
+                                ],
+                                "\"blue_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:blue_wool_slab"
+                                    }
+                                ],
+                                "\"brown_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:brown_concrete_slab"
+                                    }
+                                ],
+                                "\"brown_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:brown_wool_slab"
+                                    }
+                                ],
+                                "\"cyan_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cyan_concrete_slab"
+                                    }
+                                ],
+                                "\"cyan_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cyan_wool_slab"
+                                    }
+                                ],
+                                "\"gray_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:gray_concrete_slab"
+                                    }
+                                ],
+                                "\"gray_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:gray_wool_slab"
+                                    }
+                                ],
+                                "\"green_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:green_concrete_slab"
+                                    }
+                                ],
+                                "\"green_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:green_wool_slab"
+                                    }
+                                ],
+                                "\"light_blue_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_blue_concrete_slab"
+                                    }
+                                ],
+                                "\"light_blue_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_blue_wool_slab"
+                                    }
+                                ],
+                                "\"light_gray_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_gray_concrete_slab"
+                                    }
+                                ],
+                                "\"light_gray_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_gray_wool_slab"
+                                    }
+                                ],
+                                "\"lime_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:lime_concrete_slab"
+                                    }
+                                ],
+                                "\"lime_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:lime_wool_slab"
+                                    }
+                                ],
+                                "\"magenta_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:magenta_concrete_slab"
+                                    }
+                                ],
+                                "\"magenta_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:magenta_wool_slab"
+                                    }
+                                ],
+                                "\"orange_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:orange_concrete_slab"
+                                    }
+                                ],
+                                "\"orange_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:orange_wool_slab"
+                                    }
+                                ],
+                                "\"pink_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:pink_concrete_slab"
+                                    }
+                                ],
+                                "\"pink_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:pink_wool_slab"
+                                    }
+                                ],
+                                "\"poplar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_slab"
+                                    }
+                                ],
+                                "\"purple_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:purple_concrete_slab"
+                                    }
+                                ],
+                                "\"purple_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:purple_wool_slab"
+                                    }
+                                ],
+                                "\"red_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:red_concrete_slab"
+                                    }
+                                ],
+                                "\"red_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:red_wool_slab"
+                                    }
+                                ],
+                                "\"white_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:white_concrete_slab"
+                                    }
+                                ],
+                                "\"white_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:white_wool_slab"
+                                    }
+                                ],
+                                "\"yellow_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:yellow_concrete_slab"
+                                    }
+                                ],
+                                "\"yellow_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:yellow_wool_slab"
+                                    }
                                 ]
                             }
                         }
@@ -1264,6 +1660,204 @@
                                     {
                                         "function": "new_block",
                                         "options": "minecraft:sulfur_double_slab"
+                                    }
+                                ],
+                                "\"black_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:black_concrete_double_slab"
+                                    }
+                                ],
+                                "\"black_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:black_wool_double_slab"
+                                    }
+                                ],
+                                "\"blue_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:blue_concrete_double_slab"
+                                    }
+                                ],
+                                "\"blue_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:blue_wool_double_slab"
+                                    }
+                                ],
+                                "\"brown_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:brown_concrete_double_slab"
+                                    }
+                                ],
+                                "\"brown_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:brown_wool_double_slab"
+                                    }
+                                ],
+                                "\"cyan_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cyan_concrete_double_slab"
+                                    }
+                                ],
+                                "\"cyan_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:cyan_wool_double_slab"
+                                    }
+                                ],
+                                "\"gray_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:gray_concrete_double_slab"
+                                    }
+                                ],
+                                "\"gray_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:gray_wool_double_slab"
+                                    }
+                                ],
+                                "\"green_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:green_concrete_double_slab"
+                                    }
+                                ],
+                                "\"green_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:green_wool_double_slab"
+                                    }
+                                ],
+                                "\"light_blue_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_blue_concrete_double_slab"
+                                    }
+                                ],
+                                "\"light_blue_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_blue_wool_double_slab"
+                                    }
+                                ],
+                                "\"light_gray_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_gray_concrete_double_slab"
+                                    }
+                                ],
+                                "\"light_gray_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:light_gray_wool_double_slab"
+                                    }
+                                ],
+                                "\"lime_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:lime_concrete_double_slab"
+                                    }
+                                ],
+                                "\"lime_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:lime_wool_double_slab"
+                                    }
+                                ],
+                                "\"magenta_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:magenta_concrete_double_slab"
+                                    }
+                                ],
+                                "\"magenta_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:magenta_wool_double_slab"
+                                    }
+                                ],
+                                "\"orange_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:orange_concrete_double_slab"
+                                    }
+                                ],
+                                "\"orange_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:orange_wool_double_slab"
+                                    }
+                                ],
+                                "\"pink_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:pink_concrete_double_slab"
+                                    }
+                                ],
+                                "\"pink_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:pink_wool_double_slab"
+                                    }
+                                ],
+                                "\"poplar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_double_slab"
+                                    }
+                                ],
+                                "\"purple_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:purple_concrete_double_slab"
+                                    }
+                                ],
+                                "\"purple_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:purple_wool_double_slab"
+                                    }
+                                ],
+                                "\"red_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:red_concrete_double_slab"
+                                    }
+                                ],
+                                "\"red_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:red_wool_double_slab"
+                                    }
+                                ],
+                                "\"white_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:white_concrete_double_slab"
+                                    }
+                                ],
+                                "\"white_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:white_wool_double_slab"
+                                    }
+                                ],
+                                "\"yellow_concrete\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:yellow_concrete_double_slab"
+                                    }
+                                ],
+                                "\"yellow_wool\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:yellow_wool_double_slab"
                                     }
                                 ]
                             }
