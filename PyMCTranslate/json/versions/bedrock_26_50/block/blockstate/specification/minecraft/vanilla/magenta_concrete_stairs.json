@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "minecraft:corner": [
+            "\"none\"",
+            "\"inner_left\"",
+            "\"inner_right\"",
+            "\"outer_left\"",
+            "\"outer_right\""
+        ],
+        "upside_down_bit": [
+            "0b",
+            "1b"
+        ],
+        "weirdo_direction": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ]
+    },
+    "defaults": {
+        "minecraft:corner": "\"none\"",
+        "upside_down_bit": "0b",
+        "weirdo_direction": "0"
+    }
+}

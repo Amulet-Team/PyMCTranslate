@@ -1,0 +1,19 @@
+{
+    "nbt_identifier": [
+        "minecraft",
+        "potent_sulfur"
+    ],
+    "snbt": "{countdown: 0}",
+    "properties": {
+        "potent_sulfur_state": [
+            "\"dry\"",
+            "\"wet\"",
+            "\"dormant\"",
+            "\"erupting\"",
+            "\"continuous\""
+        ]
+    },
+    "defaults": {
+        "potent_sulfur_state": "\"dry\""
+    }
+}
