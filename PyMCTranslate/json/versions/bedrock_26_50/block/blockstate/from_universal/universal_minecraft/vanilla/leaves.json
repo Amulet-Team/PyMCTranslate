@@ -72,6 +72,24 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_leaves"
                     }
+                ],
+                "\"yellow_poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:yellow_poplar_leaves"
+                    }
+                ],
+                "\"orange_poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:orange_poplar_leaves"
+                    }
+                ],
+                "\"red_poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:red_poplar_leaves"
+                    }
                 ]
             },
             "persistent": {
