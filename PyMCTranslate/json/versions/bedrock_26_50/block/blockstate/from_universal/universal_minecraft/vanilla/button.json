@@ -90,6 +90,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_button"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_button"
+                    }
                 ]
             },
             "face": {

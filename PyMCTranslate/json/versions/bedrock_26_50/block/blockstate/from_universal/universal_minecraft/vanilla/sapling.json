@@ -72,6 +72,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_sapling"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_sapling"
+                    }
                 ]
             }
         }

@@ -90,6 +90,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_pressure_plate"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_pressure_plate"
+                    }
                 ]
             },
             "powered": {

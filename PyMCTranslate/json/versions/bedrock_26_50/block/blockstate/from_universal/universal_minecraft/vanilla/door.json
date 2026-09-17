@@ -132,6 +132,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_door"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_door"
+                    }
                 ]
             },
             "half": {

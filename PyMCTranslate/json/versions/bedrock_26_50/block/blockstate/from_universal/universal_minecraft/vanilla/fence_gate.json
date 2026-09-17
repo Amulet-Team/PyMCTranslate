@@ -78,6 +78,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_fence_gate"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_fence_gate"
+                    }
                 ]
             },
             "facing": {
