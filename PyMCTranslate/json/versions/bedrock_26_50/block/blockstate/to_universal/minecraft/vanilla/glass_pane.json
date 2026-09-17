@@ -4,105 +4,80 @@
         "options": "universal_minecraft:glass_pane"
     },
     {
-        "function": "new_properties",
+        "function": "map_properties",
         "options": {
-            "north": "\"true\"",
-            "east": "\"true\"",
-            "south": "\"true\"",
-            "west": "\"true\""
-        }
-    },
-    {
-        "function": "multiblock",
-        "options": [
-            {
-                "coords": [
-                    0,
-                    0,
-                    -1
-                ],
-                "functions": [
+            "minecraft:connection_north": {
+                "0b": [
                     {
-                        "function": "map_block_name",
+                        "function": "new_properties",
                         "options": {
-                            "minecraft:air": [
-                                {
-                                    "function": "new_properties",
-                                    "options": {
-                                        "north": "\"false\""
-                                    }
-                                }
-                            ]
+                            "north": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "north": "\"true\""
                         }
                     }
                 ]
             },
-            {
-                "coords": [
-                    0,
-                    0,
-                    1
-                ],
-                "functions": [
+            "minecraft:connection_east": {
+                "0b": [
                     {
-                        "function": "map_block_name",
+                        "function": "new_properties",
                         "options": {
-                            "minecraft:air": [
-                                {
-                                    "function": "new_properties",
-                                    "options": {
-                                        "south": "\"false\""
-                                    }
-                                }
-                            ]
+                            "east": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "east": "\"true\""
                         }
                     }
                 ]
             },
-            {
-                "coords": [
-                    -1,
-                    0,
-                    0
-                ],
-                "functions": [
+            "minecraft:connection_south": {
+                "0b": [
                     {
-                        "function": "map_block_name",
+                        "function": "new_properties",
                         "options": {
-                            "minecraft:air": [
-                                {
-                                    "function": "new_properties",
-                                    "options": {
-                                        "west": "\"false\""
-                                    }
-                                }
-                            ]
+                            "south": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "south": "\"true\""
                         }
                     }
                 ]
             },
-            {
-                "coords": [
-                    1,
-                    0,
-                    0
-                ],
-                "functions": [
+            "minecraft:connection_west": {
+                "0b": [
                     {
-                        "function": "map_block_name",
+                        "function": "new_properties",
                         "options": {
-                            "minecraft:air": [
-                                {
-                                    "function": "new_properties",
-                                    "options": {
-                                        "east": "\"false\""
-                                    }
-                                }
-                            ]
+                            "west": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "west": "\"true\""
                         }
                     }
                 ]
             }
-        ]
+        }
     }
 ]
