@@ -293,6 +293,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_standing_sign"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_standing_sign"
+                    }
                 ]
             },
             "rotation": {

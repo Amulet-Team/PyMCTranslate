@@ -305,6 +305,12 @@
                                         "function": "new_block",
                                         "options": "minecraft:pale_oak_hanging_sign"
                                     }
+                                ],
+                                "\"poplar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_hanging_sign"
+                                    }
                                 ]
                             },
                             "rotation": {
@@ -522,6 +528,12 @@
                                     {
                                         "function": "new_block",
                                         "options": "minecraft:pale_oak_hanging_sign"
+                                    }
+                                ],
+                                "\"poplar\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_hanging_sign"
                                     }
                                 ]
                             },

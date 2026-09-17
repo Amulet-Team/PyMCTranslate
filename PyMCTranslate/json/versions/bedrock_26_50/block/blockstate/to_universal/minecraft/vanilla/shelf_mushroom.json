@@ -1,17 +1,17 @@
 [
     {
         "function": "new_block",
-        "options": "minecraft:shelf_mushroom"
+        "options": "universal_minecraft:shelf_mushroom"
     },
     {
         "function": "map_properties",
         "options": {
-            "facing": {
+            "minecraft:cardinal_direction": {
                 "\"east\"": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"east\""
+                            "facing": "\"east\""
                         }
                     }
                 ],
@@ -19,7 +19,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"south\""
+                            "facing": "\"south\""
                         }
                     }
                 ],
@@ -27,7 +27,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"west\""
+                            "facing": "\"west\""
                         }
                     }
                 ],
@@ -35,25 +35,25 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"north\""
+                            "facing": "\"north\""
                         }
                     }
                 ]
             },
-            "age": {
-                "\"0\"": [
+            "growth": {
+                "0": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "growth": "0"
+                            "age": "\"0\""
                         }
                     }
                 ],
-                "\"1\"": [
+                "1": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "growth": "1"
+                            "age": "\"1\""
                         }
                     }
                 ]

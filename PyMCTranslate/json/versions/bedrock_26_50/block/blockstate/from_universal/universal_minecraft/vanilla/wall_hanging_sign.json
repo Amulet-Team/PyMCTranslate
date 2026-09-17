@@ -377,6 +377,19 @@
                             "hanging": "0b"
                         }
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_hanging_sign"
+                    },
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "attached_bit": "0b",
+                            "hanging": "0b"
+                        }
+                    }
                 ]
             },
             "facing": {

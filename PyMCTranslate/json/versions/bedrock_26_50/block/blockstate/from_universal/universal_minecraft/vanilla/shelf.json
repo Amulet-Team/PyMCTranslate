@@ -226,6 +226,12 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_shelf"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_shelf"
+                    }
                 ]
             }
         }
