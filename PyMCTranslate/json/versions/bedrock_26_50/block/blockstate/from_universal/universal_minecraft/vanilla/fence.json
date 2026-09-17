@@ -84,6 +84,84 @@
                         "function": "new_block",
                         "options": "minecraft:pale_oak_fence"
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "new_block",
+                        "options": "minecraft:poplar_fence"
+                    }
+                ]
+            },
+            "north": {
+                "\"false\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_north": "0b"
+                        }
+                    }
+                ],
+                "\"true\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_north": "1b"
+                        }
+                    }
+                ]
+            },
+            "east": {
+                "\"false\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_east": "0b"
+                        }
+                    }
+                ],
+                "\"true\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_east": "1b"
+                        }
+                    }
+                ]
+            },
+            "south": {
+                "\"false\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_south": "0b"
+                        }
+                    }
+                ],
+                "\"true\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_south": "1b"
+                        }
+                    }
+                ]
+            },
+            "west": {
+                "\"false\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_west": "0b"
+                        }
+                    }
+                ],
+                "\"true\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:connection_west": "1b"
+                        }
+                    }
                 ]
             }
         }
