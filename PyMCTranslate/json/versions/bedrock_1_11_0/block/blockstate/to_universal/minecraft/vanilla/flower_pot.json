@@ -33,39 +33,6 @@
                                                     "options": {
                                                         "plant": "\"dandelion\""
                                                     }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"dandelion\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
                                                 }
                                             ],
                                             "\"minecraft:red_flower\"": [
@@ -94,14 +61,6 @@
                                                                 "function": "map_nbt",
                                                                 "options": {
                                                                     "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"poppy\""
-                                                                                }
-                                                                            }
-                                                                        ],
                                                                         "1s": [
                                                                             {
                                                                                 "function": "new_properties",
@@ -187,12 +146,6 @@
                                                             }
                                                         ]
                                                     }
-                                                },
-                                                {
-                                                    "function": "new_properties",
-                                                    "options": {
-                                                        "plant": "\"cornflower\""
-                                                    }
                                                 }
                                             ],
                                             "\"minecraft:sapling\"": [
@@ -221,14 +174,6 @@
                                                                 "function": "map_nbt",
                                                                 "options": {
                                                                     "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"oak_sapling\""
-                                                                                }
-                                                                            }
-                                                                        ],
                                                                         "1s": [
                                                                             {
                                                                                 "function": "new_properties",
@@ -282,39 +227,6 @@
                                                     "options": {
                                                         "plant": "\"red_mushroom\""
                                                     }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"red_mushroom\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
                                                 }
                                             ],
                                             "\"minecraft:brown_mushroom\"": [
@@ -322,39 +234,6 @@
                                                     "function": "new_properties",
                                                     "options": {
                                                         "plant": "\"brown_mushroom\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"brown_mushroom\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
                                                     }
                                                 }
                                             ],
@@ -364,39 +243,6 @@
                                                     "options": {
                                                         "plant": "\"fern\""
                                                     }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "2s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"fern\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
                                                 }
                                             ],
                                             "\"minecraft:deadbush\"": [
@@ -404,39 +250,6 @@
                                                     "function": "new_properties",
                                                     "options": {
                                                         "plant": "\"dead_bush\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"dead_bush\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
                                                     }
                                                 }
                                             ],
@@ -446,39 +259,6 @@
                                                     "options": {
                                                         "plant": "\"cactus\""
                                                     }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"cactus\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
-                                                    }
                                                 }
                                             ],
                                             "\"minecraft:bamboo\"": [
@@ -486,39 +266,6 @@
                                                     "function": "new_properties",
                                                     "options": {
                                                         "plant": "\"bamboo\""
-                                                    }
-                                                },
-                                                {
-                                                    "function": "walk_input_nbt",
-                                                    "path": [
-                                                        [
-                                                            "PlantBlock",
-                                                            "compound"
-                                                        ],
-                                                        [
-                                                            "val",
-                                                            "short"
-                                                        ]
-                                                    ],
-                                                    "options": {
-                                                        "type": "short",
-                                                        "functions": [
-                                                            {
-                                                                "function": "map_nbt",
-                                                                "options": {
-                                                                    "cases": {
-                                                                        "0s": [
-                                                                            {
-                                                                                "function": "new_properties",
-                                                                                "options": {
-                                                                                    "plant": "\"bamboo\""
-                                                                                }
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                }
-                                                            }
-                                                        ]
                                                     }
                                                 }
                                             ]
