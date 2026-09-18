@@ -80,6 +80,7 @@ def is_invalid_state(
                 "minecraft:pale_oak_pressure_plate",
                 "minecraft:polished_blackstone_pressure_plate",
                 "minecraft:warped_pressure_plate",
+                "minecraft:poplar_pressure_plate",
             }:
                 return 2 <= input_blockstate.properties["redstone_signal"].py_int
             elif namespaced_name == "minecraft:bamboo_sapling":
