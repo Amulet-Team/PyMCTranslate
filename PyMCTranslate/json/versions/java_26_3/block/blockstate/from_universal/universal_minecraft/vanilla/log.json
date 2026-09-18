@@ -258,6 +258,27 @@
                             }
                         }
                     }
+                ],
+                "\"poplar\"": [
+                    {
+                        "function": "map_properties",
+                        "options": {
+                            "stripped": {
+                                "\"false\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:poplar_log"
+                                    }
+                                ],
+                                "\"true\"": [
+                                    {
+                                        "function": "new_block",
+                                        "options": "minecraft:stripped_poplar_log"
+                                    }
+                                ]
+                            }
+                        }
+                    }
                 ]
             }
         }
