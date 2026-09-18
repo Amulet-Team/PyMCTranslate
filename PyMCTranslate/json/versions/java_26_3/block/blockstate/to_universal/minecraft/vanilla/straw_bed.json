@@ -37,13 +37,7 @@
     },
     {
         "function": "new_block",
-        "options": "universal_minecraft:bed"
-    },
-    {
-        "function": "new_properties",
-        "options": {
-            "color": "\"straw\""
-        }
+        "options": "universal_minecraft:straw_bed"
     },
     {
         "function": "carry_properties",

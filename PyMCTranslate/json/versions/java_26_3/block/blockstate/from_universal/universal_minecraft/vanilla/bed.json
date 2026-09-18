@@ -151,12 +151,6 @@
                         "function": "new_block",
                         "options": "minecraft:black_bed"
                     }
-                ],
-                "\"straw\"": [
-                    {
-                        "function": "new_block",
-                        "options": "minecraft:straw_bed"
-                    }
                 ]
             }
         }
