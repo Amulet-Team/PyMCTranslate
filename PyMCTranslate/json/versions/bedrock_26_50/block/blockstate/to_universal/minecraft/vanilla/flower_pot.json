@@ -1534,6 +1534,47 @@
                                                         ]
                                                     }
                                                 }
+                                            ],
+                                            "\"minecraft:poplar_sapling\"": [
+                                                {
+                                                    "function": "new_properties",
+                                                    "options": {
+                                                        "plant": "\"poplar_sapling\""
+                                                    }
+                                                },
+                                                {
+                                                    "function": "walk_input_nbt",
+                                                    "path": [
+                                                        [
+                                                            "PlantBlock",
+                                                            "compound"
+                                                        ],
+                                                        [
+                                                            "states",
+                                                            "compound"
+                                                        ]
+                                                    ],
+                                                    "options": {
+                                                        "type": "compound",
+                                                        "functions": [
+                                                            {
+                                                                "function": "map_nbt",
+                                                                "options": {
+                                                                    "cases": {
+                                                                        "{age_bit: 0b}": [
+                                                                            {
+                                                                                "function": "new_properties",
+                                                                                "options": {
+                                                                                    "plant": "\"poplar_sapling\""
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
                                             ]
                                         }
                                     }

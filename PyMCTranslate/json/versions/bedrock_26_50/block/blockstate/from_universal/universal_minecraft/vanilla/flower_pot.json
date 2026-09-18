@@ -462,6 +462,17 @@
                             }
                         ]
                     }
+                ],
+                "\"poplar_sapling\"": [
+                    {
+                        "function": "new_nbt",
+                        "options": [
+                            {
+                                "key": "PlantBlock",
+                                "value": "{name:\"minecraft:poplar_sapling\", states: {age_bit: 0b}, version: 18168865}"
+                            }
+                        ]
+                    }
                 ]
             }
         }
