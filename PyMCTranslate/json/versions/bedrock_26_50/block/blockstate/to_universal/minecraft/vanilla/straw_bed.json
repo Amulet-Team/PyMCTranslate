@@ -1,17 +1,17 @@
 [
     {
         "function": "new_block",
-        "options": "minecraft:straw_bed"
+        "options": "universal_minecraft:straw_bed"
     },
     {
         "function": "map_properties",
         "options": {
-            "facing": {
+            "minecraft:cardinal_direction": {
                 "\"south\"": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"south\""
+                            "facing": "\"south\""
                         }
                     }
                 ],
@@ -19,7 +19,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"west\""
+                            "facing": "\"west\""
                         }
                     }
                 ],
@@ -27,7 +27,7 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"north\""
+                            "facing": "\"north\""
                         }
                     }
                 ],
@@ -35,43 +35,43 @@
                     {
                         "function": "new_properties",
                         "options": {
-                            "minecraft:cardinal_direction": "\"east\""
+                            "facing": "\"east\""
                         }
                     }
                 ]
             },
-            "part": {
-                "\"foot\"": [
+            "head_piece_bit": {
+                "0b": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "head_piece_bit": "0b"
+                            "part": "\"foot\""
                         }
                     }
                 ],
-                "\"head\"": [
+                "1b": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "head_piece_bit": "1b"
+                            "part": "\"head\""
                         }
                     }
                 ]
             },
-            "occupied": {
-                "\"false\"": [
+            "occupied_bit": {
+                "0b": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "occupied_bit": "0b"
+                            "occupied": "\"false\""
                         }
                     }
                 ],
-                "\"true\"": [
+                "1b": [
                     {
                         "function": "new_properties",
                         "options": {
-                            "occupied_bit": "1b"
+                            "occupied": "\"true\""
                         }
                     }
                 ]
