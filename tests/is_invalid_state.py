@@ -320,4 +320,6 @@ def is_invalid_state(
                 )
             elif namespaced_name == "minecraft:grindstone":
                 return input_blockstate.properties["attachment"].py_str == "multiple"
+            elif namespaced_name == "minecraft:shelf_mushroom":
+                return input_blockstate.properties["growth"].py_int >= 2
     return False
