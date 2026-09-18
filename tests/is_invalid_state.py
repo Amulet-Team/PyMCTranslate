@@ -80,6 +80,7 @@ def is_invalid_state(
                 "minecraft:pale_oak_pressure_plate",
                 "minecraft:polished_blackstone_pressure_plate",
                 "minecraft:warped_pressure_plate",
+                "minecraft:poplar_pressure_plate",
             }:
                 return 2 <= input_blockstate.properties["redstone_signal"].py_int
             elif namespaced_name == "minecraft:bamboo_sapling":
@@ -244,6 +245,39 @@ def is_invalid_state(
                 "minecraft:polished_sulfur_double_slab",
                 "minecraft:sulfur_brick_double_slab",
                 "minecraft:sulfur_double_slab",
+                "minecraft:black_concrete_double_slab",
+                "minecraft:black_wool_double_slab",
+                "minecraft:blue_concrete_double_slab",
+                "minecraft:blue_wool_double_slab",
+                "minecraft:brown_concrete_double_slab",
+                "minecraft:brown_wool_double_slab",
+                "minecraft:cyan_concrete_double_slab",
+                "minecraft:cyan_wool_double_slab",
+                "minecraft:gray_concrete_double_slab",
+                "minecraft:gray_wool_double_slab",
+                "minecraft:green_concrete_double_slab",
+                "minecraft:green_wool_double_slab",
+                "minecraft:light_blue_concrete_double_slab",
+                "minecraft:light_blue_wool_double_slab",
+                "minecraft:light_gray_concrete_double_slab",
+                "minecraft:light_gray_wool_double_slab",
+                "minecraft:lime_concrete_double_slab",
+                "minecraft:lime_wool_double_slab",
+                "minecraft:magenta_concrete_double_slab",
+                "minecraft:magenta_wool_double_slab",
+                "minecraft:orange_concrete_double_slab",
+                "minecraft:orange_wool_double_slab",
+                "minecraft:pink_concrete_double_slab",
+                "minecraft:pink_wool_double_slab",
+                "minecraft:poplar_double_slab",
+                "minecraft:purple_concrete_double_slab",
+                "minecraft:purple_wool_double_slab",
+                "minecraft:red_concrete_double_slab",
+                "minecraft:red_wool_double_slab",
+                "minecraft:white_concrete_double_slab",
+                "minecraft:white_wool_double_slab",
+                "minecraft:yellow_concrete_double_slab",
+                "minecraft:yellow_wool_double_slab",
             }:
                 return (
                     input_blockstate.properties.get("top_slot_bit", IntTag()).py_int
@@ -320,4 +354,6 @@ def is_invalid_state(
                 )
             elif namespaced_name == "minecraft:grindstone":
                 return input_blockstate.properties["attachment"].py_str == "multiple"
+            elif namespaced_name == "minecraft:shelf_mushroom":
+                return input_blockstate.properties["growth"].py_int >= 2
     return False

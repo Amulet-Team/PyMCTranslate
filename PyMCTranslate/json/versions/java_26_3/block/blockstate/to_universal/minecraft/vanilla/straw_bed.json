@@ -1,0 +1,25 @@
+[
+    {
+        "function": "new_block",
+        "options": "universal_minecraft:straw_bed"
+    },
+    {
+        "function": "carry_properties",
+        "options": {
+            "facing": [
+                "\"north\"",
+                "\"south\"",
+                "\"west\"",
+                "\"east\""
+            ],
+            "occupied": [
+                "\"true\"",
+                "\"false\""
+            ],
+            "part": [
+                "\"head\"",
+                "\"foot\""
+            ]
+        }
+    }
+]

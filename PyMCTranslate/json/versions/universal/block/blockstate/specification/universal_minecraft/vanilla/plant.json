@@ -24,7 +24,8 @@
             "\"firefly_bush\"",
             "\"short_dry_grass\"",
             "\"tall_dry_grass\"",
-            "\"golden_dandelion\""
+            "\"golden_dandelion\"",
+            "\"red_shrub\""
         ]
     },
     "defaults": {

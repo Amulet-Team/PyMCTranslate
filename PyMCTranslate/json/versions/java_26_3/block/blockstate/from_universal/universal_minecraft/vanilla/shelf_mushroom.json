@@ -1,0 +1,21 @@
+[
+    {
+        "function": "new_block",
+        "options": "minecraft:shelf_mushroom"
+    },
+    {
+        "function": "carry_properties",
+        "options": {
+            "age": [
+                "\"0\"",
+                "\"1\""
+            ],
+            "facing": [
+                "\"north\"",
+                "\"south\"",
+                "\"west\"",
+                "\"east\""
+            ]
+        }
+    }
+]

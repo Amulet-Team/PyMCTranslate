@@ -1,0 +1,63 @@
+[
+    {
+        "function": "new_block",
+        "options": "minecraft:shelf_mushroom"
+    },
+    {
+        "function": "map_properties",
+        "options": {
+            "facing": {
+                "\"east\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:cardinal_direction": "\"east\""
+                        }
+                    }
+                ],
+                "\"south\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:cardinal_direction": "\"south\""
+                        }
+                    }
+                ],
+                "\"west\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:cardinal_direction": "\"west\""
+                        }
+                    }
+                ],
+                "\"north\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "minecraft:cardinal_direction": "\"north\""
+                        }
+                    }
+                ]
+            },
+            "age": {
+                "\"0\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "growth": "0"
+                        }
+                    }
+                ],
+                "\"1\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "growth": "1"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+]

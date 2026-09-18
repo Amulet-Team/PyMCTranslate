@@ -87,7 +87,7 @@
     },
     {
         "function": "new_block",
-        "options": "minecraft:shelf"
+        "options": "minecraft:oak_shelf"
     },
     {
         "function": "map_properties",

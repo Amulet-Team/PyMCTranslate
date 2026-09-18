@@ -1,0 +1,26 @@
+{
+    "properties": {
+        "minecraft:connection_east": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_north": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_south": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_west": [
+            "0b",
+            "1b"
+        ]
+    },
+    "defaults": {
+        "minecraft:connection_east": "0b",
+        "minecraft:connection_north": "0b",
+        "minecraft:connection_south": "0b",
+        "minecraft:connection_west": "0b"
+    }
+}
