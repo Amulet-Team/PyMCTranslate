@@ -253,6 +253,13 @@ class BlockTranslator(BaseTranslator):
                 block_entity = get_block_callback((0, 0, 0))[1]
             return block, block_entity, True
 
+        # Populate default properties
+        properties = block.properties
+        for key, val in input_spec.get("defaults", {}).items():
+            if key not in properties:
+                properties[key] = amulet_nbt.from_snbt(val)
+        block = Block(block.namespace, block.base_name, properties)
+
         output, extra_output, extra_needed, cacheable = self._translate(
             block,
             input_spec,
