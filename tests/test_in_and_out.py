@@ -21,7 +21,9 @@ def in_and_out(
     input_blockstate: Block,
 ) -> List[str]:
     msg = []
-    if is_invalid_state(platform_name, version_number, version, input_blockstate):
+    if is_invalid_state(
+        platform_name, version_number, version, input_blockstate, force_blockstate=True
+    ):
         return msg
     # blockstate to universal
     try:
