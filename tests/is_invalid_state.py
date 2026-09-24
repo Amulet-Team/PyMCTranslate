@@ -15,6 +15,7 @@ def is_invalid_state(
     version_number: Any,
     version: PyMCTranslate.Version,
     input_blockstate: Block,
+    force_blockstate: bool = False,
 ) -> bool:
     """Skip over invalid states."""
     namespaced_name = input_blockstate.namespaced_name
@@ -32,33 +33,109 @@ def is_invalid_state(
                     == "sticky"
                 )
     elif platform_name == "bedrock":
-        if (1, 21, 110) <= version_number and namespaced_name == "minecraft:chain":
-            return True
-        elif (1, 19, 80) <= version_number and namespaced_name in {
-            "minecraft:fence",
-            "minecraft:log",
-            "minecraft:log2",
-        }:
-            return True
-        elif version_number < (1, 18, 30) and namespaced_name in {
-            "minecraft:concrete_powder",
-            "minecraft:piston_arm_collision",
-            "minecraft:trip_wire",
-            "minecraft:invisible_bedrock",
-            "minecraft:sea_lantern",
-            "minecraft:sticky_piston_arm_collision",
-        }:
-            return True
-        elif (1, 18, 30) <= version_number and namespaced_name in {
-            "minecraft:concretePowder",
-            "minecraft:pistonArmCollision",
-            "minecraft:tripWire",
-            "minecraft:invisibleBedrock",
-            "minecraft:seaLantern",
-            "minecraft:stickyPistonArmCollision",
-        }:
-            return True
-        elif (1, 13, 0) <= version_number:
+        if (1, 13, 0) <= version_number:
+            if (1, 21, 110) <= version_number and namespaced_name == "minecraft:chain":
+                # renamed to iron_chain
+                return True
+
+            # up and down states are unused
+            if (1, 21, 40) <= version_number:
+                if namespaced_name in {
+                    "minecraft:creeper_head",
+                    "minecraft:dragon_head",
+                    "minecraft:piglin_head",
+                    "minecraft:player_head",
+                    "minecraft:skeleton_skull",
+                    "minecraft:wither_skeleton_skull",
+                    "minecraft:zombie_head",
+                }:
+                    return input_blockstate.properties["facing_direction"].py_int <= 1
+            else:
+                if namespaced_name == "minecraft:skull":
+                    return input_blockstate.properties["facing_direction"].py_int <= 1
+
+            if version_number <= (1, 21, 20) and namespaced_name == "minecraft:skull":
+                # up and down states are unused
+                return input_blockstate.properties["facing_direction"].py_int <= 1
+
+            if version_number <= (1, 20, 30) and namespaced_name in {
+                "minecraft:chest",
+                "minecraft:ender_chest",
+                "minecraft:trapped_chest",
+            }:
+                return input_blockstate.properties["facing_direction"].py_int <= 1
+
+            if version_number <= (1, 20, 10) and namespaced_name in {
+                "minecraft:blast_furnace",
+                "minecraft:lit_blast_furnace",
+                "minecraft:furnace",
+                "minecraft:lit_furnace",
+                "minecraft:smoker",
+                "minecraft:lit_smoker",
+            }:
+                return input_blockstate.properties["facing_direction"].py_int <= 1
+
+            if (1, 19, 80) <= version_number and namespaced_name in {
+                "minecraft:fence",
+                "minecraft:log",
+                "minecraft:log2",
+            }:
+                # deprecated
+                return True
+
+            if (
+                version_number <= (1, 19, 80)
+                and namespaced_name == "minecraft:lava_cauldron"
+            ):
+                return input_blockstate.properties["cauldron_liquid"].py_str == "water"
+
+            if (1, 19, 0) <= version_number and namespaced_name in {
+                "minecraft:stone_slab",
+                "minecraft:double_stone_slab",
+                "minecraft:stone_slab2",
+                "minecraft:double_stone_slab2",
+                "minecraft:stone_slab3",
+                "minecraft:double_stone_slab3",
+                "minecraft:stone_slab4",
+                "minecraft:double_stone_slab4",
+            }:
+                return True
+
+            if (1, 18, 30) <= version_number:
+                if namespaced_name in {
+                    "minecraft:concretePowder",
+                    "minecraft:pistonArmCollision",
+                    "minecraft:tripWire",
+                    "minecraft:invisibleBedrock",
+                    "minecraft:seaLantern",
+                    "minecraft:stickyPistonArmCollision",
+                }:
+                    return True
+            else:
+                if namespaced_name in {
+                    "minecraft:concrete_powder",
+                    "minecraft:piston_arm_collision",
+                    "minecraft:trip_wire",
+                    "minecraft:invisible_bedrock",
+                    "minecraft:sea_lantern",
+                    "minecraft:sticky_piston_arm_collision",
+                }:
+                    return True
+
+            if (1, 18, 13) <= version_number:
+                if namespaced_name == "minecraft:movingBlock":
+                    return True
+
+            if version_number <= (1, 18, 10):
+                if namespaced_name == "minecraft:moving_block":
+                    return True
+
+            if version_number <= (1, 16, 0) and namespaced_name in {
+                "minecraft:beehive",
+                "minecraft:bee_nest",
+            }:
+                return input_blockstate.properties["facing_direction"].py_int <= 1
+
             # if namespaced_name in {
             #     "minecraft:blue_orchid",
             #
@@ -83,7 +160,8 @@ def is_invalid_state(
                 "minecraft:poplar_pressure_plate",
             }:
                 return 2 <= input_blockstate.properties["redstone_signal"].py_int
-            elif namespaced_name == "minecraft:bamboo_sapling":
+
+            if namespaced_name == "minecraft:bamboo_sapling":
                 return input_blockstate.properties.get(
                     "sapling_type", StringTag()
                 ).py_str in {
@@ -93,7 +171,8 @@ def is_invalid_state(
                     "acacia",
                     "dark_oak",
                 }
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:bone_block",
                 "minecraft:hay_block",
                 "minecraft:stripped_crimson_hyphae",
@@ -104,7 +183,8 @@ def is_invalid_state(
                 return (
                     input_blockstate.properties.get("deprecated", IntTag()).py_int != 0
                 )
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:brown_mushroom_block",
                 "minecraft:red_mushroom_block",
             }:
@@ -112,12 +192,14 @@ def is_invalid_state(
                 return 11 <= state <= 13 or (
                     (1, 21, 40) <= version_number and state in (10, 15)
                 )
-            elif namespaced_name == "minecraft:mushroom_stem":
+
+            if namespaced_name == "minecraft:mushroom_stem":
                 return input_blockstate.properties["huge_mushroom_bits"].py_int not in (
                     10,
                     15,
                 )
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:colored_torch_bp",
                 "minecraft:colored_torch_blue",
                 "minecraft:colored_torch_purple",
@@ -135,7 +217,8 @@ def is_invalid_state(
                     input_blockstate.properties["torch_facing_direction"].py_str
                     == "unknown"
                 )
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:coral_fan",
                 "minecraft:coral_fan_dead",
                 "minecraft:brain_coral_fan",
@@ -150,24 +233,11 @@ def is_invalid_state(
                 "minecraft:dead_tube_coral_fan",
             }:
                 return input_blockstate.properties["coral_fan_direction"].py_int == 1
-            elif namespaced_name == "minecraft:coral_fan_hang3":
+
+            if namespaced_name == "minecraft:coral_fan_hang3":
                 return input_blockstate.properties["coral_hang_type_bit"].py_int == 1
-            elif (
-                namespaced_name
-                in {
-                    "minecraft:stone_slab",
-                    "minecraft:double_stone_slab",
-                    "minecraft:stone_slab2",
-                    "minecraft:double_stone_slab2",
-                    "minecraft:stone_slab3",
-                    "minecraft:double_stone_slab3",
-                    "minecraft:stone_slab4",
-                    "minecraft:double_stone_slab4",
-                }
-                and (1, 19, 0) <= version_number
-            ):
-                return True
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:acacia_double_slab",
                 "minecraft:andesite_double_slab",
                 "minecraft:bamboo_double_slab",
@@ -287,23 +357,28 @@ def is_invalid_state(
                     ).py_str
                     == "top"
                 )
-            elif namespaced_name == "minecraft:ladder":
+
+            if namespaced_name == "minecraft:ladder":
                 return 0 <= input_blockstate.properties["facing_direction"].py_int <= 1
-            elif namespaced_name == "minecraft:portal":
+
+            if namespaced_name == "minecraft:portal":
                 return input_blockstate.properties["portal_axis"].py_str == "unknown"
-            elif namespaced_name == "minecraft:tallgrass":
+
+            if namespaced_name == "minecraft:tallgrass":
                 return input_blockstate.properties["tall_grass_type"].py_str in {
                     "default",
                     "snow",
                 }
-            elif namespaced_name == "minecraft:stonecutter_block":
+
+            if namespaced_name == "minecraft:stonecutter_block":
                 return (
                     input_blockstate.properties.get(
                         "facing_direction", IntTag(2)
                     ).py_int
                     <= 1
                 )
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:melon_stem",
                 "minecraft:pumpkin_stem",
             }:
@@ -311,40 +386,51 @@ def is_invalid_state(
                     input_blockstate.properties.get("facing_direction", IntTag()).py_int
                     == 1
                 )
-            elif namespaced_name == "minecraft:torchflower_crop":
+
+            if namespaced_name == "minecraft:torchflower_crop":
                 return 2 <= input_blockstate.properties.get("growth", IntTag()).py_int
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:leaf_litter",
                 "minecraft:pink_petals",
                 "minecraft:wildflowers",
             }:
                 return 4 <= input_blockstate.properties["growth"].py_int
-            elif namespaced_name == "minecraft:pitcher_crop":
+
+            if namespaced_name == "minecraft:pitcher_crop":
                 return 5 <= input_blockstate.properties["growth"].py_int
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:activator_rail",
                 "minecraft:detector_rail",
                 "minecraft:golden_rail",
             }:
                 return 6 <= input_blockstate.properties["rail_direction"].py_int
-            elif namespaced_name == "minecraft:chorus_flower":
+
+            if namespaced_name == "minecraft:chorus_flower":
                 return 6 <= input_blockstate.properties["age"].py_int
-            elif namespaced_name == "minecraft:cocoa":
+
+            if namespaced_name == "minecraft:cocoa":
                 return 3 <= input_blockstate.properties["age"].py_int
-            elif namespaced_name == "minecraft:frosted_ice":
+
+            if namespaced_name == "minecraft:frosted_ice":
                 return 4 <= input_blockstate.properties["age"].py_int
-            elif namespaced_name == "minecraft:nether_wart":
+
+            if namespaced_name == "minecraft:nether_wart":
                 return 4 <= input_blockstate.properties["age"].py_int
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:deprecated_purpur_block_1",
                 "minecraft:deprecated_purpur_block_2",
             }:
                 return True
-            elif namespaced_name == "minecraft:stonebrick":
+
+            if namespaced_name == "minecraft:stonebrick":
                 return (
                     input_blockstate.properties["stone_brick_type"].py_str == "smooth"
                 )
-            elif namespaced_name in {
+
+            if namespaced_name in {
                 "minecraft:mangrove_wood",
                 "minecraft:cherry_wood",
             }:
@@ -352,8 +438,80 @@ def is_invalid_state(
                     input_blockstate.properties.get("stripped_bit", ByteTag()).py_int
                     == 1
                 )
-            elif namespaced_name == "minecraft:grindstone":
+
+            if namespaced_name == "minecraft:grindstone":
                 return input_blockstate.properties["attachment"].py_str == "multiple"
-            elif namespaced_name == "minecraft:shelf_mushroom":
+
+            if namespaced_name == "minecraft:shelf_mushroom":
                 return input_blockstate.properties["growth"].py_int >= 2
+
+            if namespaced_name in {
+                "minecraft:acacia_hanging_sign",
+                "minecraft:acacia_wall_sign",
+                "minecraft:bamboo_hanging_sign",
+                "minecraft:bamboo_wall_sign",
+                "minecraft:birch_hanging_sign",
+                "minecraft:birch_wall_sign",
+                "minecraft:cherry_hanging_sign",
+                "minecraft:cherry_wall_sign",
+                "minecraft:crimson_hanging_sign",
+                "minecraft:crimson_wall_sign",
+                "minecraft:dark_oak_hanging_sign",
+                "minecraft:darkoak_wall_sign",
+                "minecraft:jungle_hanging_sign",
+                "minecraft:jungle_wall_sign",
+                "minecraft:mangrove_hanging_sign",
+                "minecraft:mangrove_wall_sign",
+                "minecraft:oak_hanging_sign",
+                "minecraft:oak_wall_sign",
+                "minecraft:pale_oak_hanging_sign",
+                "minecraft:pale_oak_wall_sign",
+                "minecraft:poplar_hanging_sign",
+                "minecraft:poplar_wall_sign",
+                "minecraft:spruce_hanging_sign",
+                "minecraft:spruce_wall_sign",
+                "minecraft:warped_hanging_sign",
+                "minecraft:warped_wall_sign",
+                "minecraft:wall_sign",
+                "minecraft:wall_banner",
+            }:
+                return input_blockstate.properties["facing_direction"].py_int <= 1
+
+            if namespaced_name == "minecraft:unpowered_comparator":
+                return input_blockstate.properties["output_lit_bit"].py_int == 1
+
+            if namespaced_name == "minecraft:powered_comparator":
+                return input_blockstate.properties["output_lit_bit"].py_int == 0
+        else:
+            if force_blockstate:
+                if namespaced_name == "minecraft:unpowered_comparator":
+                    return input_blockstate.properties["powered"].py_str == "true"
+
+                if namespaced_name == "minecraft:powered_comparator":
+                    return input_blockstate.properties["powered"].py_str == "false"
+            else:
+                if namespaced_name == "minecraft:cauldron":
+                    return (
+                        not 0 <= input_blockstate.properties["block_data"].py_int <= 6
+                    )
+
+                if namespaced_name == "minecraft:lava_cauldron":
+                    return (
+                        not 8 <= input_blockstate.properties["block_data"].py_int < 14
+                    )
+
+                if namespaced_name == "minecraft:chest":
+                    return input_blockstate.properties["block_data"].py_int <= 1
+
+                if namespaced_name == "minecraft:unpowered_comparator":
+                    return input_blockstate.properties["block_data"].py_int >= 8
+
+                if namespaced_name == "minecraft:powered_comparator":
+                    return input_blockstate.properties["block_data"].py_int <= 7
+
+                if namespaced_name == "minecraft:tallgrass":
+                    return (
+                        not 1 <= input_blockstate.properties["block_data"].py_int <= 2
+                    )
+
     return False
