@@ -211,13 +211,14 @@
                                 }
                             ]
                         },
-                        "Version": {
+                        "BedrockCommandVersion": {
                             "type": "int",
                             "functions": [
                                 {
                                     "function": "carry_nbt",
                                     "options": {
-                                        "path": []
+                                        "path": [],
+                                        "key": "Version"
                                     }
                                 }
                             ]
