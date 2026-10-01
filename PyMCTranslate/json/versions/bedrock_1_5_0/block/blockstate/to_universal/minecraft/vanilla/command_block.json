@@ -276,7 +276,8 @@
                                         "utags",
                                         "compound"
                                     ]
-                                ]
+                                ],
+                                "key": "BedrockCommandVersion"
                             }
                         }
                     ]
