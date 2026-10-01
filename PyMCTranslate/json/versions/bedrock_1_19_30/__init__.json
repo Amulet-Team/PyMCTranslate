@@ -1,0 +1,27 @@
+{
+    "block_format": "nbt-blockstate",
+    "block_entity_format": "str-id",
+    "block_entity_coord_format": "xyz-int",
+    "entity_format": "namespace-str-id",
+    "entity_coord_format": "Pos-list-float",
+    "platform": "bedrock",
+    "version": [
+        1,
+        19,
+        30
+    ],
+    "version_max_known": [
+        1,
+        19,
+        31
+    ],
+    "version_max": [
+        1,
+        19,
+        40,
+        -1
+    ],
+    "data_version": 17959425,
+    "data_version_max_known": 17959425,
+    "data_version_max": 17959425
+}
