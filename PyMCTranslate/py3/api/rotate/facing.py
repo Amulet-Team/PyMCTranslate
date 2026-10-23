@@ -166,30 +166,54 @@ class ButtonShape(BaseVectorBlockShape):
 
 @BlockShapes.register
 class StairShape(BaseVectorBlockShape):
-    Properties = ("half", "facing")
+    Properties = ("half", "facing", "shape")
     Vectors = {
-        (half, facing): (x, y, z)
+        (half, facing, shape): (
+            x + inner_left_x * left_multiplier,
+            y,
+            z + inner_left_z * left_multiplier,
+        )
         for half, y in ((TAG_String("top"), -1), (TAG_String("bottom"), 1))
-        for facing, x, z in (
-            (TAG_String("north"), 0, -1),
-            (TAG_String("south"), 0, 1),
-            (TAG_String("west"), -1, 0),
-            (TAG_String("east"), 1, 0),
+        for facing, x, z, inner_left_x, inner_left_z in (
+            (TAG_String("north"), 0, 1, 1, 0),
+            (TAG_String("south"), 0, -1, -1, 0),
+            (TAG_String("west"), 1, 0, 0, -1),
+            (TAG_String("east"), -1, 0, 0, 1),
+        )
+        for shape, left_multiplier in (
+            (TAG_String("straight"), 0),
+            (TAG_String("inner_left"), 0.5),
+            (TAG_String("inner_right"), -0.5),
+            (TAG_String("outer_left"), 0.75),
+            (TAG_String("outer_right"), -0.75),
         )
     }
 
     def is_valid(
         self, namespace: str, base_name: str, specification: BlockSpecification
     ) -> bool:
-        return set(specification.valid_properties.get("facing", ())) == {
-            TAG_String("north"),
-            TAG_String("south"),
-            TAG_String("west"),
-            TAG_String("east"),
-        } and set(specification.valid_properties.get("half", ())) == {
-            TAG_String("top"),
-            TAG_String("bottom"),
-        }
+        return (
+            set(specification.valid_properties.get("facing", ()))
+            == {
+                TAG_String("north"),
+                TAG_String("south"),
+                TAG_String("west"),
+                TAG_String("east"),
+            }
+            and set(specification.valid_properties.get("half", ()))
+            == {
+                TAG_String("top"),
+                TAG_String("bottom"),
+            }
+            and set(specification.valid_properties.get("shape", ()))
+            == {
+                TAG_String("straight"),
+                TAG_String("inner_left"),
+                TAG_String("inner_right"),
+                TAG_String("outer_left"),
+                TAG_String("outer_right"),
+            }
+        )
 
 
 @BlockShapes.register
