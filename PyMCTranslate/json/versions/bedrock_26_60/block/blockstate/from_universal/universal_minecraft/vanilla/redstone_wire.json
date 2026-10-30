@@ -135,6 +135,110 @@
                         }
                     }
                 ]
+            },
+            "north": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_north": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_north": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_north": "\"up\""
+                        }
+                    }
+                ]
+            },
+            "east": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_east": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_east": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_east": "\"up\""
+                        }
+                    }
+                ]
+            },
+            "south": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_south": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_south": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_south": "\"up\""
+                        }
+                    }
+                ]
+            },
+            "west": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_west": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_west": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "redstone_west": "\"up\""
+                        }
+                    }
+                ]
             }
         }
     }
