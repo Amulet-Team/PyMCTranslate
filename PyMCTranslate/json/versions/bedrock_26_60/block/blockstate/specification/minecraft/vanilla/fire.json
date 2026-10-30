@@ -1,0 +1,50 @@
+{
+    "properties": {
+        "age": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+        ],
+        "minecraft:connection_east": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_north": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_south": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_up": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:connection_west": [
+            "0b",
+            "1b"
+        ]
+    },
+    "defaults": {
+        "age": "0",
+        "minecraft:connection_east": "0b",
+        "minecraft:connection_north": "0b",
+        "minecraft:connection_south": "0b",
+        "minecraft:connection_up": "0b",
+        "minecraft:connection_west": "0b"
+    }
+}

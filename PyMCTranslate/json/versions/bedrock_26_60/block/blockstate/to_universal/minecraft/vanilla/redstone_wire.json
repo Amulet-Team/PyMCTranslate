@@ -1,0 +1,245 @@
+[
+    {
+        "function": "new_block",
+        "options": "universal_minecraft:redstone_wire"
+    },
+    {
+        "function": "map_properties",
+        "options": {
+            "redstone_signal": {
+                "0": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"0\""
+                        }
+                    }
+                ],
+                "1": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"1\""
+                        }
+                    }
+                ],
+                "2": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"2\""
+                        }
+                    }
+                ],
+                "3": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"3\""
+                        }
+                    }
+                ],
+                "4": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"4\""
+                        }
+                    }
+                ],
+                "5": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"5\""
+                        }
+                    }
+                ],
+                "6": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"6\""
+                        }
+                    }
+                ],
+                "7": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"7\""
+                        }
+                    }
+                ],
+                "8": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"8\""
+                        }
+                    }
+                ],
+                "9": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"9\""
+                        }
+                    }
+                ],
+                "10": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"10\""
+                        }
+                    }
+                ],
+                "11": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"11\""
+                        }
+                    }
+                ],
+                "12": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"12\""
+                        }
+                    }
+                ],
+                "13": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"13\""
+                        }
+                    }
+                ],
+                "14": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"14\""
+                        }
+                    }
+                ],
+                "15": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "power": "\"15\""
+                        }
+                    }
+                ]
+            },
+            "redstone_north": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "north": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "north": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "north": "\"up\""
+                        }
+                    }
+                ]
+            },
+            "redstone_east": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "east": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "east": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "east": "\"up\""
+                        }
+                    }
+                ]
+            },
+            "redstone_south": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "south": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "south": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "south": "\"up\""
+                        }
+                    }
+                ]
+            },
+            "redstone_west": {
+                "\"none\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "west": "\"none\""
+                        }
+                    }
+                ],
+                "\"side\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "west": "\"side\""
+                        }
+                    }
+                ],
+                "\"up\"": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "west": "\"up\""
+                        }
+                    }
+                ]
+            }
+        }
+    }
+]

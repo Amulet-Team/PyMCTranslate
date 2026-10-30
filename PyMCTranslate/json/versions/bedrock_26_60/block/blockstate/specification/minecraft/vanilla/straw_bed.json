@@ -1,0 +1,23 @@
+{
+    "properties": {
+        "head_piece_bit": [
+            "0b",
+            "1b"
+        ],
+        "minecraft:cardinal_direction": [
+            "\"south\"",
+            "\"west\"",
+            "\"north\"",
+            "\"east\""
+        ],
+        "occupied_bit": [
+            "0b",
+            "1b"
+        ]
+    },
+    "defaults": {
+        "head_piece_bit": "0b",
+        "minecraft:cardinal_direction": "\"south\"",
+        "occupied_bit": "0b"
+    }
+}

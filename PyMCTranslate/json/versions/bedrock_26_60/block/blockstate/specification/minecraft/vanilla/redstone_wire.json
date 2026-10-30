@@ -1,0 +1,49 @@
+{
+    "properties": {
+        "redstone_east": [
+            "\"none\"",
+            "\"side\"",
+            "\"up\""
+        ],
+        "redstone_north": [
+            "\"none\"",
+            "\"side\"",
+            "\"up\""
+        ],
+        "redstone_signal": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"
+        ],
+        "redstone_south": [
+            "\"none\"",
+            "\"side\"",
+            "\"up\""
+        ],
+        "redstone_west": [
+            "\"none\"",
+            "\"side\"",
+            "\"up\""
+        ]
+    },
+    "defaults": {
+        "redstone_east": "\"none\"",
+        "redstone_north": "\"none\"",
+        "redstone_signal": "0",
+        "redstone_south": "\"none\"",
+        "redstone_west": "\"none\""
+    }
+}

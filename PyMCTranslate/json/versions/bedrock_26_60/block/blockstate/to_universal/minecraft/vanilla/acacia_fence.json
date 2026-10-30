@@ -1,0 +1,89 @@
+[
+    {
+        "function": "new_block",
+        "options": "universal_minecraft:fence"
+    },
+    {
+        "function": "new_properties",
+        "options": {
+            "material": "\"acacia\""
+        }
+    },
+    {
+        "function": "map_properties",
+        "options": {
+            "minecraft:connection_north": {
+                "0b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "north": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "north": "\"true\""
+                        }
+                    }
+                ]
+            },
+            "minecraft:connection_east": {
+                "0b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "east": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "east": "\"true\""
+                        }
+                    }
+                ]
+            },
+            "minecraft:connection_south": {
+                "0b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "south": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "south": "\"true\""
+                        }
+                    }
+                ]
+            },
+            "minecraft:connection_west": {
+                "0b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "west": "\"false\""
+                        }
+                    }
+                ],
+                "1b": [
+                    {
+                        "function": "new_properties",
+                        "options": {
+                            "west": "\"true\""
+                        }
+                    }
+                ]
+            }
+        }
+    }
+]
